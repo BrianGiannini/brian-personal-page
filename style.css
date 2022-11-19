@@ -1,0 +1,17 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+#part_pannel, #part_content {
+    display:inline;
+}
+
+ul.vertical-list li{
+    list-style:none;
+}
+
+ul.horizontal-list li{
+    display: inline;
+    list-style:none;
+}
