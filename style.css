@@ -1,11 +1,15 @@
+html{scroll-behavior:smooth}
+
 body {
-    background-color: rgb(0, 0, 0);
-    color: #FFFFFF;
+    background-color: rgb(245, 245, 245);
+    color: #000000;
     margin: 0px;
 }
 
 .container {
     font-family: Bitter; src: url('Bitter-Regular.ttf');
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 a {
@@ -18,16 +22,20 @@ a {
     border-radius: 50%;
 }
 
-.side {
+.inline {
     display: inline-block;
 }
 
+.center-vertical {
+    vertical-align: middle;
+}
+
 #part_pannel {
-    padding: 0px;
-    text-transform: uppercase;
-    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding: 1%;
     top: 0;
-    background-color: rgb(21, 21, 21);
+    text-transform: uppercase;
+    background-color: rgb(245, 245, 245);
     vertical-align: top;
 }
 
@@ -42,8 +50,7 @@ a {
 
 #part_content {
     padding: 2%;
-    height: 100vh;
-    background-color: rgb(24, 24, 24);
+    background-color: rgb(255, 255, 255);
 }
 
 ul {
@@ -51,7 +58,7 @@ ul {
 }
 
 .section {
-    background-color: rgb(79, 79, 79);
+    background-color: rgb(245, 245, 245);
     padding: 2%;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     border-radius: 15px;
