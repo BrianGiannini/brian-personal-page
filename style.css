@@ -1,8 +1,61 @@
 html{scroll-behavior:smooth}
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(30, 32, 33);
+        color: rgb(232, 230, 227);
+    }
+
+    a {
+        color: rgb(0, 115, 128);
+    }
+
+    #part_pannel {
+        background-color: rgb(30, 32, 33);
+    }
+    
+    #part_content {
+        background-color: rgb(24, 26, 27);
+    }
+
+    .section {
+        background-color: rgb(30, 32, 33);
+    }
+
+    .sticky-header {
+        background-color: rgb(30, 32, 33);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: rgb(245, 245, 245);
+        color: #000000;
+    }
+
+    a {
+        color: rgb(0, 106, 117);
+    }
+
+    #part_pannel {
+        background-color: rgb(255, 255, 255);
+    }
+    
+    #part_content {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .section {
+        background-color: rgb(245, 245, 245);
+    }
+    
+    .sticky-header {
+        background-color: rgb(245, 245, 245);
+    }
+    
+}
+
 body {
-    background-color: rgb(245, 245, 245);
-    color: #000000;
     margin: 0px;
 }
 
@@ -13,12 +66,11 @@ body {
 }
 
 a {
-    color: rgb(0, 106, 117);
     text-decoration: none;
 }
 
 .portrait {
-    max-width: 50px;
+    max-width: 100px;
     border-radius: 50%;
 }
 
@@ -27,7 +79,12 @@ a {
 }
 
 .center-vertical {
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+
+.center-vertical h1 {
+    margin-left: 30px;
 }
 
 #part_pannel {
@@ -35,33 +92,28 @@ a {
     padding: 1%;
     top: 0;
     text-transform: uppercase;
-    background-color: rgb(245, 245, 245);
     vertical-align: top;
 }
 
-.sticky {
+#part_content {
+    padding: 2%;
+}
+
+.section {
+    padding: 2%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: 15px;
+}
+
+.sticky-header {
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: #ffe4c4;
-    color: #FFFFFF;
     padding: 3rem 20px;
-  }
-
-#part_content {
-    padding: 2%;
-    background-color: rgb(255, 255, 255);
 }
 
 ul {
     padding-inline-start: 0px;
-}
-
-.section {
-    background-color: rgb(245, 245, 245);
-    padding: 2%;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    border-radius: 15px;
 }
 
 ul.vertical-list li {
