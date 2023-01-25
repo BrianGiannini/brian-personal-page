@@ -60,7 +60,7 @@ body {
 }
 
 .container {
-    font-family: Bitter; src: url('Bitter-Regular.ttf');
+    font-family: 'Roboto', sans-serif;
     max-width: 1000px;
     margin: 0 auto;
 }
