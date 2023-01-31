@@ -7,13 +7,13 @@ html{scroll-behavior:smooth}
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bkg-small: rgb(30, 32, 33);
-        --bkg-medium: rgb(24, 26, 27);
+        --bkg-top: rgb(30, 32, 33);
+        --bkg-mid: rgb(24, 26, 27);
     }
 
     body {
         --text-color: rgb(232, 230, 227);
-        --bkg-color: rgb(30, 32, 33);
+        --bkg-color: rgb(51, 51, 51);
     }
 
     a {
@@ -23,13 +23,13 @@ html{scroll-behavior:smooth}
 
 @media (prefers-color-scheme: light) {
     :root {
-        --bkg-small: rgb(255, 255, 255);
-        --bkg-medium: rgb(245, 245, 245);
+        --bkg-top: rgb(255, 255, 255);
+        --bkg-mid: rgb(245, 245, 245);
     }
 
     body {
         --text-color: #000000;
-        --bkg-color: rgb(245, 245, 245);
+        --bkg-color: rgb(233, 233, 233);
     }
 
     a {
@@ -73,28 +73,36 @@ a {
 }
 
 #part_pannel {
-    background-color: var(--bkg-small);
+    height: 3rem;
+    background-color: var(--bkg-top);
     box-shadow: var(--shadow-first) 0px 1px 3px, var(--shadow-second) 0px 1px 2px;
     padding: 1%;
-    top: 0;
+    top: 0;    
     text-transform: uppercase;
     vertical-align: top;
 }
 
 #part_content {
-    background-color: var(--bkg-medium);
+    box-shadow: var(--shadow-first) 0px 1px 3px, var(--shadow-second) 0px 1px 2px;
+    background-color: var(--bkg-mid);
     padding: 2%;
 }
 
 .section {
-    background-color: var(--bkg-small);
+    max-width: 600px;
+    background-color: var(--bkg-top);
     padding: 2%;
     box-shadow: var(--shadow-first) 0px 1px 3px, var(--shadow-second) 0px 1px 2px;
     border-radius: 15px;
 }
 
+.center-section {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .sticky-header {
-    background-color: var(--bkg-small);
+    background-color: var(--bkg-top);
     position: sticky;
     top: 0;
     z-index: 10;
