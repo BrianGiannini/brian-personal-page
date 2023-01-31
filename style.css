@@ -1,62 +1,46 @@
 html{scroll-behavior:smooth}
 
+:root {
+    --shadow-first: rgba(0, 0, 0, 0.12);
+    --shadow-second: rgba(0, 0, 0, 0.24);
+}
+
 @media (prefers-color-scheme: dark) {
+    :root {
+        --bkg-small: rgb(30, 32, 33);
+        --bkg-medium: rgb(24, 26, 27);
+    }
+
     body {
-        background-color: rgb(30, 32, 33);
-        color: rgb(232, 230, 227);
+        --text-color: rgb(232, 230, 227);
+        --bkg-color: rgb(30, 32, 33);
     }
 
     a {
-        color: rgb(0, 115, 128);
-    }
-
-    #part_pannel {
-        background-color: rgb(30, 32, 33);
-    }
-    
-    #part_content {
-        background-color: rgb(24, 26, 27);
-    }
-
-    .section {
-        background-color: rgb(30, 32, 33);
-    }
-
-    .sticky-header {
-        background-color: rgb(30, 32, 33);
+        --link-color: rgb(0, 115, 128);
     }
 }
 
 @media (prefers-color-scheme: light) {
+    :root {
+        --bkg-small: rgb(255, 255, 255);
+        --bkg-medium: rgb(245, 245, 245);
+    }
+
     body {
-        background-color: rgb(245, 245, 245);
-        color: #000000;
+        --text-color: #000000;
+        --bkg-color: rgb(245, 245, 245);
     }
 
     a {
-        color: rgb(0, 106, 117);
-    }
-
-    #part_pannel {
-        background-color: rgb(255, 255, 255);
-    }
-    
-    #part_content {
-        background-color: rgb(255, 255, 255);
-    }
-
-    .section {
-        background-color: rgb(245, 245, 245);
-    }
-    
-    .sticky-header {
-        background-color: rgb(245, 245, 245);
-    }
-    
+        --link-color: rgb(0, 106, 117);
+    }    
 }
 
 body {
     margin: 0px;
+    background-color: var(--bkg-color);
+    color: var(--text-color);
 }
 
 .container {
@@ -66,6 +50,7 @@ body {
 }
 
 a {
+    color: var(--link-color);
     text-decoration: none;
 }
 
@@ -88,7 +73,8 @@ a {
 }
 
 #part_pannel {
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color: var(--bkg-small);
+    box-shadow: var(--shadow-first) 0px 1px 3px, var(--shadow-second) 0px 1px 2px;
     padding: 1%;
     top: 0;
     text-transform: uppercase;
@@ -96,16 +82,19 @@ a {
 }
 
 #part_content {
+    background-color: var(--bkg-medium);
     padding: 2%;
 }
 
 .section {
+    background-color: var(--bkg-small);
     padding: 2%;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    box-shadow: var(--shadow-first) 0px 1px 3px, var(--shadow-second) 0px 1px 2px;
     border-radius: 15px;
 }
 
 .sticky-header {
+    background-color: var(--bkg-small);
     position: sticky;
     top: 0;
     z-index: 10;
