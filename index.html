@@ -5,24 +5,31 @@
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet" disable media="screen">
         <link rel="icon" href="imgs/brian.png">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/toggleDarkMode.js"></script>
     </head>
     <body>
         <div class="container">
 
-            <div class="sticky-header" id="part_pannel">  
+            <div class="sticky-header" id="part-pannel">  
             
                 <div class="inline">
                     <ul class="horizontal-list">
-                        <li><a href="#part_content">About Me</a></li>
-                        <li><a href="#section_project">Projects</a></li>
-                        <li><a href="#section_movies">Movies</a></li>
-                        <li><a href="#section_readings">Readings</a></li>
-                        <li><a href="#section_music">Music</a></li>
+                        <li><a href="#part-content">About Me</a></li>
+                        <li><a href="#section-project">Projects</a></li>
+                        <li><a href="#section-movies">Movies</a></li>
+                        <li><a href="#section-readings">Readings</a></li>
+                        <li><a href="#section-music">Music</a></li>
                     </ul>
                 </div>
+
+                <button id="toggle-button">
+                    <img id="switch-image" src="icons/circle-half-stroke-solid.svg" alt="switch dark light mode">
+                </button>
+
             </div>
 
-            <div id="part_content">
+            <div id="part-content">
 
                 <div class="section center-section">
                     <div class="center-vertical">
@@ -48,7 +55,7 @@
 
                 </div>
 
-                <h1 id="section_project">Projects</h1>
+                <h1 id="section-project">Projects</h1>
                 <div class="section">
                     <p>Here are the projects I worked on:</p>
                     <ul class="vertical-list">
@@ -78,17 +85,17 @@
 
                 </div>
 
-                <h1 id="section_movies">Movies</h1>
+                <h1 id="section-movies">Movies</h1>
                 <div class="section">
                     <a href="https://www.imdb.com/user/ur30078525/ratings?sort=your_rating,desc&ratingFilter=0&mode=grid&ref_=undefined&lastPosition=0" target="_blank" rel="noopener noreferrer">My IMDB ratings</a>
                 </div>
 
-                <h1 id="section_readings">Readings</h1>
+                <h1 id="section-readings">Readings</h1>
                 <div class="section">
                     <a href="https://www.goodreads.com/user/show/147637219-brian" target="_blank" rel="noopener noreferrer">My Goodreads profile</a>
                 </div>
 
-                <h1 id="section_music">Music</h1>
+                <h1 id="section-music">Music</h1>
                 <div class="section">
                     <a href="https://open.spotify.com/playlist/0XWTE52aWJzls0hPgr6EoX" target="_blank" rel="noopener noreferrer">My public liked Spotify playlist</a>
                 </div>
