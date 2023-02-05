@@ -14,15 +14,11 @@ $(document).ready(function() {
     }
   }
 
-  console.log("currentTheme to check", currentTheme);
-
   if (localStorage.getItem('theme') == 'dark') {
-    document.body.classList.add('body-dark-theme');
-    document.documentElement.classList.add('root-dark-theme');
+    setDarkTheme()
     checkbox.setAttribute("checked", "true");
   } else {
-    document.body.classList.add('body-light-theme');
-    document.documentElement.classList.add('root-light-theme');
+    setLightTheme()
   }
 
   checkbox.addEventListener('change', function() {
@@ -31,20 +27,49 @@ $(document).ready(function() {
       document.body.classList.remove('body-dark-theme');
       document.documentElement.classList.remove('root-light-theme');
       document.documentElement.classList.remove('root-dark-theme');
-
-      console.log("theme toggle:" + localStorage.getItem("theme"));
+      document.body.classList.remove('a-light-theme');
+      document.body.classList.remove('a-dark-theme');
 
       // Add the new theme class to the body
       if (localStorage.getItem('theme') == 'light') {
-        document.body.classList.add('body-dark-theme');
-        document.documentElement.classList.add('root-dark-theme');
+        setDarkTheme()
         localStorage.setItem('theme', 'dark');
       } else {
-        document.body.classList.add('body-light-theme');
-        document.documentElement.classList.add('root-light-theme');
+        setLightTheme()
         localStorage.setItem('theme', 'light');
-        console.log("theme toggle2:" + localStorage.getItem("theme"));
       }
     });
+
+    function setDarkTheme() {
+      removePreviousClass()
+      document.body.classList.add('body-dark-theme');
+      document.documentElement.classList.add('root-dark-theme');
+      document
+      .querySelectorAll('a')
+      .forEach(element => element.classList.add('a-dark-theme'));
+    }
+
+    function setLightTheme() {
+      removePreviousClass()
+      document.body.classList.add('body-light-theme');
+      document.documentElement.classList.add('root-light-theme');
+      document
+      .querySelectorAll('a')
+      .forEach(element => element.classList.add('a-light-theme'));
+    }
+
+    function removePreviousClass() {
+       // Remove the current theme class from the body
+       document.body.classList.remove('body-light-theme');
+       document.body.classList.remove('body-dark-theme');
+       document.documentElement.classList.remove('root-light-theme');
+       document.documentElement.classList.remove('root-dark-theme');
+       document
+      .querySelectorAll('a')
+      .forEach(element => element.classList.remove('a-light-theme'));
+      document
+      .querySelectorAll('a')
+      .forEach(element => element.classList.remove('a-dark-theme'));
+    }
 
 });
