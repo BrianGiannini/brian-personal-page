@@ -13,7 +13,6 @@ html{scroll-behavior:smooth}
 }
 
 body {
-   
     margin: 0px;
     background-color: var(--bkg-color);
     color: var(--text-color);
@@ -60,7 +59,7 @@ a {
     --bkg-color: rgb(51, 51, 51);
 }
 
-/* To toggle dark theme*/
+/* To toggle light theme*/
 .root-light-theme {
     --bkg-top: rgb(255, 255, 255);
     --bkg-mid: rgb(245, 245, 245);
@@ -92,11 +91,6 @@ a {
 #toggle-button {
     float: right;
     margin-right: 2%;
-}
-
-#switch-image {
-    width: 24px;
-    height: 24px;
 }
 
 #part-pannel {

@@ -7,7 +7,7 @@
         <meta name="author" content="Brian Giannini">
         <meta name="theme-color" content="#8fffff">
         <meta name="color-scheme" content="light dark">
-        <link rel="icon" href="img/icon.png">
+        <link rel="icon" href="icon.png">
 
         <meta name="twitter:card" content="summary">
         <meta name="twitter:creator" content="@SanguiSan">
@@ -36,10 +36,11 @@
         }
         </script>
         
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/switch.css">
         <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap">
-        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-        <script type="text/javascript" src="scripts/toggleDarkMode.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/toggle-dark-mode.js"></script>
     </head>
     <body>
         <div class="container">
@@ -52,13 +53,15 @@
                         <li><a href="#section-project">Projects</a></li>
                         <li><a href="#section-movies">Movies</a></li>
                         <li><a href="#section-readings">Readings</a></li>
-                        <li><a href="#section-music">Music</a></li>
+                        <li><a href="#section-musics">Musics</a></li>
+                        <li><a href="#section-games">Games</a></li>
                     </ul>
                 </div>
 
-                <button id="toggle-button">
-                    <img id="switch-image" src="icons/circle-half-stroke-solid.svg" alt="switch dark light mode">
-                </button>
+                <label class="switch">
+                    <input type="checkbox" id="checkbox-change">
+                    <span class="slider round"></span>
+                </label>
 
             </div>
 
@@ -66,11 +69,11 @@
 
                 <div class="section center-section">
                     <div class="center-vertical">
-                        <img class="portrait inline" src="img/brian.png" alt="Brian Photo">
+                        <img class="portrait inline" src="img/brian.webp" alt="Brian Photo">
                         <h1 class="inline">Brian Giannini</h1>
                     </div>
 
-                    <p>mail: <a href = "mailto: brian@giannini.contact">brian@giannini.contact</a> </p>
+                    <p>mail: <a href="mailto: brian@giannini.contact">brian@giannini.contact</a> </p>
                 
                     <ul class="horizontal-list">
                         <li>
@@ -128,9 +131,14 @@
                     <a href="https://www.goodreads.com/user/show/147637219-brian" target="_blank" rel="noopener noreferrer">My Goodreads profile</a>
                 </div>
 
-                <h1 id="section-music">Music</h1>
+                <h1 id="section-musics">Musics</h1>
                 <div class="section">
                     <a href="https://open.spotify.com/playlist/0XWTE52aWJzls0hPgr6EoX" target="_blank" rel="noopener noreferrer">My public liked Spotify playlist</a>
+                </div>
+
+                <h1 id="section-games">Games</h1>
+                <div class="section">
+                    <a href="https://steamcommunity.com/id/SanguiSan/" target="_blank" rel="noopener noreferrer">My public Steam games profile</a>
                 </div>
 
             </div>
