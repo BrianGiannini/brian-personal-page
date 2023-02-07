@@ -147,7 +147,7 @@ ul.vertical-list li {
 }
 
 ul.horizontal-list li {
-    padding-right: 8px;
+    padding-left: 8px;
     display: inline;
     list-style:none;
 }
