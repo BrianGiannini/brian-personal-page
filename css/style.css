@@ -138,6 +138,7 @@ a {
     box-sizing: border-box;
     margin: 10px;
     height: 40vh;
+
 }
 
 .header-section {
@@ -163,20 +164,20 @@ ul.vertical-list li {
 }
 
 ul.horizontal-list li {
-    padding-left: 8px;
+    padding-right: 8px;
     display: inline;
     list-style:none;
 }
 
 .center-image {
-    display: block;
+    display: block; /* This can actually be omitted since it's redundant with flex items */
+    max-width: 100%; /* To ensure the image is responsive and doesn't overflow */
+    max-height: 100%; /* To ensure the image doesn't exceed the container's height */
     margin: auto;
-    width: 100%; 
-    height: auto;
-    max-height: 200px;
-    object-fit: cover; 
+    height: 100px;
+    width: auto;
 }
 
-a:hover .clickable-div {
+.clickable-div:hover {
     background-color: #f0f0f0;
 }
