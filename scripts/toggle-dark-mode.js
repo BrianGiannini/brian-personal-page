@@ -45,7 +45,6 @@ $(document).ready(function() {
       document.body.classList.add('body-dark-theme');
       document.documentElement.classList.add('root-dark-theme');
       document.querySelectorAll('a').forEach(element => element.classList.add('a-dark-theme'));
-      document.querySelectorAll('clickable-div').forEach(element => element.classList.add('a-dark-theme'));
     }
 
     function setLightTheme() {
@@ -53,7 +52,6 @@ $(document).ready(function() {
       document.body.classList.add('body-light-theme');
       document.documentElement.classList.add('root-light-theme');
       document.querySelectorAll('a').forEach(element => element.classList.add('a-light-theme'));
-      document.querySelectorAll('clickable-div').forEach(element => element.classList.add('a-light-theme'));
     }
 
     function removePreviousClass() {
@@ -64,9 +62,6 @@ $(document).ready(function() {
        document.documentElement.classList.remove('root-dark-theme');
        document.querySelectorAll('a').forEach(element => element.classList.remove('a-light-theme'));
        document.querySelectorAll('a').forEach(element => element.classList.remove('a-dark-theme'));
-       document.querySelectorAll('.clickable-div').forEach(element => element.classList.remove('clickable-div-light'));;
-       document.querySelectorAll('.clickable-div').forEach(element => element.classList.remove('clickable-div-dark'));;
-
     }
 
 });

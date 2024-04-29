@@ -39,13 +39,13 @@ a {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bkg-top: rgb(30, 32, 33);
+        --bkg-top: rgb(51, 51, 51);
         --bkg-mid: rgb(24, 26, 27);
     }
 
     body {
         --text-color: rgb(232, 230, 227);
-        --bkg-color: rgb(51, 51, 51);
+        --bkg-color: rgb(0, 0, 0);
     }
     a {
         color: #7af3ff;
@@ -54,12 +54,12 @@ a {
 
 /* To toggle dark theme*/
 .root-dark-theme {
-    --bkg-top: rgb(30, 32, 33);
+    --bkg-top: rgb(51, 51, 51);
     --bkg-mid: rgb(24, 26, 27);
 }
 .body-dark-theme {
     --text-color: rgb(232, 230, 227);
-    --bkg-color: rgb(51, 51, 51);
+    --bkg-color: rgb(0, 0, 0);
 }
 .a-dark-theme {
     color: #7af3ff;
@@ -137,7 +137,6 @@ a {
     flex: 0 0 400px;
     box-sizing: border-box;
     margin: 10px;
-    height: 40vh;
 
 }
 
@@ -178,6 +177,11 @@ ul.horizontal-list li {
     width: auto;
 }
 
-.clickable-div:hover {
-    background-color: #f0f0f0;
+.clickable-div.a-light-theme:hover {
+    background-color: #e8e8e8;
 }
+
+.clickable-div.a-dark-theme:hover {
+    background-color: #242424;
+}
+
