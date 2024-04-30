@@ -106,7 +106,10 @@ a {
     height: 3rem;
     background-color: var(--bkg-top);
     box-shadow: var(--shadow-first) 0px 1px 3px, var(--shadow-second) 0px 1px 2px;
-    padding: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
     top: 0;
     text-transform: uppercase;
 }
@@ -134,10 +137,12 @@ a {
 }
 
 .box {
-    flex: 0 0 400px;
+    flex: 0 0 300px;
+    min-height: 250px;
+    max-height: 250px;
     box-sizing: border-box;
     margin: 10px;
-    text-align:center;
+    text-align: justify;
 }
 
 .header-section {
@@ -178,6 +183,13 @@ ul.horizontal-list li {
     margin: auto;
     height: 100px;
     width: auto;
+}
+
+.clickable-div {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color from parent element */
+    transition: box-shadow 0.3s; /* Add transition for smooth animation */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3); /* Add elevation shadow */
 }
 
 .clickable-div.a-light-theme:hover {
