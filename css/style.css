@@ -62,7 +62,7 @@ a {
     --bkg-color: rgb(0, 0, 0);
 }
 .a-dark-theme {
-    color: #7af3ff;
+    color: #55aeb7;
 }
 
 /* To toggle light theme*/
@@ -137,13 +137,14 @@ a {
     flex: 0 0 400px;
     box-sizing: border-box;
     margin: 10px;
-
+    text-align:center;
 }
 
 .header-section {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box; /* so the padding don't overflow */
 }
 
 .sticky-header {
@@ -151,6 +152,8 @@ a {
     position: sticky;
     z-index: 10;
     padding: 3rem 20px;
+    display: flex;
+    align-items: center;
 }
 
 ul {
@@ -184,4 +187,3 @@ ul.horizontal-list li {
 .clickable-div.a-dark-theme:hover {
     background-color: #242424;
 }
-
