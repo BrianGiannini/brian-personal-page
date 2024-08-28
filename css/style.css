@@ -208,3 +208,8 @@ ul.horizontal-list li {
 .clickable-div.a-dark-theme:hover {
     background-color: #242424;
 }
+
+.centered-footer {
+    text-align: center;
+    padding: 20px 0;
+}
