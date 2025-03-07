@@ -145,13 +145,41 @@ a {
     align-items: center;
 }
 
+.shelf img {
+    width: 250px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .box {
     flex: 0 0 300px;
-    min-height: 250px;
-    max-height: 250px;
+    min-height: 350px;
+    max-height: 350px;
     box-sizing: border-box;
     margin: 10px;
-    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.bottom-right-text {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .header-section {
@@ -185,15 +213,6 @@ ul.horizontal-list li {
     list-style:none;
 }
 
-.center-image {
-    display: block; /* This can actually be omitted since it's redundant with flex items */
-    max-width: 100%; /* To ensure the image is responsive and doesn't overflow */
-    max-height: 100%; /* To ensure the image doesn't exceed the container's height */
-    margin: auto;
-    height: 100px;
-    width: auto;
-}
-
 .clickable-div {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit the color from parent element */
@@ -212,4 +231,24 @@ ul.horizontal-list li {
 .centered-footer {
     text-align: center;
     padding: 20px 0;
+}
+
+.date {
+    color: gray;
+    font-size: 0.8em;
+    margin-top: auto;
+}
+
+.box h3 {
+    margin-bottom: 5px;
+}
+
+.no-hover {
+    pointer-events: none;
+    cursor: default;
+}
+
+.no-hover:hover {
+    color: inherit;
+    text-decoration: none;
 }
