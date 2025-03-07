@@ -25,6 +25,30 @@ a {
     transition: color 0.2s;
 }
 
+.box:hover {
+    transform: translateY(-5px);
+    color: inherit;  /* Ensures color doesn't change */
+}
+
+/* Regular links (like in paragraphs) */
+p a {
+    color: var(--link-color);
+}
+
+p a:hover {
+    color: #7af3ff;
+}
+
+/* Keep box links from changing color */
+.box {
+    color: inherit;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    color: inherit;
+}
+
 @media (prefers-color-scheme: light) {
     :root {
         --bkg-top: #55aeb7;
@@ -190,8 +214,6 @@ ul.horizontal-list li {
 .clickable-div {
     text-decoration: none;
     color: inherit;
-    transition: box-shadow 0.3s;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .clickable-div.a-light-theme:hover {
