@@ -1,0 +1,148 @@
+.sticky-header {
+ background-color: var(--bkg-top);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow-first) 0px 2px 5px, var(--shadow-second) 0px 2px 5px;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header-left, 
+.header-center, 
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-left a {
+    display: inline-flex;
+    align-items: center;
+  }
+
+.header-logo {
+    height: 25px;
+    width: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    white-space: nowrap;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .sticky-header {
+        padding: 0.5rem;
+    }
+    
+    .header-left {
+        flex-shrink: 0;  /* Prevent logo from shrinking */
+    }
+    
+    .header-right {
+        flex-shrink: 0;  /* Prevent switch from shrinking */
+    }
+    
+    .nav-links {
+        gap: 0.5rem;
+        justify-content: center;  /* Center links on mobile */
+    }
+
+    .header-center {
+        justify-content: flex-start;  /* Move hamburger to left on mobile */
+    }
+} 
+
+/* Add hamburger button styles */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color, #000);
+    transition: 0.3s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        width: max-content;
+        background-color: var(--bkg-top);
+        color: var(--text-color);
+        padding: 1.5rem 2rem;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        display: block;
+        left: 100px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
+        color: var(--text-color);
+    }
+}
+
+/* Animation for hamburger to X */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
+} 

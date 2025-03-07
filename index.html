@@ -39,35 +39,44 @@
         
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/switch.css">
+        <link rel="stylesheet" href="css/navbar.css">
         <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
         <script type="text/javascript" src="scripts/toggle-dark-mode.js"></script>
+        <script type="text/javascript" src="scripts/hamburger.js"></script>
     </head>
     <body>
         <div class="container">
             <div class="sticky-header" id="part-pannel">
-
-                <div class="inline">
-                    <ul class="horizontal-list">
-                        | <li><a href="#section-about-me">About Me</a></li>
-                        | <li><a href="#section-work">Works</a></li>
-                        | <li><a href="#section-project">Projects</a></li>
-                        | <li><a href="#section-libraries">References</a></li>
-                    </ul>
+                <div class="header-center">
+                    <button class="hamburger" aria-label="Menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                    <nav class="nav-menu">
+                        <ul class="nav-links">
+                            <li><a href="#part-content">About Me</a></li>
+                            <li><a href="#section-work">Works</a></li>
+                            <li><a href="#section-project">Projects</a></li>
+                            <li><a href="#section-libraries">References</a></li>
+                        </ul>
+                    </nav>
                 </div>
 
-                <label class="switch">
-                    <input type="checkbox" id="checkbox-change" aria-label="Toggle dark mode">
-                    <span class="slider round"></span>
-                </label>
+                <div class="header-right">
+
+                    <label class="switch">
+                        <input type="checkbox" id="checkbox-change" aria-label="Toggle dark mode">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
 
             </div>
 
             <div id="part-content">
 
-                <h1 id="section-about-me">About Me</h1>
-
-                <div class="section header-section center-section">
+                <div class="section header-section center-section" >
 
                     <div class="center-vertical">
                         <img class="portrait inline" src="img/brian.webp" alt="Brian Photo" width="100px" height="100px">
@@ -82,21 +91,21 @@
                 
                     <ul class="horizontal-list">
                         <li>
-                            <a id="logo-svg-black" href="https://x.com/Sanguisan" target="_blank" rel="noopener noreferrer" aria-label="X Twitter"><img src="icons/x-twitter-icon.svg" alt="X Twitter logo" width="24" height="24"/></a>
+                            <a id="logo-svg-black" href="https://x.com/Sanguisan/" target="_blank" rel="noopener noreferrer" aria-label="X Twitter"><img src="icons/x-twitter-icon.svg" alt="X Twitter logo" width="24" height="24"/></a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/@Sanguinax/videos" target="_blank" rel="noopener noreferrer" aria-label="Youtube"><img src="icons/youtube-icon.svg" alt="Linkedin logo" width="32" height="24"/></a>
+                            <a href="https://www.youtube.com/@Sanguinax/videos/" target="_blank" rel="noopener noreferrer" aria-label="Youtube"><img src="icons/youtube-icon.svg" alt="Linkedin logo" width="32" height="24"/></a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/briangiannini1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="icons/linkedin-icon.svg" alt="Linkedin logo" width="24" height="24"/></a>
+                            <a href="https://www.linkedin.com/in/briangiannini1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="icons/linkedin-icon.svg" alt="Linkedin logo" width="24" height="24"/></a>
                         </li>                  
                     </ul>
 
                 </div>
 
-                <div>
+                <div class="self-section">
 
-                    <h1 id="section-work">Works</h1>
+                    <h1 class="section-title" id="section-work">Works</h1>
 
                     <div class="shelf">
                         <a class="box section clickable-div" href="https://criaphore.com/" target="_blank" rel="noopener noreferrer">
@@ -141,7 +150,7 @@
                     
                         <a class="box section clickable-div no-hover" href="" target="_blank" rel="noopener noreferrer">
                             <div class="image-container">
-                                <img src="img/shelf/work_armin.png" alt="Armin logo">
+                                <img src="img/shelf/work_amrin.jpg" alt="Armin logo">
                             </div>
                             <h3>French Special Forces App</h3>
                             <p>A cartography and communication Android app for the french special forces in an internal Thales Startup</p>
@@ -160,7 +169,7 @@
                     
                         <a class="box section clickable-div no-hover" href="" target="_blank" rel="noopener noreferrer">
                             <div class="image-container">
-                                <img src="img/shelf/work_thales.png" alt="Thales logo">
+                                <img src="img/shelf/work_thales.jpg" alt="Thales logo">
                             </div>
                             <h3>Identidy card checker</h3>
                             <p>An Android app developed to check National ID cards using a law enforcement smartphone</p>
@@ -168,7 +177,7 @@
                         </a>
                     </div>
 
-                    <h1 id="section-project">Projects</h1>
+                    <h1 class="section-title" id="section-project">Projects</h1>
 
                     <div class="shelf">
                         <a class="box section clickable-div" href="https://play.google.com/store/apps/details?id=dev.sangui.wakeupright" target="_blank" rel="noopener noreferrer">
@@ -176,27 +185,17 @@
                                 <img src="img/shelf/project_wake-up.webp" alt="wake up right app logo">
                             </div>
                             <h3>Wake up Right</h3>
-                            <p>An Android app to choose the duration you want to sleep instead of the time you want to wake-up</p>
+                            <p>A quick Android app to set the duration you want to sleep instead of the time you want to wake-up</p>
                             <p class="date">11 July 2024</p>
                             <span class="bottom-right-text">Link →</span>
                         </a>
-                    
-                        <a class="box section clickable-div" href="https://play.google.com/store/apps/details?id=dev.sangui.bigwormsattractor" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/project_sand-worm.webp" alt="sand worm attractor app logo">
-                            </div>
-                            <h3>Sand worms attractor</h3>
-                            <p>A funny quick Android app that I made in a day after seeing the Dune movie that just plays an animation</p>
-                            <p class="date">24 April 2024</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    
+                   
                         <a class="box section clickable-div" href="https://play.google.com/store/apps/details?id=io.sangui.sleepontime" target="_blank" rel="noopener noreferrer">
                             <div class="image-container">
                                 <img src="img/shelf/project_sleep-cycle.webp" alt="sleep cycles timing app logo">
                             </div>
                             <h3>Sleep Cycles Timing</h3>
-                            <p>An Android app for smartwatches that displays the optimal sleep times based on your wake-up schedule</p>
+                            <p>A quick smartwatch app that displays your optimal sleep times to go to bed</p>
                             <p class="date">14 March 2022</p>
                             <span class="bottom-right-text">Link →</span>
                         </a>
@@ -270,7 +269,7 @@
                         </a>
                     </div>
 
-                    <h1 id="section-libraries">References</h1>
+                    <h1 class="section-title" id="section-libraries">References</h1>
 
                     <div class="shelf">
 
@@ -310,6 +309,16 @@
                             </div>
                             <h3>Games library</h3>
                             <p>My Steam profile with the games I've played</p>
+                            <span class="bottom-right-text">Link →</span>
+                            <p class="date"></p>
+                        </a>
+
+                        <a class="box section clickable-div" href="https://www.canva.com/design/DAGUroBs8GQ/vseRNraDYkxDD1n3BQuwaA/edit" target="_blank" rel="noopener noreferrer">
+                            <div class="image-container">
+                                <img src="img/shelf/ref_moodboard.png" alt="caneva image">
+                            </div>
+                            <h3>Moodboard</h3>
+                            <p>My pop culture references (wip)</p>
                             <span class="bottom-right-text">Link →</span>
                             <p class="date"></p>
                         </a>
