@@ -1,0 +1,16 @@
+# Brian Giannini
+
+## Introduction
+
+Brian Giannini personal website for showcase and portfolio
+
+## Applications
+
+[Work] https://briangiannini.com/#section-work: Professional experiences of Brian Giannini
+[Project] https://briangiannini.com/#section-project: Personal projects made by Brian Giannini
+[References] https://briangiannini.com/#section-libraries: Hobbies of Brian Giannini
+
+## Optional
+
+- [Website](https://briangiannini.com/)
+- [Contact](mailto:brian@criaphore.com)
