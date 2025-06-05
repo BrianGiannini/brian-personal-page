@@ -22,13 +22,8 @@ $(document).ready(function() {
   }
 
   checkbox.addEventListener('change', function() {
-      // Remove the current theme class from the body
-      document.body.classList.remove('body-light-theme');
-      document.body.classList.remove('body-dark-theme');
-      document.documentElement.classList.remove('root-light-theme');
-      document.documentElement.classList.remove('root-dark-theme');
-      document.body.classList.remove('a-light-theme');
-      document.body.classList.remove('a-dark-theme');
+      // Remove the current theme classes
+      removePreviousClass();
 
       // Add the new theme class to the body
       if (localStorage.getItem('theme') == 'light') {
