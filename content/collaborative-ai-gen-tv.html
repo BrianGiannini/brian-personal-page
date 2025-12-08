@@ -1,140 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Basic Meta Tags -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>The collaborative AI Gen TV</title>
-        <meta name="description" content="A project that allows viewers of a YouTube stream to donate with a prompt to generate a unique AI video that is then shown on the stream for everyone to see.">
-        <meta name="author" content="Brian Giannini">
-        <meta name="theme-color" content="#55aeb7">
-        <meta name="color-scheme" content="light dark">
-        <link rel="icon" href="../icon.png">
-        
-        <!-- Preconnect to External Domains -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://ajax.googleapis.com">
-        <link rel="preconnect" href="https://t2.gstatic.com">
 
-        <!-- Social Media Tags -->
-        <meta property="og:type" content="article">
-        <meta property="og:title" content="The collaborative AI Gen TV - Brian Giannini">
-        <meta property="og:description" content="A project that allows viewers of a YouTube stream to donate with a prompt to generate a unique AI video that is then shown on the stream for everyone to see.">
-        <meta property="og:url" content="https://briangiannini.com/content/collaborative-ai-gen-tv.html">
-        <meta property="og:image" content="https://briangiannini.com/img/shelf/project_gen_ai_video.png">
-        <meta property="og:site_name" content="Brian Giannini">
-        
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:creator" content="@SanguiSan">
-        <meta name="twitter:title" content="The collaborative AI Gen TV - Brian Giannini">
-        <meta name="twitter:description" content="A project that allows viewers of a YouTube stream to donate with a prompt to generate a unique AI video that is then shown on the stream for everyone to see.">
-        <meta name="twitter:image" content="https://briangiannini.com/img/shelf/project_gen_ai_video.png">
-        
-        <!-- CSS files with relative paths -->
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/navbar.css">
-        <link rel="stylesheet" href="../css/switch.css">
-        <link rel="stylesheet" href="../css/link-preview.css">
-        <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap">
-        
-        <!-- JavaScript files -->
-        <script src="../scripts/theme-flash-prevention.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
-        <script src="../scripts/toggle-dark-mode.js" defer></script>
-        <script src="../scripts/hamburger.js" defer></script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="sticky-header" id="part-pannel">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The collaborative AI Gen TV</title>
+    <meta name="description"
+        content="A project that allows viewers of a YouTube stream to donate with a prompt to generate a unique AI video that is then shown on the stream for everyone to see.">
+    <meta name="author" content="Brian Giannini">
+    <meta name="theme-color" content="#55aeb7">
+    <meta name="color-scheme" content="light dark">
+    <link rel="icon" href="../icon.png">
+
+    <!-- Preconnect to External Domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://ajax.googleapis.com">
+    <link rel="preconnect" href="https://t2.gstatic.com">
+
+    <!-- Social Media Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The collaborative AI Gen TV - Brian Giannini">
+    <meta property="og:description"
+        content="A project that allows viewers of a YouTube stream to donate with a prompt to generate a unique AI video that is then shown on the stream for everyone to see.">
+    <meta property="og:url" content="https://briangiannini.com/content/collaborative-ai-gen-tv.html">
+    <meta property="og:image" content="https://briangiannini.com/img/shelf/project_gen_ai_video.png">
+    <meta property="og:site_name" content="Brian Giannini">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@SanguiSan">
+    <meta name="twitter:title" content="The collaborative AI Gen TV - Brian Giannini">
+    <meta name="twitter:description"
+        content="A project that allows viewers of a YouTube stream to donate with a prompt to generate a unique AI video that is then shown on the stream for everyone to see.">
+    <meta name="twitter:image" content="https://briangiannini.com/img/shelf/project_gen_ai_video.png">
+
+    <!-- CSS files with relative paths -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/switch.css">
+    <link rel="stylesheet" href="../css/link-preview.css">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap">
+
+    <!-- JavaScript files -->
+    <script src="../scripts/theme-flash-prevention.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
+    <script src="../scripts/toggle-dark-mode.js" defer></script>
+    <script src="../scripts/hamburger.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="sticky-header" id="navbar">
+            <div class="header-container">
                 <div class="header-left">
-                    <a href="../index.html" aria-label="Back to home">
-                        <span class="back-arrow">←</span>
+                    <a href="../index.html#projects" class="back-arrow-btn" aria-label="Back to projects">
+                        <!-- Arrow Left Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
                     </a>
                 </div>
 
                 <div class="header-center">
-                    <!-- Empty center div to maintain the flex structure -->
+                    <!-- Empty for now, or Title -->
                 </div>
 
                 <div class="header-right">
-
-                    <label class="switch">
-                        <input type="checkbox" id="checkbox-change" aria-label="Toggle dark mode">
-                        <span class="slider round"></span>
-                    </label>
+                    <button id="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
+        </nav>
 
-            <div id="part-content">
-                <div class="section self-section">
-                    <header>
-                        <h1>The collaborative AI Gen TV</h1>
-                        <p class="date">November 2025</p>
-                    </header>
-                                        <div class="video-full-width">
-                        <h2>Live Stream Replay</h2>
-                        <div class="video-container">
-                            <iframe src="https://www.youtube-nocookie.com/embed/lv9KWO0ZTsU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
+        <div id="part-content">
+            <div class="section self-section">
+                <header>
+                    <h1>The collaborative AI Gen TV</h1>
+                    <p class="date">November 2025</p>
+                </header>
+                <div class="video-full-width">
+                    <h2>Live Stream Replay</h2>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/lv9KWO0ZTsU" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                     </div>
-                    <div class="article-content">
-                        <h2>Inspiration</h2>
-                        <p>Inspired by Google's AI Flow, the recent hype around generative AI video, and interactive streaming experiences. This project is designed for entertainment, aiming to gather people for a fun and surprising experience. It simultaneously demonstrates the remarkable power of AI video generation and playfully educates users on how to craft effective video prompts.</p>
-                        
-                        <h2>What it does</h2>
-                        <img src="../img/content/stream_ai_video.png" alt="Stream AI Video" style="width: 100%; height: auto; border-radius: 15px;">
-                        <p>This project allows viewers of a YouTube stream to donate with a prompt included in their message. This prompt is used to generate a unique AI video that is then shown on the stream for everyone to see, along with the donor's name and the prompt they submitted.</p>
-                        <p>The prompt is sent to a <strong>Cloud Run</strong> service that uses an <strong>agent-based workflow</strong> to generate a video. This video is then pulled by the streaming PC to be displayed. The newly generated video is shown first. After it finishes, a loop of previously generated videos (from the streaming session) plays randomly, one after the other.</p>
-                        <p>We can use a streaming software like <code>OBS</code> to capture this video output and the associated prompt (displayed from a text file). This entire feed is then broadcast to the YouTube Live stream. After a few minutes, the viewer who made the donation sees their generated video appear live on stream with their name and prompt.</p>
-                        
-                        <h2>️How I built it</h2>
-                        <p>I built a <strong>Cloud Run</strong> service that features an <strong>orchestrator agent</strong>. This orchestrator launches other agents sequentially to handle the video generation pipeline:</p>
-                        <ol>
-                            <li><strong>Safety Check Agent:</strong> This agent uses the <strong>Cloud Natural Language API</strong> to check the user's prompt for toxicity. It generates a JSON output with a toxicity level.</li>
-                            <li><strong>Decision Agent:</strong> Based on the toxicity level, this agent decides the next step.
-                                <ul>
-                                    <li><strong>Safe:</strong> The original prompt is used.</li>
-                                    <li><strong>Borderline:</strong> The prompt is slightly modified to be safer.</li>
-                                    <li><strong>Toxic:</strong> The prompt is entirely replaced with a safe, generic one.</li>
-                                </ul>
-                                This agent's output is a clean JSON file containing the username and the final, safe prompt.
-                            </li>
-                            <li><strong>Worker Agent:</strong> This agent uses the <strong>Vertex AI API</strong> to generate a <strong>Veo</strong> video based on the new JSON payload. It generates a "fast" or "normal" quality video depending on the donation amount specified in the JSON. The final video is then stored in a <strong>Google Cloud Storage (GCS)</strong> bucket.</li>
-                            <li><strong>Final Worker Agent:</strong> This agent confirms whether the entire workflow finished successfully or failed.</li>
-                        </ol>
-                        <p>This Cloud Run service can be triggered in two ways: either from a simple UI admin interface built for the jury to test the system, or from the live streaming setup.</p>
-                        
-                        <h3>How the streaming setup works</h3>
-                        <p>When the YouTube live stream is active, viewers can make donations. I use <strong>StreamElements</strong> for this, as my YouTube channel is new and does not have native channel donations enabled.</p>
-                        <p>These donation events are captured and processed by a <strong>local streaming bot</strong> (Streamlabs Chatbot) on my PC. The bot checks the donation amount:</p>
-                        <ul>
-                            <li><strong>$2 - $5:</strong> Triggers a "fast" video generation.</li>
-                            <li><strong>Over $5:</strong> Triggers a "normal" quality Veo generation.</li>
-                        </ul>
-                        <p>The bot then initiates a two-step process:</p>
-                        <ol>
-                            <li>It runs a script to retrieve a <strong>GCP identity token</strong> to securely call the Cloud Run service.</li>
-                            <li>It launches a <strong>C# program</strong> that uses this token to make an authenticated call to the Cloud Run service. This program generates the correct JSON payload, including the user's message (prompt), the requested quality, and the donor's username.</li>
-                        </ol>
-                        <p>This payload is what kicks off the Cloud Run agent-based service described above.</p>
-                        
-                        <h3>On the streaming PC</h3>
-                        <img src="../img/content/obs_stream_ai.png" alt="OBS Stream AI" style="width: 100%; height: auto; border-radius: 15px;">
-                        <p>A separate <strong>Python</strong> program on the streaming PC continuously monitors the GCS bucket. When a new video and its associated prompt file appear, the program downloads them.</p>
-                        <ol>
-                            <li>It launches an <strong>FFmpeg</strong> instance to play the newly generated video file.</li>
-                            <li>Simultaneously, it updates a local text file (<code>prompt.txt</code>) with the prompt associated with that video.</li>
-                            <li>When the new video finishes, the program queries a local <strong>SQL database</strong> to select and play a random video that has already been shown during the stream, creating a continuous replay loop.</li>
-                        </ol>
-                        <p>Finally, <code>OBS</code> is set up to capture two sources: the <code>FFmpeg</code> player window and the <code>prompt.txt</code> file. This combined view is what is broadcast to the YouTube Live stream.</p>
-                    </div>
+                </div>
+                <div class="article-content">
+                    <h2>Inspiration</h2>
+                    <p>Inspired by Google's AI Flow, the recent hype around generative AI video, and interactive
+                        streaming experiences. This project is designed for entertainment, aiming to gather people for a
+                        fun and surprising experience. It simultaneously demonstrates the remarkable power of AI video
+                        generation and playfully educates users on how to craft effective video prompts.</p>
+
+                    <h2>What it does</h2>
+                    <img src="../img/content/stream_ai_video.png" alt="Stream AI Video"
+                        style="width: 100%; height: auto; border-radius: 15px;">
+                    <p>This project allows viewers of a YouTube stream to donate with a prompt included in their
+                        message. This prompt is used to generate a unique AI video that is then shown on the stream for
+                        everyone to see, along with the donor's name and the prompt they submitted.</p>
+                    <p>The prompt is sent to a <strong>Cloud Run</strong> service that uses an <strong>agent-based
+                            workflow</strong> to generate a video. This video is then pulled by the streaming PC to be
+                        displayed. The newly generated video is shown first. After it finishes, a loop of previously
+                        generated videos (from the streaming session) plays randomly, one after the other.</p>
+                    <p>We can use a streaming software like <code>OBS</code> to capture this video output and the
+                        associated prompt (displayed from a text file). This entire feed is then broadcast to the
+                        YouTube Live stream. After a few minutes, the viewer who made the donation sees their generated
+                        video appear live on stream with their name and prompt.</p>
+
+                    <h2>️How I built it</h2>
+                    <p>I built a <strong>Cloud Run</strong> service that features an <strong>orchestrator
+                            agent</strong>. This orchestrator launches other agents sequentially to handle the video
+                        generation pipeline:</p>
+                    <ol>
+                        <li><strong>Safety Check Agent:</strong> This agent uses the <strong>Cloud Natural Language
+                                API</strong> to check the user's prompt for toxicity. It generates a JSON output with a
+                            toxicity level.</li>
+                        <li><strong>Decision Agent:</strong> Based on the toxicity level, this agent decides the next
+                            step.
+                            <ul>
+                                <li><strong>Safe:</strong> The original prompt is used.</li>
+                                <li><strong>Borderline:</strong> The prompt is slightly modified to be safer.</li>
+                                <li><strong>Toxic:</strong> The prompt is entirely replaced with a safe, generic one.
+                                </li>
+                            </ul>
+                            This agent's output is a clean JSON file containing the username and the final, safe prompt.
+                        </li>
+                        <li><strong>Worker Agent:</strong> This agent uses the <strong>Vertex AI API</strong> to
+                            generate a <strong>Veo</strong> video based on the new JSON payload. It generates a "fast"
+                            or "normal" quality video depending on the donation amount specified in the JSON. The final
+                            video is then stored in a <strong>Google Cloud Storage (GCS)</strong> bucket.</li>
+                        <li><strong>Final Worker Agent:</strong> This agent confirms whether the entire workflow
+                            finished successfully or failed.</li>
+                    </ol>
+                    <p>This Cloud Run service can be triggered in two ways: either from a simple UI admin interface
+                        built for the jury to test the system, or from the live streaming setup.</p>
+
+                    <h3>How the streaming setup works</h3>
+                    <p>When the YouTube live stream is active, viewers can make donations. I use
+                        <strong>StreamElements</strong> for this, as my YouTube channel is new and does not have native
+                        channel donations enabled.
+                    </p>
+                    <p>These donation events are captured and processed by a <strong>local streaming bot</strong>
+                        (Streamlabs Chatbot) on my PC. The bot checks the donation amount:</p>
+                    <ul>
+                        <li><strong>$2 - $5:</strong> Triggers a "fast" video generation.</li>
+                        <li><strong>Over $5:</strong> Triggers a "normal" quality Veo generation.</li>
+                    </ul>
+                    <p>The bot then initiates a two-step process:</p>
+                    <ol>
+                        <li>It runs a script to retrieve a <strong>GCP identity token</strong> to securely call the
+                            Cloud Run service.</li>
+                        <li>It launches a <strong>C# program</strong> that uses this token to make an authenticated call
+                            to the Cloud Run service. This program generates the correct JSON payload, including the
+                            user's message (prompt), the requested quality, and the donor's username.</li>
+                    </ol>
+                    <p>This payload is what kicks off the Cloud Run agent-based service described above.</p>
+
+                    <h3>On the streaming PC</h3>
+                    <img src="../img/content/obs_stream_ai.png" alt="OBS Stream AI"
+                        style="width: 100%; height: auto; border-radius: 15px;">
+                    <p>A separate <strong>Python</strong> program on the streaming PC continuously monitors the GCS
+                        bucket. When a new video and its associated prompt file appear, the program downloads them.</p>
+                    <ol>
+                        <li>It launches an <strong>FFmpeg</strong> instance to play the newly generated video file.</li>
+                        <li>Simultaneously, it updates a local text file (<code>prompt.txt</code>) with the prompt
+                            associated with that video.</li>
+                        <li>When the new video finishes, the program queries a local <strong>SQL database</strong> to
+                            select and play a random video that has already been shown during the stream, creating a
+                            continuous replay loop.</li>
+                    </ol>
+                    <p>Finally, <code>OBS</code> is set up to capture two sources: the <code>FFmpeg</code> player window
+                        and the <code>prompt.txt</code> file. This combined view is what is broadcast to the YouTube
+                        Live stream.</p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <footer class="centered-footer">
-            <p>&copy; 2025 Brian Giannini. All rights reserved.</p>
-        </footer>
-    </body>
+    <footer class="centered-footer">
+        <p>&copy; 2025 Brian Giannini. All rights reserved.</p>
+    </footer>
+</body>
+
 </html>

@@ -1,62 +1,23 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
 
-  const checkbox = document.getElementById('checkbox-change');
-  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-  const currentTheme = localStorage.getItem('theme');
+  // Check local storage or system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  if (currentTheme === null) {
-
-    if (prefersDarkScheme.matches) {
-      checkbox.setAttribute("checked", "true");
-      localStorage.setItem("theme", 'dark');
-    } else {
-      localStorage.setItem("theme", 'light');
-    }
+  if (savedTheme) {
+    htmlElement.setAttribute('data-theme', savedTheme);
+  } else if (systemPrefersDark) {
+    htmlElement.setAttribute('data-theme', 'dark');
   }
 
-  if (localStorage.getItem('theme') == 'dark') {
-    setDarkTheme()
-    checkbox.setAttribute("checked", "true");
-  } else {
-    setLightTheme()
-  }
+  // Toggle function
+  toggleButton.addEventListener('click', () => {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-  checkbox.addEventListener('change', function() {
-      // Remove the current theme classes
-      removePreviousClass();
-
-      // Add the new theme class to the body
-      if (localStorage.getItem('theme') == 'light') {
-        setDarkTheme()
-        localStorage.setItem('theme', 'dark');
-      } else {
-        setLightTheme()
-        localStorage.setItem('theme', 'light');
-      }
-    });
-
-    function setDarkTheme() {
-      removePreviousClass()
-      document.body.classList.add('body-dark-theme');
-      document.documentElement.classList.add('root-dark-theme');
-      document.querySelectorAll('a').forEach(element => element.classList.add('a-dark-theme'));
-    }
-
-    function setLightTheme() {
-      removePreviousClass()
-      document.body.classList.add('body-light-theme');
-      document.documentElement.classList.add('root-light-theme');
-      document.querySelectorAll('a').forEach(element => element.classList.add('a-light-theme'));
-    }
-
-    function removePreviousClass() {
-       // Remove the current theme class from the body
-       document.body.classList.remove('body-light-theme');
-       document.body.classList.remove('body-dark-theme');
-       document.documentElement.classList.remove('root-light-theme');
-       document.documentElement.classList.remove('root-dark-theme');
-       document.querySelectorAll('a').forEach(element => element.classList.remove('a-light-theme'));
-       document.querySelectorAll('a').forEach(element => element.classList.remove('a-dark-theme'));
-    }
-
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
 });

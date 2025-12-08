@@ -1,363 +1,382 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <script src="scripts/theme-flash-prevention.js"></script>
+<html lang="en" data-theme="light">
 
-        <title>Brian Giannini website</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Personal website profile presentation">
-        <meta name="author" content="Brian Giannini">
-        <meta name="theme-color" content="#8fffff">
-        <meta name="color-scheme" content="light dark">
-        <meta charset="UTF-8">
-        <link rel="icon" href="icon.png">
+<head>
+    <script src="scripts/theme-flash-prevention.js"></script>
 
-        <!-- Preconnect to External Domains -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://ajax.googleapis.com">
-        <link rel="preconnect" href="https://t2.gstatic.com">
+    <title>Brian Giannini | Mobile Engineer & Tech Entrepreneur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Personal website of Brian Giannini - Mobile Engineer, Tech Entrepreneur, and Creator.">
+    <meta name="author" content="Brian Giannini">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="color-scheme" content="light dark">
+    <meta charset="UTF-8">
+    <link rel="icon" href="icon.png">
 
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:creator" content="@SanguiSan">
-        <meta name="twitter:title" content="Brian Giannini website">
-        <meta name="twitter:description" content="Personal website profile presentation">
-        <meta name="twitter:image" content="https://briangiannini.com/img/brian.webp">
+    <!-- Fonts: Manrope & Inter for that modern feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
 
-        <meta property="og:type" content="profile">
-        <meta property="og:title" content="Brian Giannini website">
-        <meta property="og:description" content="Personal website profile presentation">
-        <meta property="og:url" content="https://briangiannini.com">
-        <meta property="og:image" content="https://briangiannini.com/img/brian.webp">
-        <meta property="og:profile:first_name" content="Brian">
-        <meta property="og:profile:last_name" content="Giannini">
+    <!-- Icons via FontAwesome (optional, but using SVGs is fine too. Sticking to SVGs for speed/minimalism) -->
 
-        <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "@id": "https://briangiannini.com/#me",
-              "name": "Brian Giannini",
-              "givenName": "Brian",
-              "familyName": "Giannini",
-              "url": "https://briangiannini.com",
-              "image": "https://briangiannini.com/img/brian.png",
-              "description": "Personal profile overview",
-              "sameAs": [
-                "https://x.com/Sanguisan",
-                "https://www.linkedin.com/in/briangiannini1/"
-              ]
-            }
-        </script>
-        
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/switch.css">
-        <link rel="stylesheet" href="css/navbar.css">
-        <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap">
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
-        <script type="text/javascript" src="scripts/toggle-dark-mode.js" defer></script>
-        <script type="text/javascript" src="scripts/hamburger.js" defer></script>
-    </head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <!-- Removed switch.css as we'll integrate it -->
 
-    <body>
-        <div class="container">
-            <div class="sticky-header" id="part-pannel">
-                <div class="header-center">
-                    <button class="hamburger" aria-label="Menu">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </button>
-                    <nav class="nav-menu">
-                        <ul class="nav-links">
-                            <li><a href="#part-content">About Me</a></li>
-                            <li><a href="#section-work">Works</a></li>
-                            <li><a href="#section-project">Projects</a></li>
-                            <li><a href="#section-libraries">References</a></li>
-                        </ul>
-                    </nav>
-                </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
+    <script type="text/javascript" src="scripts/toggle-dark-mode.js" defer></script>
+    <script type="text/javascript" src="scripts/hamburger.js" defer></script>
+    <script type="text/javascript" src="scripts/scroll-spy.js" defer></script>
+</head>
 
-                <div class="header-right">
+<body>
+    <div class="background-glob"></div>
+    <div class="scanlines"></div>
 
-                    <label class="switch">
-                        <input type="checkbox" id="checkbox-change" aria-label="Toggle dark mode">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-
+    <nav class="sticky-header" id="navbar">
+        <div class="header-container">
+            <div class="header-left">
+                <!-- Logo or Name could go here if requested, keeping it clean for now -->
             </div>
 
-            <div id="part-content">
-
-                <div class="section header-section center-section" >
-
-                    <div class="center-vertical">
-                        <img class="portrait inline" src="img/brian.webp" alt="Brian Photo" width="100px" height="100px">
-                        <h1 class="inline">Brian Giannini</h1>
-                    </div>
-
-                    <p>Senior Mobile Engineer and Tech Entrepreneur at <a href="https://criaphore.com/" target="_blank">Criaphore</a>, too many ideas, not enough time.</p>
-                    <p>Previously worked at <a href="https://www.ledger.com/" target="_blank">Ledger</a> in crypto, <a href="https://www.softbankrobotics.com/" target="_blank">SoftBank</a> in robotics and <a href="https://www.thalesgroup.com/" target="_blank">Thales</a>.</p>
-                    <p>I like learning about the world and the universe, creating all kinds of things and experiencing the most of what life can provide.</p>
-
-                    <p>email: <a href="mailto: brian@criaphore.com">brian@criaphore.com</a></p>
-                
-                    <ul class="horizontal-list">
-                        <li>
-                            <a id="logo-svg-black" href="https://x.com/Sanguisan/" target="_blank" rel="noopener noreferrer" aria-label="X Twitter"><img src="icons/x-twitter-icon.svg" alt="X Twitter logo" width="24" height="24"/></a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/@Sanguinax/videos/" target="_blank" rel="noopener noreferrer" aria-label="Youtube"><img src="icons/youtube-icon.svg" alt="YouTube logo" width="32" height="24"/></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/briangiannini1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="icons/linkedin-icon.svg" alt="Linkedin logo" width="24" height="24"/></a>
-                        </li>                  
+            <div class="header-center">
+                <button class="hamburger" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <div class="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#references">References</a></li>
+                        <li><a href="#newsletter" class="nav-cta">Subscribe</a></li>
                     </ul>
-
                 </div>
-
-                <div class="self-section">
-
-                    <h1 class="section-title" id="section-work">Works</h1>
-                    
-                    <div class="shelf">
-                        <a class="box section clickable-div" href="https://criaphore.com/diagnosly/diagnosly.html" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/work_diagnosly.png" alt="diagnosly logo">
-                            </div>
-                            <h3>Diagnosly</h3>
-                            <p>An Android and iOS app to do personalized health checkups and follow-ups powered by AI</p>
-                            <p class="date">2024 - 2025</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    
-                        <a class="box section clickable-div" href="https://www.ledger.com/ledger-live" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/work_ledger.png" alt="Ledger logo">
-                            </div>
-                            <h3>Ledger Crypto</h3>
-                            <p>A hardware wallet device powered by a modified version of Android to manage your cryptocurrencies</p>
-                            <p class="date">2022 - 2023</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    
-                        <a class="box section clickable-div" href="https://aldebaran.com/en/plato-2/" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/work_plato.png" alt="softbank Plato">
-                            </div>
-                            <h3>Plato</h3>
-                            <p>A food service robot powered by a modified version of Android in an embedded tablet</p>
-                            <p class="date">2021 - 2022</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    
-                        <a class="box section clickable-div" href="https://us.softbankrobotics.com/pepper" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/work_pepper.png" alt="Softbank Pepper">
-                            </div>
-                            <h3>Pepper</h3>
-                            <p>A humanoid social robot for interacting and helping humans with an Android app on the front tablet</p>
-                            <p class="date">2019 - 2021</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    
-                        <a class="box section clickable-div" href="https://youtu.be/Xnk5TuG0L7Y?si=Cvt4mjJarm4mXhJW" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/work_amrin.jpg" alt="Armin logo">
-                            </div>
-                            <h3>French Special Forces App</h3>
-                            <p>A cartography and communication Android app for the french special forces in an internal Thales Startup</p>
-                            <p class="date">2018 - 2019</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    
-                        <a class="box section clickable-div" href="https://www.thalesgroup.com/en/worldwide/press-release/thales-provide-first-interoperable-command-information-system-french-army" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/work_army.png" alt="french army logo">
-                            </div>
-                            <h3>Thales: SIA C2</h3>
-                            <p>Project that modernized the french armies interoperability communication software</p>
-                            <p class="date">2017 - 2018</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    
-                        <a class="box section clickable-div" href="https://www.aeroexpo.online/fr/tab/lecteur-rfid-controle-acces-grabba.html" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/work_thales.jpg" alt="Thales logo">
-                            </div>
-                            <h3>Identity card checker</h3>
-                            <p>An Android app developed to check National ID cards using a law enforcement smartphone</p>
-                            <p class="date">2015 - 2016</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    </div>
-
-                    <h1 class="section-title" id="section-project">Projects</h1>
-
-                    <div class="shelf">
-                        <a class="box section clickable-div" href="content/collaborative-ai-gen-tv.html" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/project_gen_ai_video.png" alt="collaborative ai gen tv logo">
-                            </div>
-                            <h3>The collaborative AI Gen TV</h3>
-                            <p>A project that allows viewers of a YouTube stream to donate with a prompt to generate a unique AI video that is then shown on the stream for everyone to see.</p>
-                            <p class="date">November 2025</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                        <a class="box section clickable-div" href="https://play.google.com/store/apps/details?id=dev.sangui.wakeupright" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/project_wake-up.webp" alt="wake up right app logo">
-                            </div>
-                            <h3>Wake up Right</h3>
-                            <p>A quick Android app to set the duration you want to sleep instead of the time you want to wake-up</p>
-                            <p class="date">July 2024</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                   
-                        <a class="box section clickable-div" href="https://play.google.com/store/apps/details?id=io.sangui.sleepontime" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/project_sleep-cycle.webp" alt="sleep cycles timing app logo">
-                            </div>
-                            <h3>Sleep Cycles Timing</h3>
-                            <p>A quick smartwatch app that displays your optimal sleep times to go to bed</p>
-                            <p class="date">March 2022</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    
-                        <a class="box section clickable-div" href="https://youtu.be/Mw7aGrnBltc" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/project_unity.png" alt="unity logo">
-                            </div>
-                            <h3>VR Slow Motion Project</h3>
-                            <p>A scrapped VR project developed from scratch on Unity playing a slow-motion action game</p>
-                            <p class="date">October 2020</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    
-                        <a class="box section clickable-div" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2104498553" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/project_half-life-alyx.png" alt="vr alyx logo">
-                            </div>
-                            <h3>Horror style apartment in VR</h3>
-                            <p>A Half-Life Alyx VR mod on Source Engine 2 that recreates my old apartment in a horror style in VR</p>
-                            <p class="date">Mai 2020</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    
-                        <a class="box section clickable-div" href="https://youtu.be/qOMNfp0QcUA" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/project_spaceX.png" alt="spacex logo">
-                            </div>
-                            <h3>Rocket simulation launch</h3>
-                            <p>A video montage of a simulation of a Falcon 9 SpaceX rocket launch using KSP game with mods</p>
-                            <p class="date">April 2017</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-
-                        <a class="box section clickable-div no-hover" href="" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/project_philippe.png" alt="boite philippe logo">
-                            </div>
-                            <h3>Boîte à Philippe sound box</h3>
-                            <p>A fun Android soundbox app from the famous poorly dubbed movie, officially no more available online</p>
-                            <p class="date">Août 2015</p>
-                        </a>
-                    
-                        <a class="box section clickable-div no-hover" href="https://youtu.be/DCTnwHj4eXU" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/project_ogaming.png" alt="ogaming logo">
-                            </div>
-                            <h3>O'Gaming Micro Tournament</h3>
-                            <p>A scrapped e-sport tournament game mod for the O'Gaming community for the game Starcraft 2</p>
-                            <p class="date">March 2014</p>
-                        </a>
-                        
-                        <a class="box section clickable-div" href="content/war4craft.html" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/project_starcraft.png" alt="starcraft2 logo">
-                            </div>
-                            <h3>War4craft Battle Realms</h3>
-                            <p>A mod for the game Starcraft 2 with Warcraft game unit models and Battle Realms gameplay mechanics</p>
-                            <p class="date">February 2013</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    
-                        <a class="box section clickable-div" href="https://youtu.be/4O-YM0Iub0Y" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/project_source-engine.png" alt="source engine logo">
-                            </div>
-                            <h3>Bichat 3D</h3> 
-                            <p>My high school, 3D digitized in Source Engine, playable on Counter-Strike Source, Alien Swarm, and L4D</p>
-                            <p class="date">Mai 2009</p>
-                            <span class="bottom-right-text">Link →</span>
-                        </a>
-                    </div>
-
-                    <h1 class="section-title" id="section-libraries">References</h1>
-
-                    <div class="shelf">
-
-                        <a class="box section clickable-div" href="https://www.imdb.com/user/ur30078525/ratings?sort=your_rating,desc&ratingFilter=0&mode=grid&ref_=undefined&lastPosition=0" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/ref_imdb.png" alt="imdb logo">
-                            </div>
-                            <h3>Movies and Shows ratings</h3>    
-                            <p>My ratings on IMDB of the movies and shows I've seen</p>
-                            <span class="bottom-right-text">Link →</span>
-                            <p class="date"></p>
-                        </a>
-                       
-                        <a  class="box section clickable-div" href="https://www.goodreads.com/user/show/147637219-brian" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/ref_goodreads.png" alt="goodreads logo">
-                            </div>
-                            <h3>Reading list</h3>
-                            <p>All the books I've read, I'm currently reading and I want to read</p>
-                            <span class="bottom-right-text">Link →</span>
-                            <p class="date"></p>
-                        </a> 
-                        
-                        <a class="box section clickable-div" href="https://open.spotify.com/user/117537904" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/ref_spotify.webp" alt="spotify logo">
-                            </div>
-                            <h3>Music profile</h3>
-                            <p>My Spotify profile with public playlists</p>
-                            <span class="bottom-right-text">Link →</span>
-                            <p class="date"></p>
-                        </a>
-                            
-                        <a class="box section clickable-div" href="https://steamcommunity.com/id/SanguiSan/" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/ref_steam.png" alt="steam logo">
-                            </div>
-                            <h3>Games library</h3>
-                            <p>My Steam profile with the games I've played</p>
-                            <span class="bottom-right-text">Link →</span>
-                            <p class="date"></p>
-                        </a>
-
-                        <a class="box section clickable-div" href="https://www.canva.com/design/DAGUroBs8GQ/vseRNraDYkxDD1n3BQuwaA/edit" target="_blank" rel="noopener noreferrer">
-                            <div class="image-container">
-                                <img src="img/shelf/ref_moodboard.png" alt="caneva image">
-                            </div>
-                            <h3>Moodboard</h3>
-                            <p>My pop culture references (wip)</p>
-                            <span class="bottom-right-text">Link →</span>
-                            <p class="date"></p>
-                        </a>
-
-                    </div>
-                </div>
-
             </div>
 
+            <div class="header-right">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
+    </nav>
 
-        <footer class="centered-footer">
-            <p>&copy; 2025 Brian Giannini. All rights reserved.</p>
-        </footer>
-    </body>
+    <main class="container">
+
+        <section id="about" class="hero-section">
+            <div class="hero-content">
+                <div class="profile-frame">
+                    <img class="portrait" src="img/brian.webp" alt="Brian Giannini">
+                    <!-- Removed status indicator -->
+                </div>
+                <h1>Brian Giannini</h1>
+                <p class="tagline">Mobile Engineer. Entrepreneur. Creator.</p>
+                <p class="bio">Building the future at <a href="https://criaphore.com/" target="_blank"
+                        class="highlight-link">Criaphore</a>. Previously <a href="https://www.ledger.com/"
+                        target="_blank" class="highlight-link">Ledger</a>, <a href="https://www.softbankrobotics.com/"
+                        target="_blank" class="highlight-link">SoftBank</a>, <a href="https://www.thalesgroup.com/"
+                        target="_blank" class="highlight-link">Thales</a>.</p>
+
+                <div class="social-links">
+                    <button onclick="copyEmail()" class="social-btn" aria-label="Copy Email" style="cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span id="copy-tooltip"
+                            style="position: absolute; top: -30px; background: var(--color-text-main); color: var(--color-bg); padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; white-space: nowrap;">Copied!</span>
+                    </button>
+                    <script>
+                        function copyEmail() {
+                            navigator.clipboard.writeText('brian@criaphore.com');
+                            const tooltip = document.getElementById('copy-tooltip');
+                            tooltip.style.opacity = '1';
+                            setTimeout(() => { tooltip.style.opacity = '0'; }, 2000);
+                        }
+                    </script>
+                    <a href="https://x.com/Sanguisan/" target="_blank" class="social-btn" aria-label="Twitter">
+                        <img src="icons/x-twitter-icon.svg" alt="X" width="18" height="18"
+                            style="filter: invert(var(--icon-invert));">
+                    </a>
+                    <a href="https://www.youtube.com/@Sanguinax/videos/" target="_blank" class="social-btn"
+                        aria-label="YouTube">
+                        <img src="icons/youtube-icon.svg" alt="YouTube" width="22" height="18">
+                    </a>
+                    <a href="https://www.linkedin.com/in/briangiannini1/" target="_blank" class="social-btn"
+                        aria-label="LinkedIn">
+                        <img src="icons/linkedin-icon.svg" alt="LinkedIn" width="18" height="18">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="content-section">
+            <h2 class="section-title">Selected Work</h2>
+            <div class="grid-shelf">
+                <!-- Work Items -->
+                <a class="card glass-card" href="https://criaphore.com/diagnosly/diagnosly.html" target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/work_diagnosly.png" alt="Diagnosly"></div>
+                    <div class="card-content">
+                        <h3>Diagnosly</h3>
+                        <p>AI-powered personalized health checkups.</p>
+                        <span class="meta">2024 - Present</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card" href="https://www.ledger.com/ledger-live" target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/work_ledger.png" alt="Ledger"></div>
+                    <div class="card-content">
+                        <h3>Ledger Crypto</h3>
+                        <p>Hardware wallet security & Android integration.</p>
+                        <span class="meta">2022 - 2023</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card" href="https://aldebaran.com/en/plato-2/" target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/work_plato.png" alt="Plato"></div>
+                    <div class="card-content">
+                        <h3>Plato</h3>
+                        <p>Food service robot interface (Android).</p>
+                        <span class="meta">2021 - 2022</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card" href="https://us.softbankrobotics.com/pepper" target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/work_pepper.png" alt="Pepper"></div>
+                    <div class="card-content">
+                        <h3>Pepper</h3>
+                        <p>Humanoid robot social interactions.</p>
+                        <span class="meta">2019 - 2021</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card" href="https://youtu.be/Xnk5TuG0L7Y?si=Cvt4mjJarm4mXhJW" target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/work_amrin.jpg" alt="Armin"></div>
+                    <div class="card-content">
+                        <h3>Special Forces App</h3>
+                        <p>Tactical cartography & comms.</p>
+                        <span class="meta">2018 - 2019</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card"
+                    href="https://www.thalesgroup.com/en/worldwide/press-release/thales-provide-first-interoperable-command-information-system-french-army"
+                    target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/work_army.png" alt="SIA C2"></div>
+                    <div class="card-content">
+                        <h3>Thales: SIA C2</h3>
+                        <p>Modernized army interoperability communication software.</p>
+                        <span class="meta">2017 - 2018</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card"
+                    href="https://www.aeroexpo.online/fr/tab/lecteur-rfid-controle-acces-grabba.html" target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/work_thales.jpg" alt="Identity card"></div>
+                    <div class="card-content">
+                        <h3>Identity Card Checker</h3>
+                        <p>National ID check app for law enforcement.</p>
+                        <span class="meta">2015 - 2016</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2 class="section-title">Experiments & Projects</h2>
+            <div class="grid-shelf">
+                <a class="card glass-card" href="content/collaborative-ai-gen-tv.html">
+                    <div class="card-img-wrapper"><img src="img/shelf/project_gen_ai_video.png" alt="AI TV"
+                            class="blend-multiply"></div>
+                    <div class="card-content">
+                        <h3>Collab AI TV</h3>
+                        <p>Stream-controlled AI video generation.</p>
+                        <span class="meta">Nov 2025</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card" href="https://play.google.com/store/apps/details?id=dev.sangui.wakeupright"
+                    target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/project_wake-up.webp" alt="Wake up"></div>
+                    <div class="card-content">
+                        <h3>Wake Up Right</h3>
+                        <p>Sleep duration calculator app.</p>
+                        <span class="meta">July 2024</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card" href="https://play.google.com/store/apps/details?id=io.sangui.sleepontime"
+                    target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/project_sleep-cycle.webp" alt="Sleep Cycle"></div>
+                    <div class="card-content">
+                        <h3>Sleep Cycles</h3>
+                        <p>Smartwatch sleep timing utility.</p>
+                        <span class="meta">March 2022</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card" href="https://youtu.be/Mw7aGrnBltc" target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/project_unity.png" alt="Unity VR"></div>
+                    <div class="card-content">
+                        <h3>VR Slow Mo</h3>
+                        <p>Action game mechanic prototype.</p>
+                        <span class="meta">Oct 2020</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2104498553"
+                    target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/project_half-life-alyx.png" alt="Alyx Mod"></div>
+                    <div class="card-content">
+                        <h3>Horror Apartment VR</h3>
+                        <p>Half-Life Alyx mod verifying classic horror tropes.</p>
+                        <span class="meta">May 2020</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card" href="https://youtu.be/qOMNfp0QcUA" target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/project_spaceX.png" alt="SpaceX"></div>
+                    <div class="card-content">
+                        <h3>Rocket Sim Launch</h3>
+                        <p>Falcon 9 simulation montage in KSP.</p>
+                        <span class="meta">Apr 2017</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card no-hover">
+                    <div class="card-img-wrapper"><img src="img/shelf/project_philippe.png" alt="Boite Philippe"></div>
+                    <div class="card-content">
+                        <h3>Boîte à Philippe</h3>
+                        <p>Soundbox app from a cult classic movie.</p>
+                        <span class="meta">Aug 2015</span>
+                    </div>
+                </a>
+
+                <a class="card glass-card no-hover" href="https://youtu.be/DCTnwHj4eXU" target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/project_ogaming.png" alt="OGaming"></div>
+                    <div class="card-content">
+                        <h3>O'Gaming Tournament</h3>
+                        <p>Starcraft 2 tournament mod.</p>
+                        <span class="meta">Mar 2014</span>
+                    </div>
+                </a>
+
+                <a class="card glass-card" href="content/war4craft.html">
+                    <div class="card-img-wrapper"><img src="img/shelf/project_starcraft.png" alt="War4craft"
+                            class="blend-multiply"></div>
+                    <div class="card-content">
+                        <h3>War4Craft</h3>
+                        <p>Warcraft models in Starcraft 2 engine.</p>
+                        <span class="meta">Feb 2013</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+
+                <a class="card glass-card" href="https://youtu.be/4O-YM0Iub0Y" target="_blank">
+                    <div class="card-img-wrapper"><img src="img/shelf/project_source-engine.png" alt="Bichat 3D"></div>
+                    <div class="card-content">
+                        <h3>Bichat 3D</h3>
+                        <p>High school recreation in Source Engine.</p>
+                        <span class="meta">May 2009</span>
+                    </div>
+                    <span class="card-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="references" class="content-section">
+            <h2 class="section-title">References</h2>
+            <div class="grid-shelf compact">
+                <a class="card glass-card small" href="https://www.imdb.com/user/ur30078525/ratings" target="_blank">
+                    <div class="icon-wrapper"><img src="img/shelf/ref_imdb.png" alt="IMDB"></div>
+                    <span>Movies</span>
+                    <div class="card-arrow"
+                        style="position:static; opacity:1; transform:none; margin-left:auto; font-size:1rem;">→</div>
+                </a>
+                <a class="card glass-card small" href="https://www.goodreads.com/user/show/147637219-brian"
+                    target="_blank">
+                    <div class="icon-wrapper"><img src="img/shelf/ref_goodreads.png" alt="Goodreads"></div>
+                    <span>Books</span>
+                    <div class="card-arrow"
+                        style="position:static; opacity:1; transform:none; margin-left:auto; font-size:1rem;">→</div>
+                </a>
+                <a class="card glass-card small" href="https://open.spotify.com/user/117537904" target="_blank">
+                    <div class="icon-wrapper"><img src="img/shelf/ref_spotify.webp" alt="Spotify"></div>
+                    <span>Music</span>
+                    <div class="card-arrow"
+                        style="position:static; opacity:1; transform:none; margin-left:auto; font-size:1rem;">→</div>
+                </a>
+                <a class="card glass-card small" href="https://steamcommunity.com/id/SanguiSan/" target="_blank">
+                    <div class="icon-wrapper"><img src="img/shelf/ref_steam.png" alt="Steam"></div>
+                    <span>Games</span>
+                    <div class="card-arrow"
+                        style="position:static; opacity:1; transform:none; margin-left:auto; font-size:1rem;">→</div>
+                </a>
+                <a class="card glass-card small"
+                    href="https://www.canva.com/design/DAGUroBs8GQ/vseRNraDYkxDD1n3BQuwaA/edit" target="_blank">
+                    <div class="icon-wrapper"><img src="img/shelf/ref_moodboard.png" alt="Moodboard"></div>
+                    <span>Moodboard</span>
+                    <div class="card-arrow"
+                        style="position:static; opacity:1; transform:none; margin-left:auto; font-size:1rem;">→</div>
+                </a>
+            </div>
+        </section>
+
+        <section id="newsletter" class="newsletter-section">
+            <div class="newsletter-glass">
+                <h2>Join the Inner Circle</h2>
+                <p>Thoughts on tech, AI, and the future of creation.</p>
+                <div class="newsletter-cta">
+                    <a href="https://sanguisan.substack.com" target="_blank" class="cta-button">Subscribe to my
+                        newsletter</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Brian Giannini</p>
+    </footer>
+</body>
+
 </html>
