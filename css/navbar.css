@@ -239,11 +239,61 @@
         font-size: 1.5rem;
     }
 
+    /* Mobile Header Layout */
     .header-center {
         justify-content: flex-end;
-        /* Hamburger on right-ish area but separated from theme toggle? actually flex-1 keeps it center but we want hamburger.. wait. */
-        /* Let's re-arrange for mobile. */
         flex: unset;
         margin-right: 1rem;
+    }
+}
+
+/* Logo / Avatar Area */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    /* Prevent clicks when hidden */
+}
+
+.nav-logo.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.nav-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--glass-border);
+}
+
+.nav-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-text-main);
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .nav-name {
+        display: block;
+    }
+
+    /* Absolute centering for desktop to ignore left/right width differences */
+    .header-container {
+        position: relative;
+    }
+
+    .header-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
     }
 }
