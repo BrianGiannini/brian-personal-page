@@ -256,6 +256,9 @@ p.tagline {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    /* Add padding to prevent edge touching on very small screens */
 }
 
 .social-btn {
