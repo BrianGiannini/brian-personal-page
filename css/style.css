@@ -217,8 +217,8 @@ p.tagline {
 
 .profile-frame {
     position: relative;
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     margin: 0 auto 2rem;
 }
 
@@ -261,6 +261,15 @@ p.tagline {
     /* Add padding to prevent edge touching on very small screens */
 }
 
+@media (max-width: 580px) {
+    .social-links {
+        max-width: 320px;
+        /* Constrain width to force 4 items max (48*4 + 24*3 = 264px) */
+        margin: 0 auto;
+        /* Center the container */
+    }
+}
+
 .social-btn {
     width: 48px;
     height: 48px;
@@ -273,6 +282,8 @@ p.tagline {
     border: 1px solid var(--glass-border);
     transition: all var(--transition-fast);
     color: var(--color-text-main);
+    position: relative;
+    /* Anchor for the absolute tooltip */
 }
 
 .social-btn:hover {
@@ -285,6 +296,27 @@ p.tagline {
 .social-btn:hover img {
     filter: invert(1) brightness(2);
     /* Make icon white on hover */
+}
+
+/* Helper for icon inversion (e.g. for light mode specific icons) */
+.icon-invert {
+    filter: invert(var(--icon-invert));
+}
+
+#copy-tooltip {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-text-main);
+    color: var(--color-bg);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    white-space: nowrap;
 }
 
 /* GLASS CARDS & SHELF */
@@ -305,7 +337,79 @@ p.tagline {
 
 @media (max-width: 720px) {
     .grid-shelf {
-        grid-template-columns: repeat(1, 300px);
+        grid-template-columns: repeat(1, 100%);
+        padding: 0 1rem;
+        /* Ensure some side padding on mobile */
+    }
+
+    /* Horizontal Card Layout for non-small cards */
+    .card:not(.small) {
+        flex-direction: row;
+        align-items: stretch;
+        min-height: 180px;
+        /* Ensure enough height for content */
+    }
+
+    .card:not(.small) .card-img-wrapper {
+        width: 40%;
+        /* Slightly less than 50% to give text more room */
+        height: auto;
+        min-height: auto;
+        border-bottom: none;
+        border-right: 1px solid var(--glass-border);
+        padding: 0.5rem;
+        /* Reduce padding to maximize image size */
+    }
+
+    .card:not(.small) .card-content {
+        width: 60%;
+        padding: 1rem;
+        justify-content: center;
+        /* Center text vertically */
+    }
+
+    .card:not(.small) h3 {
+        font-size: 1.1rem;
+        /* Slightly smaller heading */
+    }
+
+    .card:not(.small) p {
+        font-size: 0.9rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        /* Limit text lines */
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        /* Ensure space for meta/arrow at bottom */
+    }
+
+    /* Fix Overlap: Make arrow static or push meta */
+    .card:not(.small) .card-content {
+        position: relative;
+        /* Context for absolute items */
+    }
+
+    /* Shorten text labels on mobile */
+    /* Handled globally now */
+
+    /* Ensure meta doesn't overlap arrow */
+    .card:not(.small) .meta {
+        max-width: 60%;
+        /* Limit width so it doesn't hit arrow */
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.5rem;
+    }
+
+    .card:not(.small) .card-arrow {
+        bottom: 1.5rem;
+        right: 1.5rem;
     }
 }
 
@@ -328,8 +432,84 @@ p.tagline {
 
 @media (max-width: 520px) {
     .grid-shelf.compact {
-        grid-template-columns: repeat(1, 220px);
+        grid-template-columns: repeat(2, 1fr);
+        /* Force 2 columns */
+        gap: 1rem;
+        /* Reduce gap to fit */
     }
+
+    /* Adjust font size/padding for small cards in tight 2-col layout */
+    .card.small {
+        padding: 0.75rem;
+        flex-direction: column;
+        /* Stack icon and text if needed, or keep row but tighter */
+        justify-content: center;
+        text-align: center;
+    }
+
+    .card.small .icon-wrapper {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .card.small span {
+        font-size: 0.9rem;
+    }
+}
+
+/* Collapsible Grid Logic */
+/* Collapsible Grid Logic */
+.grid-shelf {
+    /* Base styles for animation */
+    transition: max-height 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+    /* Required for height animation */
+    padding: 1rem;
+    /* Prevent clipping of hover effects */
+    margin: 0 -1rem;
+    /* Compensate for padding to keep alignment */
+    width: calc(100% + 2rem);
+    /* Compensate width */
+}
+
+.grid-shelf.collapsed {
+    position: relative;
+    padding-bottom: 0;
+    /* Use mask-image for a perfect transparent fade that respects background gradients */
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+}
+
+/* Old overlay method removed to prevent background mismatch */
+
+.section-expand-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -1.5rem auto 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 20;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+.section-expand-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    background: var(--color-accent);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.6);
+}
+
+.section-expand-btn svg {
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .card {
@@ -392,8 +572,8 @@ p.tagline {
     bottom: 1.5rem;
     right: 1.5rem;
     color: var(--color-primary);
-    opacity: 0;
-    transform: translateX(-10px);
+    opacity: 1;
+    transform: none;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -401,18 +581,10 @@ p.tagline {
     /* Space between text and arrow */
 }
 
-/* Hover Labels Logic */
-/* Internal Links (Default) */
+/* Hover Labels Logic Removed - using specific icon instead */
+/* Update: Restoring "Article" label for internal links only as per request */
 .card:not([target="_blank"]) .card-arrow::before {
-    content: "Article page";
-    font-size: 0.8rem;
-    font-weight: 500;
-    white-space: nowrap;
-}
-
-/* External Links */
-.card[target="_blank"] .card-arrow::before {
-    content: "External link";
+    content: "Article";
     font-size: 0.8rem;
     font-weight: 500;
     white-space: nowrap;
@@ -420,7 +592,7 @@ p.tagline {
 
 /* Small Reference Cards - always visible */
 .card.small .card-arrow {
-    display: none !important;
+    display: flex !important;
 }
 
 .card-arrow-static {
