@@ -396,21 +396,14 @@ p.tagline {
 
     /* Ensure meta doesn't overlap arrow */
     .card:not(.small) .meta {
-        max-width: 60%;
-        /* Limit width so it doesn't hit arrow */
+        max-width: 100%;
         display: block;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        position: absolute;
-        bottom: 1.5rem;
-        left: 1.5rem;
     }
 
-    .card:not(.small) .card-arrow {
-        bottom: 1.5rem;
-        right: 1.5rem;
-    }
+    /* Arrow handled by card-footer now */
 }
 
 /* Compact shelf for references (4 cols -> 3 -> 2 -> 1) */
@@ -567,10 +560,8 @@ p.tagline {
 }
 
 /* Arrow Styling */
+/* Arrow Styling */
 .card-arrow {
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
     color: var(--color-primary);
     opacity: 1;
     transform: none;
@@ -578,7 +569,17 @@ p.tagline {
     display: flex;
     align-items: center;
     gap: 8px;
-    /* Space between text and arrow */
+    margin-left: auto;
+    /* Push to right if purely flex */
+}
+
+.card-footer {
+    margin-top: auto;
+    /* Push to bottom of flex container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 /* Hover Labels Logic Removed - using specific icon instead */

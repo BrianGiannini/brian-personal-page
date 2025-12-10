@@ -39,9 +39,11 @@ function renderCards(containerId, items) {
                 <div class="card-content">
                     <h3>${item.title}</h3>
                     <p>${item.description}</p>
-                    <span class="meta">${item.meta}</span>
+                    <div class="card-footer">
+                        <span class="meta">${item.meta}</span>
+                        ${item.link && !item.noHover ? arrowSVG : ''}
+                    </div>
                 </div>
-                ${item.link && !item.noHover ? arrowSVG : ''}
             </${tag}>
         `;
     }).join('');
