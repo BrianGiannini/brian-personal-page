@@ -2,7 +2,18 @@
 <html lang="en" data-theme="light">
 
 <head>
-    <script src="scripts/theme-flash-prevention.js"></script>
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (systemPrefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 
     <title>Brian Giannini | Mobile Engineer & Tech Entrepreneur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,13 +24,19 @@
     <meta name="color-scheme" content="light dark">
     <meta charset="UTF-8">
     <link rel="icon" href="icon.png">
+    <link rel="preload" as="image" href="img/brian.webp" fetchpriority="high">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;500;700&display=swap"
+            rel="stylesheet">
+    </noscript>
 
     <!-- Icons -->
 
@@ -89,7 +106,7 @@
         <section id="about" class="hero-section">
             <div class="hero-content">
                 <div class="profile-frame">
-                    <img class="portrait" src="img/brian.webp" alt="Brian Giannini">
+                    <img class="portrait" src="img/brian.webp" alt="Brian Giannini" fetchpriority="high">
 
                 </div>
                 <h1>Brian Giannini</h1>
