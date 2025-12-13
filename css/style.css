@@ -13,7 +13,7 @@
 
     --color-text-main: #2c3e50;
 
-    --color-text-muted: #7f8c8d;
+    --color-text-muted: #445D78;
 
     /* Color Wheel: Base Blue #3498db */
     --color-primary: #3498db;
@@ -21,6 +21,7 @@
     /* Lighter Tint */
     --color-accent: #2980b9;
     /* Darker Shade */
+    --color-meta: #21618C;
 
     /* GLASS - LIGHT */
     --glass-bg: rgba(255, 255, 255, 0.9);
@@ -45,10 +46,11 @@
     --color-bg: #1a252f;
     /* Dark Blue-Grey */
     --color-text-main: #ecf0f1;
-    --color-text-muted: #bdc3c7;
+    --color-text-muted: #d0d7de;
 
     --color-primary: #3498db;
     --color-secondary: #5dade2;
+    --color-meta: #85C1E9;
 
     --glass-bg: rgba(44, 62, 80, 0.8);
     --glass-border: rgba(255, 255, 255, 0.05);
@@ -475,7 +477,7 @@ p.tagline {
     mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
 }
 
-/* Old overlay method removed to prevent background mismatch */
+
 
 .section-expand-btn {
     display: flex;
@@ -582,8 +584,7 @@ p.tagline {
     width: 100%;
 }
 
-/* Hover Labels Logic Removed - using specific icon instead */
-/* Update: Restoring "Article" label for internal links only as per request */
+
 .card:not([target="_blank"]) .card-arrow::before {
     content: "Article";
     font-size: 0.8rem;
@@ -647,7 +648,7 @@ p.tagline {
 
 .card .meta {
     font-size: 0.8rem;
-    color: var(--color-primary);
+    color: var(--color-meta);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
