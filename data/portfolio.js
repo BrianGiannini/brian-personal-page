@@ -12,7 +12,7 @@ const portfolioData = {
             title: "Diagnosly",
             description: "AI-powered personalized health checkups.",
             meta: "2024 - 2025",
-            image: "img/shelf/work_diagnosly.png",
+            image: "img/shelf/work_diagnosly.webp",
             link: "https://criaphore.com/diagnosly/diagnosly.html",
             external: true
         },
@@ -20,7 +20,7 @@ const portfolioData = {
             title: "Ledger Crypto",
             description: "Hardware wallet security & Android integration.",
             meta: "2022 - 2023",
-            image: "img/shelf/work_ledger.png",
+            image: "img/shelf/work_ledger.webp",
             link: "https://www.ledger.com/ledger-live",
             external: true
         },
@@ -28,7 +28,7 @@ const portfolioData = {
             title: "Plato",
             description: "Food service robot interface (Android).",
             meta: "2021 - 2022",
-            image: "img/shelf/work_plato.png",
+            image: "img/shelf/work_plato.webp",
             link: "https://aldebaran.com/en/plato-2/",
             external: true
         },
@@ -36,7 +36,7 @@ const portfolioData = {
             title: "Pepper",
             description: "Humanoid robot social interactions.",
             meta: "2019 - 2021",
-            image: "img/shelf/work_pepper.png",
+            image: "img/shelf/work_pepper.webp",
             link: "https://us.softbankrobotics.com/pepper",
             external: true
         },
@@ -44,7 +44,7 @@ const portfolioData = {
             title: "Special Forces App",
             description: "Tactical cartography & comms.",
             meta: "2018 - 2019",
-            image: "img/shelf/work_amrin.jpg",
+            image: "img/shelf/work_armin.webp",
             link: "https://youtu.be/Xnk5TuG0L7Y?si=Cvt4mjJarm4mXhJW",
             external: true
         },
@@ -52,7 +52,7 @@ const portfolioData = {
             title: "Thales: SIA C2",
             description: "Modernized army interoperability communication software.",
             meta: "2017 - 2018",
-            image: "img/shelf/work_army.png",
+            image: "img/shelf/work_army.webp",
             link: "https://www.thalesgroup.com/en/worldwide/press-release/thales-provide-first-interoperable-command-information-system-french-army",
             external: true
         },
@@ -60,7 +60,7 @@ const portfolioData = {
             title: "Identity Card Checker",
             description: "National ID check app for law enforcement.",
             meta: "2015 - 2016",
-            image: "img/shelf/work_thales.jpg",
+            image: "img/shelf/work_thales.webp",
             link: "https://www.aeroexpo.online/fr/tab/lecteur-rfid-controle-acces-grabba.html",
             external: true
         }
@@ -70,7 +70,7 @@ const portfolioData = {
             title: "Collab AI TV",
             description: "Stream-controlled AI video generation.",
             meta: "Nov 2025",
-            image: "img/shelf/project_gen_ai_video.png",
+            image: "img/shelf/project_gen_ai_video.webp",
             link: "content/collaborative-ai-gen-tv.html",
             external: false,
             blendC: "blend-multiply"
@@ -95,7 +95,7 @@ const portfolioData = {
             title: "VR Slow Mo",
             description: "Action game mechanic prototype.",
             meta: "Oct 2020",
-            image: "img/shelf/project_unity.png",
+            image: "img/shelf/project_unity.webp",
             link: "https://youtu.be/Mw7aGrnBltc",
             external: true
         },
@@ -103,7 +103,7 @@ const portfolioData = {
             title: "Horror Apartment VR",
             description: "Half-Life Alyx mod verifying classic horror tropes.",
             meta: "May 2020",
-            image: "img/shelf/project_half-life-alyx.png",
+            image: "img/shelf/project_half-life-alyx.webp",
             link: "https://steamcommunity.com/sharedfiles/filedetails/?id=2104498553",
             external: true
         },
@@ -111,7 +111,7 @@ const portfolioData = {
             title: "Rocket Sim Launch",
             description: "Falcon 9 simulation montage in KSP.",
             meta: "Apr 2017",
-            image: "img/shelf/project_spaceX.png",
+            image: "img/shelf/project_spaceX.webp",
             link: "https://youtu.be/qOMNfp0QcUA",
             external: true
         },
@@ -119,19 +119,19 @@ const portfolioData = {
             title: "Boîte à Philippe",
             description: "Soundbox app from a cult classic movie.",
             meta: "Aug 2015",
-            image: "img/shelf/project_philippe.png"
+            image: "img/shelf/project_philippe.webp"
         },
         {
             title: "O'Gaming Tournament",
             description: "Starcraft 2 tournament mod.",
             meta: "Mar 2014",
-            image: "img/shelf/project_ogaming.png"
+            image: "img/shelf/project_ogaming.webp"
         },
         {
             title: "War4Craft",
             description: "Warcraft models in Starcraft 2 engine.",
             meta: "Feb 2013",
-            image: "img/shelf/project_starcraft.png",
+            image: "img/shelf/project_starcraft.webp",
             link: "content/war4craft.html",
             external: false,
             blendC: "blend-multiply"
@@ -140,7 +140,7 @@ const portfolioData = {
             title: "Bichat 3D",
             description: "High school recreation in Source Engine.",
             meta: "May 2009",
-            image: "img/shelf/project_source-engine.png",
+            image: "img/shelf/project_source-engine.webp",
             link: "https://youtu.be/4O-YM0Iub0Y",
             external: true
         }
@@ -148,12 +148,12 @@ const portfolioData = {
     references: [
         {
             title: "Movies",
-            icon: "img/shelf/ref_imdb.png",
+            icon: "img/shelf/ref_imdb.webp",
             link: "https://www.imdb.com/user/ur30078525/ratings"
         },
         {
             title: "Books",
-            icon: "img/shelf/ref_goodreads.png",
+            icon: "img/shelf/ref_goodreads.webp",
             link: "https://www.goodreads.com/user/show/147637219-brian"
         },
         {
@@ -163,12 +163,12 @@ const portfolioData = {
         },
         {
             title: "Games",
-            icon: "img/shelf/ref_steam.png",
+            icon: "img/shelf/ref_steam.webp",
             link: "https://steamcommunity.com/id/SanguiSan/"
         },
         {
             title: "Moodboard",
-            icon: "img/shelf/ref_moodboard.png",
+            icon: "img/shelf/ref_moodboard.webp",
             link: "https://www.canva.com/design/DAGUroBs8GQ/vseRNraDYkxDD1n3BQuwaA/edit"
         }
     ]
