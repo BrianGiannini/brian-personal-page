@@ -3,7 +3,7 @@ const portfolioData = {
         {
             title: "Freelancing",
             description: "Software Mobile Engineer",
-            meta: "2005 - Present",
+            meta: "2025 - Present",
             image: "icons/android_logo_2023.svg",
             link: "https://www.malt.fr/profile/briangiannini",
             external: true
@@ -75,22 +75,7 @@ const portfolioData = {
             external: false,
             blendC: "blend-multiply"
         },
-        {
-            title: "Wake Up Right",
-            description: "Sleep duration calculator app.",
-            meta: "July 2024",
-            image: "img/shelf/project_wake-up.webp",
-            link: "https://play.google.com/store/apps/details?id=dev.sangui.wakeupright",
-            external: true
-        },
-        {
-            title: "Sleep Cycles",
-            description: "Smartwatch sleep timing utility.",
-            meta: "March 2022",
-            image: "img/shelf/project_sleep-cycle.webp",
-            link: "https://play.google.com/store/apps/details?id=io.sangui.sleepontime",
-            external: true
-        },
+
         {
             title: "VR Slow Mo",
             description: "Action game mechanic prototype.",
