@@ -15,10 +15,10 @@
         })();
     </script>
 
-    <title>Brian Giannini | Mobile Engineer & Tech Entrepreneur</title>
+    <title>Brian Giannini | Mobile Engineer Portfolio & Freelance</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-        content="Personal website of Brian Giannini - Mobile Engineer, Tech Entrepreneur, and Creator.">
+        content="Showcase of Android & KMP projects by Brian Giannini. Senior engineer (ex-Ledger, SoftBank) available for freelance consulting and technical entrepreneurship.">
     <meta name="author" content="Brian Giannini">
     <meta name="theme-color" content="#ffffff">
     <meta name="color-scheme" content="light dark">
@@ -43,6 +43,7 @@
     <script type="text/javascript" src="scripts/scroll-spy.js" defer></script>
     <script type="text/javascript" src="scripts/icons.js" defer></script>
     <script type="text/javascript" src="data/portfolio.js" defer></script>
+    <script type="text/javascript" src="scripts/webmcp-tools.js" defer></script>
     <script type="text/javascript" src="scripts/card-renderer.js" defer></script>
     <script type="text/javascript" src="scripts/copyright.js" defer></script>
 </head>
@@ -128,6 +129,22 @@
                         </svg>
                         <span id="copy-tooltip">Copied!</span>
                     </button>
+
+                    <!-- Declarative WebMCP Contact Form (Hidden, styled for agents) -->
+                    <form id="webmcp-contact-form" 
+                          toolname="contactForFreelance" 
+                          tooldescription="Prepare an email to hire Brian for a freelance project."
+                          toolautosubmit
+                          action="mailto:brian@criaphore.com" 
+                          method="GET">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-primary);">Agent Session</span>
+                            <button type="button" id="close-agent-form" style="background: none; border: none; color: var(--color-text-muted); cursor: pointer; padding: 5px; font-size: 1.2rem; line-height: 1;">&times;</button>
+                        </div>
+                        <input type="text" name="subject" toolparamtitle="Email Subject" placeholder="Subject">
+                        <textarea name="body" toolparamtitle="Email Body" placeholder="Message"></textarea>
+                        <button type="submit">Draft Email</button>
+                    </form>
 
                     <a href="https://x.com/Sanguisan/" target="_blank" class="social-btn" aria-label="Twitter">
                         <img src="icons/x-twitter-icon.svg" alt="" width="18" height="18" class="icon-invert">

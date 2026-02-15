@@ -14,3 +14,9 @@ Brian Giannini personal website for showcase and portfolio
 
 - [Website](https://briangiannini.com/)
 - [Contact](mailto:brian@criaphore.com)
+
+## AI Agent Interaction (WebMCP)
+
+This website supports WebMCP (Model Context Protocol for the Web). AI agents can use the following registered tools:
+- `searchPortfolio`: Search through Brian's work, projects, and references.
+- `contactForFreelance`: Get contact information for hiring Brian for freelance missions.
