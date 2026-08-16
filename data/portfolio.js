@@ -4,7 +4,7 @@ const portfolioData = {
             title: "Freelancing",
             description: "Software Mobile Engineer",
             meta: "2025 - Present",
-            image: "icons/android_logo_2023.svg",
+            image: "icons/mobile_platforms.svg",
             link: "https://www.malt.fr/profile/briangiannini",
             external: true
         },
