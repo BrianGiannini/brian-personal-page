@@ -34,8 +34,31 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// Profile Image Transition Logic
+// Profile Image Transition Logic & Smooth Scrolling for Navigation
 document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scroll for nav link clicks only
+    document.querySelectorAll('.nav-links a, .nav-logo').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetHref = link.getAttribute('href');
+            if (targetHref && targetHref.startsWith('#')) {
+                e.preventDefault();
+                if (targetHref === '#' || targetHref === '#about') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    history.pushState(null, '', window.location.pathname);
+                } else {
+                    const targetEl = document.querySelector(targetHref);
+                    if (targetEl) {
+                        const navOffset = 80;
+                        const elementPosition = targetEl.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                        history.pushState(null, '', targetHref);
+                    }
+                }
+            }
+        });
+    });
+
     const heroProfile = document.querySelector('.profile-frame');
     const navLogo = document.querySelector('.nav-logo');
 

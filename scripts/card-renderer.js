@@ -1,8 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initCards() {
     renderCards('work-grid', portfolioData.work);
     renderCards('projects-grid', portfolioData.projects);
     renderReferences('references-grid', portfolioData.references);
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCards);
+} else {
+    initCards();
+}
 
 function renderCards(containerId, items) {
     const container = document.getElementById(containerId);
