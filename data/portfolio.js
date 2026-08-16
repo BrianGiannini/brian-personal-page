@@ -10,7 +10,7 @@ const portfolioData = {
         },
         {
             title: "Criaphore",
-            description: "Agentic-AI dev company I created.",
+            description: "Agentic-AI dev company I created",
             meta: "2024 - Present",
             image: "img/shelf/work_criaphore.webp",
             link: "https://criaphore.com/",
@@ -18,7 +18,7 @@ const portfolioData = {
         },
         {
             title: "Ledger Crypto",
-            description: "Hardware wallet security & Android integration.",
+            description: "Hardware wallet security & Android integration",
             meta: "2022 - 2023",
             image: "img/shelf/work_ledger.webp",
             link: "https://www.ledger.com/ledger-live",
@@ -26,7 +26,7 @@ const portfolioData = {
         },
         {
             title: "Plato",
-            description: "Food service robot interface (Android).",
+            description: "Food service robot interface (Android)",
             meta: "2021 - 2022",
             image: "img/shelf/work_plato.webp",
             link: "https://aldebaran.com/en/plato-2/",
@@ -34,7 +34,7 @@ const portfolioData = {
         },
         {
             title: "Pepper",
-            description: "Humanoid robot social interactions.",
+            description: "Humanoid robot social interactions",
             meta: "2019 - 2021",
             image: "img/shelf/work_pepper.webp",
             link: "https://us.softbankrobotics.com/pepper",
@@ -42,7 +42,7 @@ const portfolioData = {
         },
         {
             title: "Special Forces App",
-            description: "Tactical cartography & comms.",
+            description: "Tactical cartography & comms",
             meta: "2018 - 2019",
             image: "img/shelf/work_armin.webp",
             link: "https://youtu.be/Xnk5TuG0L7Y?si=Cvt4mjJarm4mXhJW",
@@ -50,7 +50,7 @@ const portfolioData = {
         },
         {
             title: "Thales: SIA C2",
-            description: "Modernized army interoperability communication software.",
+            description: "Modernized army interoperability communication software",
             meta: "2017 - 2018",
             image: "img/shelf/work_army.webp",
             link: "https://www.thalesgroup.com/en/worldwide/press-release/thales-provide-first-interoperable-command-information-system-french-army",
@@ -58,7 +58,7 @@ const portfolioData = {
         },
         {
             title: "Identity Card Checker",
-            description: "National ID check app for law enforcement.",
+            description: "National ID check app for law enforcement",
             meta: "2015 - 2016",
             image: "img/shelf/work_thales.webp",
             link: "https://www.aeroexpo.online/fr/tab/lecteur-rfid-controle-acces-grabba.html",
@@ -68,7 +68,7 @@ const portfolioData = {
     projects: [
         {
             title: "Collab AI TV",
-            description: "Stream-controlled AI video generation.",
+            description: "Stream-controlled AI video generation",
             meta: "Nov 2025",
             image: "img/shelf/project_gen_ai_video.webp",
             link: "content/collaborative-ai-gen-tv.html",
@@ -85,7 +85,7 @@ const portfolioData = {
         },
         {
             title: "VR Slow Mo",
-            description: "Action game mechanic prototype.",
+            description: "Action game mechanic prototype",
             meta: "Oct 2020",
             image: "img/shelf/project_unity.webp",
             link: "https://youtu.be/Mw7aGrnBltc",
@@ -93,7 +93,7 @@ const portfolioData = {
         },
         {
             title: "Horror Apartment VR",
-            description: "Half-Life Alyx mod verifying classic horror tropes.",
+            description: "Half-Life Alyx mod verifying classic horror tropes",
             meta: "May 2020",
             image: "img/shelf/project_half-life-alyx.webp",
             link: "https://steamcommunity.com/sharedfiles/filedetails/?id=2104498553",
@@ -101,7 +101,7 @@ const portfolioData = {
         },
         {
             title: "Rocket Sim Launch",
-            description: "Falcon 9 simulation montage in KSP.",
+            description: "Falcon 9 simulation montage in KSP",
             meta: "Apr 2017",
             image: "img/shelf/project_spaceX.webp",
             link: "https://youtu.be/qOMNfp0QcUA",
@@ -109,19 +109,19 @@ const portfolioData = {
         },
         {
             title: "Boîte à Philippe",
-            description: "Soundbox app from a cult classic movie.",
+            description: "Soundbox app from a cult classic movie",
             meta: "Aug 2015",
             image: "img/shelf/project_philippe.webp"
         },
         {
             title: "O'Gaming Tournament",
-            description: "Starcraft 2 tournament mod.",
+            description: "Starcraft 2 tournament mod",
             meta: "Mar 2014",
             image: "img/shelf/project_ogaming.webp"
         },
         {
             title: "War4Craft",
-            description: "Warcraft models in Starcraft 2 engine.",
+            description: "Warcraft models in Starcraft 2 engine",
             meta: "Feb 2013",
             image: "img/shelf/project_starcraft.webp",
             link: "content/war4craft.html",
@@ -130,7 +130,7 @@ const portfolioData = {
         },
         {
             title: "Bichat 3D",
-            description: "High school recreation in Source Engine.",
+            description: "High school recreation in Source Engine",
             meta: "May 2009",
             image: "img/shelf/project_source-engine.webp",
             link: "https://youtu.be/4O-YM0Iub0Y",
