@@ -6,9 +6,9 @@ Brian Giannini personal website for showcase and portfolio
 
 ## Applications
 
-[Work] https://briangiannini.com/#section-work: Professional experiences of Brian Giannini
-[Project] https://briangiannini.com/#section-project: Personal projects made by Brian Giannini
-[References] https://briangiannini.com/#section-libraries: Hobbies of Brian Giannini
+[Work] https://briangiannini.com/#work: Professional experiences of Brian Giannini
+[Project] https://briangiannini.com/#projects: Personal projects made by Brian Giannini
+[References] https://briangiannini.com/#references: Hobbies of Brian Giannini
 
 ## Optional
 

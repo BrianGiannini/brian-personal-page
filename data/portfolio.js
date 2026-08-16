@@ -67,11 +67,19 @@ const portfolioData = {
     ],
     projects: [
         {
+            title: "Orbora",
+            description: "Generative audio wellness agentic app",
+            meta: "Aug 2026",
+            image: "img/shelf/project_orbora.webp",
+            link: "https://criaphore.com/orbora",
+            external: true
+        },
+        {
             title: "Collab AI TV",
             description: "Stream-controlled AI video generation",
             meta: "Nov 2025",
             image: "img/shelf/project_gen_ai_video.webp",
-            link: "content/collaborative-ai-gen-tv.html",
+            link: "projects/collaborative-ai-gen-tv/",
             external: false,
             blendC: "blend-multiply"
         },
@@ -80,7 +88,7 @@ const portfolioData = {
             description: "Agentic AI mobile app for health diagnosis",
             meta: "May 2025",
             image: "img/shelf/project_diagnosly.webp",
-            link: "https://criaphore.com/diagnosly/diagnosly.html",
+            link: "https://criaphore.com/diagnosly",
             external: true
         },
         {
@@ -124,7 +132,7 @@ const portfolioData = {
             description: "Warcraft models in Starcraft 2 engine",
             meta: "Feb 2013",
             image: "img/shelf/project_starcraft.webp",
-            link: "content/war4craft.html",
+            link: "projects/war4craft/",
             external: false,
             blendC: "blend-multiply"
         },
