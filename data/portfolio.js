@@ -9,11 +9,11 @@ const portfolioData = {
             external: true
         },
         {
-            title: "Diagnosly",
-            description: "AI-powered personalized health checkups.",
-            meta: "2024 - 2025",
-            image: "img/shelf/work_diagnosly.webp",
-            link: "https://criaphore.com/diagnosly/diagnosly.html",
+            title: "Criaphore",
+            description: "Agentic-AI dev company",
+            meta: "2024 - Present",
+            image: "img/shelf/work_criaphore.webp",
+            link: "https://criaphore.com/",
             external: true
         },
         {
@@ -75,7 +75,14 @@ const portfolioData = {
             external: false,
             blendC: "blend-multiply"
         },
-
+        {
+            title: "Diagnosly",
+            description: "Agentic AI mobile app for health diagnosis",
+            meta: "May 2025",
+            image: "img/shelf/project_diagnosly.webp",
+            link: "https://criaphore.com/diagnosly/diagnosly.html",
+            external: true
+        },
         {
             title: "VR Slow Mo",
             description: "Action game mechanic prototype.",
