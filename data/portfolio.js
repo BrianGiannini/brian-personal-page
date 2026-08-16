@@ -10,7 +10,7 @@ const portfolioData = {
         },
         {
             title: "Criaphore",
-            description: "Agentic-AI dev company",
+            description: "Agentic-AI dev company I created.",
             meta: "2024 - Present",
             image: "img/shelf/work_criaphore.webp",
             link: "https://criaphore.com/",
