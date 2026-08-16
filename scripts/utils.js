@@ -6,8 +6,8 @@ function copyEmail() {
         setTimeout(() => { tooltip.style.opacity = '0'; }, 2000);
     }
 
-    // Also open default mail client
-    window.location.href = 'mailto:brian@criaphore.com';
+    // Also open default mail client in a new tab/window
+    window.open('mailto:brian@criaphore.com', '_blank');
 }
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -157,11 +157,6 @@ const portfolioData = {
             title: "Games",
             icon: "img/shelf/ref_steam.webp",
             link: "https://steamcommunity.com/id/SanguiSan/"
-        },
-        {
-            title: "Moodboard",
-            icon: "img/shelf/ref_moodboard.webp",
-            link: "https://www.canva.com/design/DAGUroBs8GQ/vseRNraDYkxDD1n3BQuwaA/edit"
         }
     ]
 };

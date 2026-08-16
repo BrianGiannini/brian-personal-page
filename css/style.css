@@ -411,6 +411,7 @@ p.tagline {
 /* Compact shelf for references (4 cols -> 3 -> 2 -> 1) */
 .grid-shelf.compact {
     grid-template-columns: repeat(4, 220px);
+    margin-bottom: 5rem;
 }
 
 @media (max-width: 1080px) {
