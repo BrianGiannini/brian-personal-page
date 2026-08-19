@@ -10,7 +10,7 @@ const portfolioData = {
         },
         {
             title: "Criaphore",
-            description: "Agentic-AI dev company I created",
+            description: "Founder developing Agentic AI apps",
             meta: "2024 - Present",
             image: "img/shelf/work_criaphore.webp",
             link: "https://criaphore.com/",
@@ -26,7 +26,7 @@ const portfolioData = {
         },
         {
             title: "Plato",
-            description: "Food service robot interface (Android)",
+            description: "Food service robot interface",
             meta: "2021 - 2022",
             image: "img/shelf/work_plato.webp",
             link: "https://aldebaran.com/en/plato-2/",
@@ -92,7 +92,7 @@ const portfolioData = {
             external: true
         },
         {
-            title: "VR Slow Mo",
+            title: "VR Slow Motion",
             description: "Action game mechanic prototype",
             meta: "Oct 2020",
             image: "img/shelf/project_unity.webp",
