@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="../../css/navbar.css">
     <link rel="stylesheet" href="../../css/switch.css">
     <link rel="stylesheet" href="../../css/link-preview.css">
+    <link rel="stylesheet" href="../../css/collab-ai-tv.css">
     <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap">
 
@@ -103,7 +104,7 @@
             <div class="section self-section">
                 <header>
                     <h1>The collaborative AI Gen TV</h1>
-                    <p class="date">November 2025</p>
+                    <p class="date">November 2025 · Updated September 2026</p>
                 </header>
                 <div class="video-full-width">
                     <h2>Live Stream Replay</h2>
@@ -115,92 +116,189 @@
                     </div>
                 </div>
                 <div class="article-content">
+                    <p class="lead">A live TV channel programmed by its audience. Viewers of a YouTube stream donate
+                        with a prompt, AI agents check it and turn it into a video with Google's <strong>Veo</strong>,
+                        and a few minutes later it plays live on stream with the donor's name.</p>
+
+                    <div class="tv-stats">
+                        <div class="tv-stat"><strong>4</strong><span>AI agents in the pipeline</span></div>
+                        <div class="tv-stat"><strong>2</strong><span>ways to submit a prompt</span></div>
+                        <div class="tv-stat"><strong>3</strong><span>safety verdicts per prompt</span></div>
+                        <div class="tv-stat"><strong>8s</strong><span>clips, on screen within minutes</span></div>
+                    </div>
+
                     <h2>Inspiration</h2>
-                    <p>Inspired by Google's AI Flow, the recent hype around generative AI video, and interactive
-                        streaming experiences. This project is designed for entertainment, aiming to gather people for a
-                        fun and surprising experience. It simultaneously demonstrates the remarkable power of AI video
-                        generation and playfully educates users on how to craft effective video prompts.</p>
+                    <p>Inspired by Google's AI Flow, the hype around generative AI video, and interactive streaming. The
+                        goal is entertainment: bring people together for a fun, surprising show where nobody knows what
+                        comes next. Along the way it shows what AI video generation can do, and playfully teaches viewers
+                        how to write a good video prompt, because they see their own words come to life (or get
+                        rewritten).</p>
 
                     <h2>What it does</h2>
-                    <img src="../../img/content/stream_ai_video.webp" alt="Stream AI Video"
+                    <img src="../../img/content/stream_ai_video.webp" alt="A generated video playing live on stream with the donor's name and prompt"
                         style="width: 100%; height: auto; border-radius: 15px;">
-                    <p>This project allows viewers of a YouTube stream to donate with a prompt included in their
-                        message. This prompt is used to generate a unique AI video that is then shown on the stream for
-                        everyone to see, along with the donor's name and the prompt they submitted.</p>
-                    <p>The prompt is sent to a <strong>Cloud Run</strong> service that uses an <strong>agent-based
-                            workflow</strong> to generate a video. This video is then pulled by the streaming PC to be
-                        displayed. The newly generated video is shown first. After it finishes, a loop of previously
-                        generated videos (from the streaming session) plays randomly, one after the other.</p>
-                    <p>We can use a streaming software like <code>OBS</code> to capture this video output and the
-                        associated prompt (displayed from a text file). This entire feed is then broadcast to the
-                        YouTube Live stream. After a few minutes, the viewer who made the donation sees their generated
-                        video appear live on stream with their name and prompt.</p>
-
-                    <h2>️How I built it</h2>
-                    <p>I built a <strong>Cloud Run</strong> service that features an <strong>orchestrator
-                            agent</strong>. This orchestrator launches other agents sequentially to handle the video
-                        generation pipeline:</p>
-                    <ol>
-                        <li><strong>Safety Check Agent:</strong> This agent uses the <strong>Cloud Natural Language
-                                API</strong> to check the user's prompt for toxicity. It generates a JSON output with a
-                            toxicity level.</li>
-                        <li><strong>Decision Agent:</strong> Based on the toxicity level, this agent decides the next
-                            step.
-                            <ul>
-                                <li><strong>Safe:</strong> The original prompt is used.</li>
-                                <li><strong>Borderline:</strong> The prompt is slightly modified to be safer.</li>
-                                <li><strong>Toxic:</strong> The prompt is entirely replaced with a safe, generic one.
-                                </li>
-                            </ul>
-                            This agent's output is a clean JSON file containing the username and the final, safe prompt.
-                        </li>
-                        <li><strong>Worker Agent:</strong> This agent uses the <strong>Vertex AI API</strong> to
-                            generate a <strong>Veo</strong> video based on the new JSON payload. It generates a "fast"
-                            or "normal" quality video depending on the donation amount specified in the JSON. The final
-                            video is then stored in a <strong>Google Cloud Storage (GCS)</strong> bucket.</li>
-                        <li><strong>Final Worker Agent:</strong> This agent confirms whether the entire workflow
-                            finished successfully or failed.</li>
+                    <p>From the viewer's side, it's five steps:</p>
+                    <ol class="tv-journey">
+                        <li><div><strong>Donate</strong>with a video idea as the message</div></li>
+                        <li><div><strong>Moderate</strong>AI checks the prompt, rewrites it if needed</div></li>
+                        <li><div><strong>Generate</strong>Veo turns it into a video</div></li>
+                        <li><div><strong>Store</strong>the video lands in a cloud bucket</div></li>
+                        <li><div><strong>Broadcast</strong>it plays live with name and prompt</div></li>
                     </ol>
-                    <p>This Cloud Run service can be triggered in two ways: either from a simple UI admin interface
-                        built for the jury to test the system, or from the live streaming setup.</p>
+                    <p>The newest video always plays first. When it ends, the stream falls back to a random replay of
+                        videos generated earlier in the session, so the channel never goes quiet.</p>
 
-                    <h3>How the streaming setup works</h3>
-                    <p>When the YouTube live stream is active, viewers can make donations. I use
-                        <strong>StreamElements</strong> for this, as my YouTube channel is new and does not have native
-                        channel donations enabled.
-                    </p>
-                    <p>These donation events are captured and processed by a <strong>local streaming bot</strong>
-                        (Streamlabs Chatbot) on my PC. The bot checks the donation amount:</p>
-                    <ul>
-                        <li><strong>$2 - $5:</strong> Triggers a "fast" video generation.</li>
-                        <li><strong>Over $5:</strong> Triggers a "normal" quality Veo generation.</li>
-                    </ul>
-                    <p>The bot then initiates a two-step process:</p>
-                    <ol>
-                        <li>It runs a script to retrieve a <strong>GCP identity token</strong> to securely call the
-                            Cloud Run service.</li>
-                        <li>It launches a <strong>C# program</strong> that uses this token to make an authenticated call
-                            to the Cloud Run service. This program generates the correct JSON payload, including the
-                            user's message (prompt), the requested quality, and the donor's username.</li>
-                    </ol>
-                    <p>This payload is what kicks off the Cloud Run agent-based service described above.</p>
+                    <h2>How it works</h2>
+                    <p>The whole system in one picture: two entry points feed a single agent service on Google Cloud,
+                        and the streaming PC picks up whatever it produces.</p>
 
-                    <h3>On the streaming PC</h3>
-                    <img src="../../img/content/obs_stream_ai.webp" alt="OBS Stream AI"
+                    <div class="tv-arch" role="img" aria-label="Architecture: YouTube donations through a local bot, or the web app, call an ADK agent on Cloud Run that runs four agents, generates with Veo, stores in Cloud Storage, which the streaming PC downloads and broadcasts with OBS to YouTube Live">
+                        <div class="tv-arch-row">
+                            <div class="tv-node">
+                                <span class="tv-node-title">Live stream donation</span>
+                                StreamElements donation, picked up by a local bot that calls the agent with a GCP
+                                identity token
+                            </div>
+                            <div class="tv-node">
+                                <span class="tv-node-title">Web app</span>
+                                Google sign-in, invite-only access, a few generations per user
+                            </div>
+                        </div>
+                        <div class="tv-arrow"></div>
+                        <span class="tv-arrow-label">prompt + username + quality</span>
+                        <div class="tv-node tv-core">
+                            <span class="tv-node-title">ADK agent on Cloud Run</span>
+                            An orchestrator runs four agents one after another:
+                            <div class="tv-agents">
+                                <span class="tv-agent">Safety check</span><span class="tv-agent-arrow">→</span>
+                                <span class="tv-agent">Decision</span><span class="tv-agent-arrow">→</span>
+                                <span class="tv-agent">Video worker</span><span class="tv-agent-arrow">→</span>
+                                <span class="tv-agent">Confirmation</span>
+                            </div>
+                        </div>
+                        <div class="tv-arrow"></div>
+                        <span class="tv-arrow-label">Veo on Vertex AI</span>
+                        <div class="tv-node">
+                            <span class="tv-node-title">Google Cloud Storage</span>
+                            The video file and a small text file with the prompt to display
+                        </div>
+                        <div class="tv-arrow"></div>
+                        <span class="tv-arrow-label">downloaded as soon as it appears</span>
+                        <div class="tv-arch-row">
+                            <div class="tv-node">
+                                <span class="tv-node-title">Streaming PC</span>
+                                Python watcher, FFmpeg player, SQL replay history
+                            </div>
+                            <div class="tv-node">
+                                <span class="tv-node-title">OBS → YouTube Live</span>
+                                Captures the player and the prompt text, broadcasts to viewers
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>1. Keeping the stream family-friendly</h3>
+                    <p>Anyone can type anything into a donation, and it goes out live. So every prompt is first checked
+                        by the <strong>Cloud Natural Language API</strong>, which scores it for toxicity. A Gemini agent
+                        then decides what to do with it. Rather than just rejecting prompts, it rewrites them, so every
+                        donor still gets a video:</p>
+
+                    <div class="tv-verdicts">
+                        <div class="tv-verdict safe">
+                            <span class="tv-verdict-label">SAFE</span>
+                            <p>The prompt is used exactly as written.</p>
+                            <span class="tv-example">A cat surfing a giant wave at sunset</span>
+                        </div>
+                        <div class="tv-verdict borderline">
+                            <span class="tv-verdict-label">BORDERLINE</span>
+                            <p>Rewritten to be family-friendly, and marked "censored" on screen.</p>
+                            <span class="tv-example"><span class="from">Two knights in a bloody sword fight</span><br>
+                                Two valiant knights engaged in a heroic and honorable sword duel, their armor gleaming
+                                in the sunlight</span>
+                        </div>
+                        <div class="tv-verdict toxic">
+                            <span class="tv-verdict-label">TOXIC</span>
+                            <p>Replaced entirely by an invented prompt that is meant to be spectacular or funny.</p>
+                            <span class="tv-example">Shown as "prompt banned, replacement prompt here: …"</span>
+                        </div>
+                    </div>
+                    <p class="caption">Real input and output from a test run of the pipeline.</p>
+
+                    <h3>2. Generating the video</h3>
+                    <p>The video worker agent calls <strong>Veo</strong> through the Vertex AI API and saves the result
+                        to a <strong>Google Cloud Storage</strong> bucket, together with the text to show on screen. The
+                        donation amount chooses the model:</p>
+                    <div class="tv-tiers">
+                        <div class="tv-tier"><strong>$2 – $5</strong><span>Veo Fast: quicker and cheaper</span></div>
+                        <div class="tv-tier"><strong>Over $5</strong><span>Veo standard: higher quality</span></div>
+                    </div>
+                    <p>A final agent confirms whether the whole workflow succeeded or failed, so the caller always gets a
+                        clear answer.</p>
+
+                    <h3>3. From donation to agent</h3>
+                    <p>My YouTube channel was too new for native donations, so I used <strong>StreamElements</strong>.
+                        A local bot (<strong>Streamlabs Chatbot</strong>) on my PC catches each donation, checks the
+                        amount, fetches a <strong>GCP identity token</strong>, and starts a small <strong>C#</strong>
+                        program. That program builds the request (prompt, quality, donor name) and makes the
+                        authenticated call to Cloud Run. The agent service is private, so only callers with a valid
+                        identity can use it.</p>
+                    <p>For the hackathon jury I also built a <strong>web app</strong>, a second Cloud Run service, so
+                        they could try it without the stream. Users sign in with Google and request access. I approve
+                        them by hand, and each approved account gets a small number of generations. Finished videos are
+                        shared back through a time-limited signed link.</p>
+
+                    <h3>4. On the streaming PC</h3>
+                    <img src="../../img/content/obs_stream_ai.webp" alt="OBS scene capturing the FFmpeg video player and the prompt text"
                         style="width: 100%; height: auto; border-radius: 15px;">
-                    <p>A separate <strong>Python</strong> program on the streaming PC continuously monitors the GCS
-                        bucket. When a new video and its associated prompt file appear, the program downloads them.</p>
-                    <ol>
-                        <li>It launches an <strong>FFmpeg</strong> instance to play the newly generated video file.</li>
-                        <li>Simultaneously, it updates a local text file (<code>prompt.txt</code>) with the prompt
-                            associated with that video.</li>
-                        <li>When the new video finishes, the program queries a local <strong>SQL database</strong> to
-                            select and play a random video that has already been shown during the stream, creating a
-                            continuous replay loop.</li>
-                    </ol>
-                    <p>Finally, <code>OBS</code> is set up to capture two sources: the <code>FFmpeg</code> player window
-                        and the <code>prompt.txt</code> file. This combined view is what is broadcast to the YouTube
-                        Live stream.</p>
+                    <p>A <strong>Python</strong> program watches the bucket. When a new video and its prompt file
+                        appear, it downloads them, plays the video with <strong>FFmpeg</strong>, and writes the prompt
+                        into a local <code>prompt.txt</code>. When the video ends, it picks a random earlier video from a
+                        local <strong>SQL database</strong> and keeps the replay loop going.</p>
+                    <p><code>OBS</code> captures two sources, the FFmpeg window and <code>prompt.txt</code>, and
+                        broadcasts the combined scene to YouTube Live.</p>
+
+                    <h2>2026 update: new models and cost safeguards</h2>
+                    <p>Coming back to the project a year later, I upgraded it to the latest models: Gemini 3 for the
+                        agents and the stable Veo 3.1 release for video. One surprise: the new Gemini models are only
+                        served from Google's <em>global</em> endpoint, while Veo and the storage bucket stay in
+                        <code>us-central1</code>, so the two now have separate location settings.</p>
+                    <p>The bigger lesson was about cost. Every Veo video is billed per second, and Google Cloud budget
+                        alerts can arrive <strong>hours</strong> after the spending happens. An alert can tell you what
+                        you already spent, but it can't stop the spending. So I added limits that are checked
+                        <strong>before</strong> every paid call:</p>
+                    <div class="tv-guards">
+                        <div class="tv-guard"><strong>Daily cap</strong>A counter in Firestore, updated in a
+                            transaction, limits how many videos can be made per day across all users and entry points.</div>
+                        <div class="tv-guard"><strong>One video per request</strong>If an agent gets stuck in a loop
+                            and calls Veo again, the extra calls are refused.</div>
+                        <div class="tv-guard"><strong>Kill switch</strong>One setting turns off all video generation.</div>
+                        <div class="tv-guard"><strong>Fail closed</strong>If the limit can't be checked, no video is
+                            made. Per-user limits are also reserved before generating, so sending many requests at once
+                            can't bypass them.</div>
+                    </div>
+
+                    <h2>Tech stack</h2>
+                    <div class="tv-stack">
+                        <span>Google ADK</span><span>Gemini 3</span><span>Veo 3.1</span><span>Vertex AI</span>
+                        <span>Cloud Run</span><span>Cloud Storage</span><span>Firestore</span>
+                        <span>Cloud Natural Language API</span><span>Python / FastAPI</span><span>C#</span>
+                        <span>FFmpeg</span><span>OBS</span><span>StreamElements</span>
+                    </div>
+
+                    <h2>Source code</h2>
+                    <div class="link-preview">
+                        <a href="https://github.com/BrianGiannini/adk-ai-gen-video" target="_blank">
+                            <div class="link-preview-logo">
+                                <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://github.com&size=128"
+                                    alt="GitHub Logo">
+                            </div>
+                            <div class="link-preview-content">
+                                <div class="link-preview-title">adk-ai-gen-video</div>
+                                <div class="link-preview-description">The ADK agent, the Veo tool with its cost
+                                    safeguards, and the web app.</div>
+                                <div class="link-preview-domain">github.com</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
