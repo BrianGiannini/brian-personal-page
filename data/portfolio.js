@@ -75,6 +75,14 @@ const portfolioData = {
             external: true
         },
         {
+            title: "AI Second Brain",
+            description: "Knowledge base written and maintained by an AI agent",
+            meta: "Jul 2026",
+            image: "img/shelf/project_second-brain.webp",
+            link: "projects/ai-second-brain/",
+            external: false
+        },
+        {
             title: "Collab AI TV",
             description: "Stream-controlled AI video generation",
             meta: "Nov 2025",

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Second Brain</title>
+    <meta name="description"
+        content="A personal knowledge base where an AI agent writes and maintains every page, built on the LLM Wiki pattern and browsed in Obsidian.">
+    <meta name="author" content="Brian Giannini">
+    <meta name="theme-color" content="#55aeb7">
+    <meta name="color-scheme" content="light dark">
+    <link rel="icon" href="../../icon.png">
+
+    <!-- Preconnect to External Domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://ajax.googleapis.com">
+    <link rel="preconnect" href="https://t2.gstatic.com">
+
+    <!-- Social Media Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI Second Brain - Brian Giannini">
+    <meta property="og:description"
+        content="A personal knowledge base where an AI agent writes and maintains every page, built on the LLM Wiki pattern and browsed in Obsidian.">
+    <link rel="canonical" href="https://briangiannini.com/projects/ai-second-brain">
+    <meta property="og:url" content="https://briangiannini.com/projects/ai-second-brain">
+    <meta property="og:image" content="https://briangiannini.com/img/shelf/project_second-brain.webp">
+    <meta property="og:site_name" content="Brian Giannini">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@SanguiSan">
+    <meta name="twitter:title" content="AI Second Brain - Brian Giannini">
+    <meta name="twitter:description"
+        content="A personal knowledge base where an AI agent writes and maintains every page, built on the LLM Wiki pattern and browsed in Obsidian.">
+    <meta name="twitter:image" content="https://briangiannini.com/img/shelf/project_second-brain.webp">
+
+    <!-- CSS files with relative paths -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/switch.css">
+    <link rel="stylesheet" href="../../css/link-preview.css">
+    <link rel="stylesheet" href="../../css/second-brain.css">
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap">
+
+    <!-- JavaScript files -->
+    <script src="../../scripts/theme-flash-prevention.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
+    <script src="../../scripts/toggle-dark-mode.js" defer></script>
+    <script src="../../scripts/hamburger.js" defer></script>
+</head>
+
+<body>
+    <div class="background-glob"></div>
+    <div class="scanlines"></div>
+
+    <nav class="sticky-header" id="navbar">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="../../#projects" class="back-arrow-btn" aria-label="Back to projects"
+                    onclick="if (window.history.length > 1 && document.referrer && new URL(document.referrer).origin === window.location.origin) { window.history.back(); return false; }">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="header-center">
+                <!-- Spacer -->
+            </div>
+
+            <div class="header-right">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div id="part-content">
+            <div class="section self-section">
+                <header>
+                    <h1>AI Second Brain</h1>
+                    <p class="date">July 2026</p>
+                </header>
+                <div class="article-content">
+                    <p class="lead">A personal knowledge base where I bring the material and an AI agent does the
+                        writing. I feed it articles, videos and my own raw thoughts; the agent turns them into wiki pages,
+                        links everything together and keeps it all up to date. I browse the result in Obsidian like a map of what I know.</p>
+
+                    <h2>The idea</h2>
+                    <p>Most note-taking systems die the same way: saving things is easy, but keeping them organized,
+                        linked and current is tedious, so the notes go stale and nobody reads them again. The work
+                        that kills a second brain is exactly the work an AI agent is good at.</p>
+                    <p>So I split the roles. The project follows the <strong>LLM Wiki</strong> pattern shared by
+                        Andrej Karpathy: instead of searching raw documents every time (as classic RAG does), an agent
+                        builds and maintains a lasting wiki of Markdown pages, so knowledge adds up instead of being
+                        rediscovered.</p>
+
+                    <div class="sb-roles">
+                        <div class="sb-role"><strong>What I do</strong>
+                            <ul>
+                                <li>Choose what is worth keeping</li>
+                                <li>Write my thoughts freely, however messy</li>
+                                <li>Ask questions</li>
+                                <li>Decide the judgment calls</li>
+                            </ul>
+                        </div>
+                        <div class="sb-role"><strong>What the agent does</strong>
+                            <ul>
+                                <li>Read and summarize every source</li>
+                                <li>Write and update all the wiki pages</li>
+                                <li>Link related pages in both directions</li>
+                                <li>Keep the index and the history log current</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2>Three layers</h2>
+                    <p>The vault is a folder of Markdown files with three layers, each with a clear owner:</p>
+
+                    <div class="sb-layers">
+                        <div class="sb-layer raw">
+                            <span class="sb-layer-label">Raw · mine</span>
+                            <strong>Sources</strong>
+                            Articles, transcripts, images and journal entries, exactly as they arrived. Never edited
+                            afterwards: they are the source of truth.
+                        </div>
+                        <div class="sb-layer-arrow"><span>→</span><small>read by the agent</small></div>
+                        <div class="sb-layer wiki">
+                            <span class="sb-layer-label">Wiki · the agent's</span>
+                            <strong>Knowledge</strong>
+                            Every page written and maintained by the agent, cross-linked with Obsidian wikilinks.
+                            <div class="sb-folders"><code>areas/</code><code>entities/</code><code>concepts/</code><code>sources/</code><code>notes/</code><code>index.md</code><code>log.md</code></div>
+                        </div>
+                    </div>
+                    <div class="sb-layer schema">
+                        <span class="sb-layer-label">Schema · the rules</span>
+                        <strong>AGENTS.md</strong>
+                        One file describes how the agent must behave: page templates, frontmatter, linking rules and
+                        every workflow. It turns a general-purpose AI into a disciplined librarian.
+                    </div>
+
+                    <h2>A map of connected ideas</h2>
+                    <p>Because the agent links every page to the pages it relates to, the vault grows into a network
+                        rather than a pile of notes. This is its real graph in Obsidian: each dot is a page, each line a
+                        link the agent wrote, and the biggest dots are the hubs that many ideas lead back to.</p>
+                    <img src="../../img/content/second_brain_graph.svg" alt="Obsidian graph of the knowledge base: about a hundred linked pages, with a few large hubs"
+                        class="sb-graph">
+                    <p class="sb-caption">The vault's graph in September 2026, about three months in. Page names
+                        are hidden to keep its content private.</p>
+
+                    <h2>How I use it</h2>
+                    <div class="sb-flows">
+                        <div class="sb-flow"><strong>Ingest</strong><em>add something new</em>
+                            <ol>
+                                <li>I clip an article with the Web Clipper extension, or write a thought</li>
+                                <li>We discuss the key takeaways first</li>
+                                <li>The agent writes a summary page</li>
+                                <li>It updates every related page</li>
+                                <li>Index and log updated, then a commit</li>
+                            </ol>
+                        </div>
+                        <div class="sb-flow"><strong>Query</strong><em>ask a question</em>
+                            <ol>
+                                <li>The agent starts from the index</li>
+                                <li>It reads the relevant pages</li>
+                                <li>It answers with citations</li>
+                                <li>A good answer is filed back as a new note</li>
+                            </ol>
+                        </div>
+                        <div class="sb-flow"><strong>Lint</strong><em>a regular health check</em>
+                            <ol>
+                                <li>Contradictions never reconciled</li>
+                                <li>Claims made stale by newer sources</li>
+                                <li>Orphan pages and missing links</li>
+                                <li>Fixes the obvious, asks me about the rest</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <h2>Philosophy</h2>
+                    <div class="sb-principles">
+                        <div class="sb-principle"><strong>Sources never change</strong>What came in stays as it came
+                            in. Corrections and new understanding live in the wiki, never in the originals.</div>
+                        <div class="sb-principle"><strong>Changing my mind stays visible</strong>When something new
+                            contradicts an old page, the agent notes the contradiction instead of silently overwriting.
+                            How my thinking evolves is the most valuable part.</div>
+                        <div class="sb-principle"><strong>Opinions are labelled as opinions</strong>Anything that
+                            comes from my own thoughts is marked as my view, with a date, so it never reads like an
+                            established fact.</div>
+                        <div class="sb-principle"><strong>Stay in the loop</strong>The agent discusses each source
+                            with me before filing it, rather than quietly rewriting a dozen pages on its own.</div>
+                        <div class="sb-principle"><strong>Synthesize, don't transcribe</strong>Short pages that are
+                            correct and current beat long pages that are stale.</div>
+                        <div class="sb-principle"><strong>Answers are worth keeping</strong>A good analysis should not
+                            disappear into chat history: it becomes a page and feeds future questions.</div>
+                        <div class="sb-principle"><strong>No lock-in</strong>Plain Markdown and one vendor-neutral
+                            rule file: any AI agent can take over tomorrow, and the notes outlive every tool.</div>
+                        <div class="sb-principle"><strong>Private by design</strong>The vault lives in a private
+                            repository and its browsing site only runs on my machine. This page describes the system,
+                            never its content.</div>
+                    </div>
+
+                    <h2>Tech stack</h2>
+                    <div class="sb-stack">
+                        <div class="sb-tool"><strong>Obsidian</strong>Reading and browsing, with the graph view and the
+                            Extended Graph plugin to see how ideas connect.</div>
+                        <div class="sb-tool"><strong>Obsidian Web Clipper</strong>A Chromium browser extension: one
+                            click saves the article I'm reading into the sources folder as clean Markdown, ready for
+                            the agent to process.</div>
+                        <div class="sb-tool"><strong>AI coding agents</strong>Claude Code, Gemini CLI or Codex. Each
+                            reads the same <code>AGENTS.md</code>, through a tiny stub file when it expects another
+                            name.</div>
+                        <div class="sb-tool"><strong>Markdown + YAML frontmatter</strong>Every page has a type, an
+                            area, tags, dates and the sources behind its claims.</div>
+                        <div class="sb-tool"><strong>Git + GitHub</strong>History of every change, and sync between my
+                            machines: pull before working, push after.</div>
+                        <div class="sb-tool"><strong>Quartz</strong>A local website built from the vault, with search,
+                            graph and backlinks in the browser.</div>
+                    </div>
+
+                    <h2>Inspiration</h2>
+                    <div class="link-preview">
+                        <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank">
+                            <div class="link-preview-logo">
+                                <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://github.com&size=128"
+                                    alt="GitHub Logo">
+                            </div>
+                            <div class="link-preview-content">
+                                <div class="link-preview-title">LLM Wiki, by Andrej Karpathy</div>
+                                <div class="link-preview-description">The idea file behind this project: let an LLM
+                                    build and maintain a wiki instead of re-reading raw documents.</div>
+                                <div class="link-preview-domain">gist.github.com</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="centered-footer">
+        <p>&copy; 2025 Brian Giannini. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
