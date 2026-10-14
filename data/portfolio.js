@@ -11,7 +11,7 @@ const portfolioData = {
         {
             title: "Criaphore",
             description: "Founder developing Agentic AI apps",
-            meta: "2024 - Present",
+            meta: "2023 - Present",
             image: "img/shelf/work_criaphore.webp",
             link: "https://criaphore.com/",
             external: true
