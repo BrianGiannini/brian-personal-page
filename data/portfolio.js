@@ -17,11 +17,11 @@ const portfolioData = {
             external: true
         },
         {
-            title: "Ledger Crypto",
+            title: "Ledger Atom",
             description: "Hardware wallet security & Android integration",
             meta: "2022 - 2023",
             image: "img/shelf/work_ledger.webp",
-            link: "https://www.ledger.com/ledger-live",
+            link: "https://shop.ledger.com/pages/ledger-atom",
             external: true
         },
         {
