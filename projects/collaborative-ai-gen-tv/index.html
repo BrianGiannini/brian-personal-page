@@ -189,6 +189,12 @@
                         </div>
                     </div>
 
+                    <p>The agents reach their models through <strong>LiteLLM</strong>, which ADK supports as a model
+                        adapter. The first version ran on a self-hosted <strong>Gemma</strong> model served by
+                        <strong>Ollama</strong>. Moving to Gemini later meant changing a model name, not the agent code.
+                        Each agent also gets the model its job needs: Gemini Pro for the decision agent, the faster and
+                        cheaper Flash for the others.</p>
+
                     <h3>1. Keeping the stream family-friendly</h3>
                     <p>Anyone can type anything into a donation, and it goes out live. So every prompt is first checked
                         by the <strong>Cloud Natural Language API</strong>, which scores it for toxicity. A Gemini agent
@@ -271,7 +277,7 @@
 
                     <h2>Tech stack</h2>
                     <div class="tv-stack">
-                        <span>Google ADK</span><span>Gemini 3</span><span>Veo 3.1</span><span>Vertex AI</span>
+                        <span>Google ADK</span><span>LiteLLM</span><span>Gemini 3</span><span>Veo 3.1</span><span>Vertex AI</span>
                         <span>Cloud Run</span><span>Cloud Storage</span><span>Firestore</span>
                         <span>Cloud Natural Language API</span><span>Python / FastAPI</span><span>C#</span>
                         <span>FFmpeg</span><span>OBS</span><span>StreamElements</span>
