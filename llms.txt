@@ -8,7 +8,6 @@ Brian Giannini personal website for showcase and portfolio
 
 [Work] https://briangiannini.com/#work: Professional experiences of Brian Giannini
 [Project] https://briangiannini.com/#projects: Personal projects made by Brian Giannini
-[References] https://briangiannini.com/#references: Hobbies of Brian Giannini
 
 ## Optional
 
@@ -18,5 +17,5 @@ Brian Giannini personal website for showcase and portfolio
 ## AI Agent Interaction (WebMCP)
 
 This website supports WebMCP (Model Context Protocol for the Web). AI agents can use the following registered tools:
-- `searchPortfolio`: Search through Brian's work, projects, and references.
+- `searchPortfolio`: Search through Brian's work and projects.
 - `contactForFreelance`: Get contact information for hiring Brian for freelance missions.

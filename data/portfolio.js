@@ -152,27 +152,5 @@ const portfolioData = {
             link: "https://youtu.be/4O-YM0Iub0Y",
             external: true
         }
-    ],
-    references: [
-        {
-            title: "Movies",
-            icon: "img/shelf/ref_imdb.webp",
-            link: "https://www.imdb.com/user/ur30078525/ratings"
-        },
-        {
-            title: "Books",
-            icon: "img/shelf/ref_goodreads.webp",
-            link: "https://www.goodreads.com/user/show/147637219-brian"
-        },
-        {
-            title: "Music",
-            icon: "img/shelf/ref_spotify.webp",
-            link: "https://open.spotify.com/user/117537904"
-        },
-        {
-            title: "Games",
-            icon: "img/shelf/ref_steam.webp",
-            link: "https://steamcommunity.com/id/SanguiSan/"
-        }
     ]
 };

@@ -1,7 +1,6 @@
 function initCards() {
     renderCards('work-grid', portfolioData.work);
     renderCards('projects-grid', portfolioData.projects);
-    renderReferences('references-grid', portfolioData.references);
 }
 
 if (document.readyState === 'loading') {
@@ -149,24 +148,4 @@ function setupCollapsible(containerId) {
             }
         });
     }
-}
-
-function renderReferences(containerId, items) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    container.innerHTML = items.map(item => `
-        <a class="card glass-card small" href="${item.link}" target="_blank">
-            <div class="icon-wrapper"><img src="${item.icon}" alt="${item.title}"></div>
-            <span>${item.title}</span>
-            <div class="card-arrow card-arrow-static">
-                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <use href="#icon-external-link"></use>
-                </svg>
-            </div>
-        </a>
-    `).join('');
-
-    // Initialize collapsible state
-    setupCollapsible(containerId);
 }

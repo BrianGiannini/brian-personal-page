@@ -407,51 +407,9 @@ p.tagline {
     /* Arrow handled by card-footer now */
 }
 
-/* Compact shelf for references (4 cols -> 3 -> 2 -> 1) */
-.grid-shelf.compact {
-    grid-template-columns: repeat(4, 220px);
+/* Space before the footer, the last section (was the References shelf) */
+#projects {
     margin-bottom: 5rem;
-}
-
-@media (max-width: 1080px) {
-    .grid-shelf.compact {
-        grid-template-columns: repeat(3, 220px);
-    }
-}
-
-@media (max-width: 800px) {
-    .grid-shelf.compact {
-        grid-template-columns: repeat(2, 220px);
-    }
-}
-
-@media (max-width: 520px) {
-    .grid-shelf.compact {
-        grid-template-columns: repeat(2, 1fr);
-        /* Force 2 columns */
-        gap: 1rem;
-        /* Reduce gap to fit */
-    }
-
-    /* Adjust font size/padding for small cards in tight 2-col layout */
-    .card.small {
-        padding: 0.75rem;
-        flex-direction: column;
-        /* Stack icon and text if needed, or keep row but tighter */
-        justify-content: center;
-        text-align: center;
-    }
-
-    .card.small .icon-wrapper {
-        margin-right: 0;
-        margin-bottom: 0.5rem;
-        width: 40px;
-        height: 40px;
-    }
-
-    .card.small span {
-        font-size: 0.9rem;
-    }
 }
 
 /* Collapsible Grid Logic */
@@ -592,18 +550,6 @@ p.tagline {
     white-space: nowrap;
 }
 
-/* Small Reference Cards - always visible */
-.card.small .card-arrow {
-    display: flex !important;
-}
-
-.card-arrow-static {
-    position: static !important;
-    opacity: 1 !important;
-    transform: none !important;
-    margin-left: auto;
-}
-
 .card:not(.no-hover):hover .card-arrow {
     opacity: 1;
     transform: translateX(0);
@@ -652,37 +598,6 @@ p.tagline {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-}
-
-/* Small Cards (References) */
-.card.small {
-    flex-direction: row;
-    align-items: center;
-    padding: 1rem;
-    height: auto;
-}
-
-.card.small .icon-wrapper {
-    width: 50px;
-    height: 50px;
-    flex-shrink: 0;
-    margin-right: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card.small img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 4px;
-    /* Slightly smaller for icons */
-}
-
-.card.small span {
-    font-weight: 600;
-    font-family: var(--font-heading);
 }
 
 /* NEWSLETTER */
