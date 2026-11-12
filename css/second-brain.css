@@ -139,8 +139,12 @@
     max-width: 640px;
     height: auto;
     margin: 1.5rem auto 0.5rem;
-    box-shadow: none;
-    border-radius: 0;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    background: #0d1117;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .article-content .sb-caption {
