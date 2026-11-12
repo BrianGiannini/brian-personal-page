@@ -25,43 +25,19 @@ const portfolioData = {
             external: true
         },
         {
-            title: "Plato",
-            description: "Food service robot interface",
-            meta: "2021 - 2022",
-            image: "img/shelf/work_plato.webp",
-            link: "https://aldebaran.com/en/plato-2/",
-            external: true
-        },
-        {
-            title: "Pepper",
-            description: "Humanoid robot social interactions",
-            meta: "2019 - 2021",
+            title: "SoftBank Robotics: Pepper & Plato",
+            description: "Built the social interactions of Pepper, the humanoid robot, then the touchscreen interface of Plato, the food service robot used in restaurants",
+            meta: "2019 - 2022",
             image: "img/shelf/work_pepper.webp",
             link: "https://us.softbankrobotics.com/pepper",
             external: true
         },
         {
-            title: "Special Forces App",
-            description: "Tactical cartography & comms",
-            meta: "2018 - 2019",
-            image: "img/shelf/work_armin.webp",
-            link: "https://youtu.be/Xnk5TuG0L7Y?si=Cvt4mjJarm4mXhJW",
-            external: true
-        },
-        {
-            title: "Thales: SIA C2",
-            description: "Modernized army interoperability communication software",
-            meta: "2017 - 2018",
-            image: "img/shelf/work_army.webp",
-            link: "https://www.thalesgroup.com/en/worldwide/press-release/thales-provide-first-interoperable-command-information-system-french-army",
-            external: true
-        },
-        {
-            title: "Identity Card Checker",
-            description: "National ID check app for law enforcement",
-            meta: "2015 - 2016",
+            title: "Thales",
+            description: "Defense and security apps: tactical cartography and comms for special forces, the French Army's interoperable command system (SIA C2), and a national ID check app for law enforcement",
+            meta: "2015 - 2019",
             image: "img/shelf/work_thales.webp",
-            link: "https://www.aeroexpo.online/fr/tab/lecteur-rfid-controle-acces-grabba.html",
+            link: "https://www.thalesgroup.com/",
             external: true
         }
     ],
