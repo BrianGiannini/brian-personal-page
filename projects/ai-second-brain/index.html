@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI Second Brain</title>
     <meta name="description"
-        content="A personal knowledge base where an AI agent writes and maintains every page, built on the LLM Wiki pattern and browsed in Obsidian.">
+        content="A personal knowledge base where AI agents write and maintain every page, built on the LLM Wiki pattern, running 24/7 on a home server and driven from my phone.">
     <meta name="author" content="Brian Giannini">
     <meta name="theme-color" content="#55aeb7">
     <meta name="color-scheme" content="light dark">
@@ -23,7 +23,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="AI Second Brain - Brian Giannini">
     <meta property="og:description"
-        content="A personal knowledge base where an AI agent writes and maintains every page, built on the LLM Wiki pattern and browsed in Obsidian.">
+        content="A personal knowledge base where AI agents write and maintain every page, built on the LLM Wiki pattern, running 24/7 on a home server and driven from my phone.">
     <link rel="canonical" href="https://briangiannini.com/projects/ai-second-brain">
     <meta property="og:url" content="https://briangiannini.com/projects/ai-second-brain">
     <meta property="og:image" content="https://briangiannini.com/img/shelf/project_second-brain.webp">
@@ -33,7 +33,7 @@
     <meta name="twitter:creator" content="@SanguiSan">
     <meta name="twitter:title" content="AI Second Brain - Brian Giannini">
     <meta name="twitter:description"
-        content="A personal knowledge base where an AI agent writes and maintains every page, built on the LLM Wiki pattern and browsed in Obsidian.">
+        content="A personal knowledge base where AI agents write and maintain every page, built on the LLM Wiki pattern, running 24/7 on a home server and driven from my phone.">
     <meta name="twitter:image" content="https://briangiannini.com/img/shelf/project_second-brain.webp">
 
     <!-- CSS files with relative paths -->
@@ -104,12 +104,14 @@
             <div class="section self-section">
                 <header>
                     <h1>AI Second Brain</h1>
-                    <p class="date">July 2026</p>
+                    <p class="date">July 2026 · updated November 2026</p>
                 </header>
                 <div class="article-content">
                     <p class="lead">A personal knowledge base where I bring the material and an AI agent does the
                         writing. I feed it articles, videos and my own raw thoughts; the agent turns them into wiki pages,
-                        links everything together and keeps it all up to date. I browse the result in Obsidian like a map of what I know.</p>
+                        links everything together and keeps it all up to date. It started as a wiki and grew into a small
+                        system of its own: it runs day and night on an old laptop at home, I drive it from my phone, and
+                        agents now work on their own on a schedule.</p>
 
                     <h2>The idea</h2>
                     <p>Most note-taking systems die the same way: saving things is easy, but keeping them organized,
@@ -171,13 +173,13 @@
                     <img src="../../img/content/second_brain_graph.svg" alt="Obsidian graph of the knowledge base: about a hundred linked pages, with a few large hubs"
                         class="sb-graph">
                     <p class="sb-caption">The vault's graph in September 2026, about three months in. Page names
-                        are hidden to keep its content private.</p>
+                        are hidden to keep its content private. By November it had grown past 220 pages.</p>
 
                     <h2>How I use it</h2>
                     <div class="sb-flows">
                         <div class="sb-flow"><strong>Ingest</strong><em>add something new</em>
                             <ol>
-                                <li>I clip an article with the Web Clipper extension, or write a thought</li>
+                                <li>I drop a link, a note or a picture into the Capture card, or write a thought</li>
                                 <li>We discuss the key takeaways first</li>
                                 <li>The agent writes a summary page</li>
                                 <li>It updates every related page</li>
@@ -202,6 +204,53 @@
                         </div>
                     </div>
 
+                    <h2>Always on</h2>
+                    <p>The brain lives on an old laptop that stays closed in a corner, running around the clock. I
+                        almost never sit in front of it: I reach it from my phone or my other computers through a
+                        private network, and a dashboard I built (with the agents) is the control room.</p>
+                    <div class="sb-stack">
+                        <div class="sb-tool"><strong>Agent sessions from the phone</strong>Start a Claude Code, Codex or
+                            Antigravity session in one tap, read its screen and answer it like a chat. Closing one costs
+                            nothing: the next session boots from the rules and the index, so the vault is the memory.</div>
+                        <div class="sb-tool"><strong>Work while I sleep</strong>A message can be scheduled for the night,
+                            or for the moment a usage limit resets, and the result is waiting in the morning.</div>
+                        <div class="sb-tool"><strong>A second opinion</strong>A task can move to another agent or model
+                            mid-way, or go to a small council of other agents that review it before I decide.</div>
+                        <div class="sb-tool"><strong>Capture in one place</strong>A card on the home screen takes a
+                            thought, a link or a photo and hands it to an agent to file, which replaced Obsidian for
+                            day-to-day use.</div>
+                        <div class="sb-tool"><strong>The wiki as a 3D cloud</strong>Every page drawn as a point in space,
+                            grouped by area, with the links between them and the pages touched in the last two weeks
+                            lit up.</div>
+                        <div class="sb-tool"><strong>Beyond the wiki</strong>The same rules apply when an agent works in my
+                            code projects: it ships the code there and writes the decisions back to the brain, so
+                            intent and code never drift apart.</div>
+                    </div>
+
+                    <h2>Daily routines</h2>
+                    <p>Some sessions start on their own, at fixed times, with no one at the keyboard. Each follows a
+                        written procedure in the vault, so the result is the same whichever agent runs it.</p>
+                    <div class="sb-flows">
+                        <div class="sb-flow"><strong>Lesson of the day</strong><em>every morning</em>
+                            A short course on one thing I lack to reach my goals, with diagrams, examples, an exercise
+                            and a quiz. I rate it, and the next one adapts.</div>
+                        <div class="sb-flow"><strong>Morning report</strong><em>after the night</em>
+                            Once my watch and scale have synced, an agent writes a short factual report on sleep,
+                            heart rate and training. A weekly summary follows on Sunday.</div>
+                        <div class="sb-flow"><strong>Goals review</strong><em>every Sunday</em>
+                            An agent goes over the week and updates my goals board on three horizons, writing down
+                            the reason for every change in priority.</div>
+                        <div class="sb-flow"><strong>Reminders</strong><em>at the time I asked</em>
+                            "Remind me Thursday" in any session becomes a phone message at the right time, listed
+                            on the dashboard until I tick it.</div>
+                        <div class="sb-flow"><strong>Voice briefs</strong><em>on demand</em>
+                            A plain text brief on any topic, made to upload to a voice assistant and talk it through
+                            out loud, then filed back into the wiki.</div>
+                        <div class="sb-flow"><strong>Health check</strong><em>each time I open the dashboard</em>
+                            Broken links, forgotten pages and missing details are flagged on the dashboard before
+                            they pile up.</div>
+                    </div>
+
                     <h2>Philosophy</h2>
                     <div class="sb-principles">
                         <div class="sb-principle"><strong>Sources never change</strong>What came in stays as it came
@@ -221,20 +270,25 @@
                         <div class="sb-principle"><strong>No lock-in</strong>Plain Markdown and one vendor-neutral
                             rule file: any AI agent can take over tomorrow, and the notes outlive every tool.</div>
                         <div class="sb-principle"><strong>Private by design</strong>The vault lives in a private
-                            repository and its browsing site only runs on my machine. This page describes the system,
-                            never its content.</div>
+                            repository, and the dashboard and the wiki site are only reachable on my private network.
+                            This page describes the system, never its content.</div>
                     </div>
 
                     <h2>Tech stack</h2>
                     <div class="sb-stack">
-                        <div class="sb-tool"><strong>Obsidian</strong>Reading and browsing, with the graph view and the
-                            Extended Graph plugin to see how ideas connect.</div>
-                        <div class="sb-tool"><strong>Obsidian Web Clipper</strong>A Chromium browser extension: one
-                            click saves the article I'm reading into the sources folder as clean Markdown, ready for
-                            the agent to process.</div>
-                        <div class="sb-tool"><strong>AI coding agents</strong>Claude Code, Gemini CLI or Codex. Each
+                        <div class="sb-tool"><strong>AI coding agents</strong>Claude Code, Codex or Antigravity. Each
                             reads the same <code>AGENTS.md</code>, through a tiny stub file when it expects another
                             name.</div>
+                        <div class="sb-tool"><strong>Agent dashboard</strong>A small Python web app made for the phone:
+                            sessions, capture, goals, lessons and the wiki cloud in one place.</div>
+                        <div class="sb-tool"><strong>tmux + systemd timers</strong>Every agent session lives in tmux, so
+                            it survives a closed browser, and timers start the daily routines.</div>
+                        <div class="sb-tool"><strong>Tailscale</strong>The private network that lets my phone and
+                            computers reach the laptop from anywhere, with nothing open to the internet.</div>
+                        <div class="sb-tool"><strong>Telegram</strong>A private bot that brings reminders and alerts to
+                            my phone.</div>
+                        <div class="sb-tool"><strong>Obsidian</strong>The reading and capture tool of the first months,
+                            with its graph view and Web Clipper, since replaced by the dashboard.</div>
                         <div class="sb-tool"><strong>Markdown + YAML frontmatter</strong>Every page has a type, an
                             area, tags, dates and the sources behind its claims.</div>
                         <div class="sb-tool"><strong>Git + GitHub</strong>History of every change, and sync between my
