@@ -351,6 +351,58 @@ p.tagline {
     white-space: nowrap;
 }
 
+/* Email copied: the envelope flies off, a check mark draws in, the envelope comes back */
+#email-btn .check-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0;
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+}
+
+#email-btn.copied {
+    animation: mail-ring 0.6s ease-out;
+}
+
+#email-btn.copied .mail-icon {
+    animation: mail-send 2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#email-btn.copied .check-icon {
+    animation: mail-check 2s ease;
+}
+
+@keyframes mail-send {
+    0% { transform: none; opacity: 1; }
+    8% { transform: translate(-2px, 2px) scale(0.9); opacity: 1; }
+    25% { transform: translate(18px, -18px) rotate(-20deg) scale(0.5); opacity: 0; }
+    80% { transform: translate(-14px, 14px) scale(0.6); opacity: 0; }
+    100% { transform: none; opacity: 1; }
+}
+
+@keyframes mail-check {
+    0%, 22% { opacity: 0; stroke-dashoffset: 24; transform: translate(-50%, -50%) scale(0.6); }
+    30% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+    45% { stroke-dashoffset: 0; transform: translate(-50%, -50%) scale(1); }
+    72% { opacity: 1; stroke-dashoffset: 0; }
+    80%, 100% { opacity: 0; stroke-dashoffset: 0; transform: translate(-50%, -50%) scale(0.6); }
+}
+
+@keyframes mail-ring {
+    0% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.6); }
+    100% { box-shadow: 0 0 0 14px rgba(52, 152, 219, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #email-btn.copied,
+    #email-btn.copied .mail-icon,
+    #email-btn.copied .check-icon {
+        animation: none;
+    }
+}
+
 /* GLASS CARDS & SHELF */
 /* GLASS CARDS & SHELF */
 .grid-shelf {
