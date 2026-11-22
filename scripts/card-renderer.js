@@ -59,93 +59,73 @@ function renderCards(containerId, items) {
 
 function setupCollapsible(containerId) {
     const container = document.getElementById(containerId);
-    if (!container) return;
+    if (!container || !container.querySelector('.card')) return;
 
-    // We assume cards are mostly uniform height (controlled by CSS).
-    // Execute immediately to avoid flash of expanded content.
-    const cards = container.querySelectorAll('.card');
-    if (cards.length === 0) return;
+    const getIcon = (id) => `
+        <svg width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <use href="#${id}"></use>
+        </svg>
+    `;
+    const arrowDown = getIcon('icon-arrow-down');
+    const arrowUp = getIcon('icon-arrow-up');
 
-    // Determine grid Layout 
-    // We want to show the first row.
-    const firstCard = cards[0];
-    const cardHeight = firstCard.offsetHeight;
-    const gap = 32; // 2rem gap from CSS
+    const btn = document.createElement('button');
+    btn.className = 'section-expand-btn';
+    btn.innerHTML = arrowDown;
+    btn.setAttribute('aria-label', 'Show more');
+    container.parentNode.insertBefore(btn, container.nextSibling);
 
-    // Calculate the threshold. 
-    // We want to show 1 full row + 0.75 of the second row (better visibility)
-    const visibleHeight = (cardHeight * 1.75) + gap;
+    let expanded = false;
 
-    if (container.scrollHeight > visibleHeight + 10) {
-        // It needs collapsing
-        container.classList.add('collapsed');
-        container.style.maxHeight = `${visibleHeight}px`;
+    // Height showing the first row plus 3/4 of the second one
+    const collapsedHeight = () => {
+        const cardHeight = container.querySelector('.card').offsetHeight;
+        const gap = parseFloat(getComputedStyle(container).rowGap) || 0;
+        return cardHeight * 1.75 + gap;
+    };
 
-        // Add button
-        const btn = document.createElement('button');
-        btn.className = 'section-expand-btn';
+    // Re-evaluated on every resize: the number of columns, so of rows, changes with the width
+    const update = () => {
+        // scrollHeight includes the clipped part, so no need to un-collapse to measure
+        const fullHeight = container.scrollHeight;
+        const limit = collapsedHeight();
 
-        // Icon Helpers
-        const getIcon = (id) => `
-            <svg width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <use href="#${id}"></use>
-            </svg>
-        `;
+        if (fullHeight <= limit + 10) {
+            // Everything fits: no button
+            btn.hidden = true;
+            container.classList.remove('collapsed');
+            container.style.maxHeight = '';
+            return;
+        }
 
-        // Down Arrow (Show More)
-        const arrowDown = getIcon('icon-arrow-down');
-        // Up Arrow (Show Less)
-        const arrowUp = getIcon('icon-arrow-up');
+        btn.hidden = false;
+        if (expanded) {
+            container.classList.remove('collapsed');
+            container.style.maxHeight = `${fullHeight}px`;
+        } else {
+            container.classList.add('collapsed');
+            container.style.maxHeight = `${limit}px`;
+        }
+    };
 
-        btn.innerHTML = arrowDown;
-        btn.setAttribute('aria-label', 'Show more');
+    btn.addEventListener('click', () => {
+        expanded = !expanded;
+        btn.classList.toggle('expanded', expanded);
+        btn.innerHTML = expanded ? arrowUp : arrowDown;
+        btn.setAttribute('aria-label', expanded ? 'Show less' : 'Show more');
+        update();
 
-        // Insert button after container
-        container.parentNode.insertBefore(btn, container.nextSibling);
-
-        btn.addEventListener('click', () => {
-            const isCollapsed = container.classList.contains('collapsed');
-
-            if (isCollapsed) {
-                // Expand
-                container.classList.remove('collapsed');
-                container.style.maxHeight = `${container.scrollHeight}px`;
-                btn.classList.add('expanded');
-                btn.innerHTML = arrowUp;
-            } else {
-                // Collapse
-                // Recalculate height in case of window resize or layout shift
-                const currentFirstCard = container.querySelector('.card');
-                const currentHeight = currentFirstCard ? currentFirstCard.offsetHeight : cardHeight;
-                const currentVisibleHeight = (currentHeight * 1.75) + gap;
-
-                container.classList.add('collapsed');
-                container.style.maxHeight = `${currentVisibleHeight}px`;
-                btn.classList.remove('expanded');
-                btn.innerHTML = arrowDown;
-
-                // Smooth scroll back to top of section if we are way down
-                const sectionTop = container.offsetTop - 100; // navbar offset
-                if (window.scrollY > sectionTop) {
-                    window.scrollTo({ top: sectionTop, behavior: 'smooth' });
-                }
+        if (!expanded) {
+            // Scroll back to the section if we are below it
+            const sectionTop = container.offsetTop - 100; // navbar offset
+            if (window.scrollY > sectionTop) {
+                window.scrollTo({ top: sectionTop, behavior: 'smooth' });
             }
-        });
+        }
+    });
 
-        // Update max-height on window resize to handle grid column changes (3 -> 2 -> 1)
-        window.addEventListener('resize', () => {
-            if (container.classList.contains('collapsed')) {
-                // Re-measure first row height in case it changed
-                const newFirstCard = container.querySelector('.card');
-                if (newFirstCard) {
-                    const newHeight = (newFirstCard.offsetHeight * 1.75) + gap;
-                    container.style.maxHeight = `${newHeight}px`;
-                }
-            } else {
-                // If expanded, update max-height to fit content (responsive wrapping)
-                // Actually, if expanded, we can just remove max-height or set to scrollHeight
-                container.style.maxHeight = `${container.scrollHeight}px`;
-            }
-        });
-    }
+    update();
+    window.addEventListener('resize', update);
+    // Images and fonts loading late can change the card height
+    window.addEventListener('load', update);
 }
