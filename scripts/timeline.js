@@ -1,4 +1,5 @@
-// Career timeline: one bar per position on a year axis, a detail panel for the selected one.
+// Career timeline under the work cards: a line with one dot per position (at its start year).
+// Hover, focus or click a dot: its period lights up on the line and the matching card above is highlighted.
 // Data comes from portfolioData.work (start / end years, end null = still going).
 (function () {
     const now = new Date();
@@ -8,151 +9,89 @@
         const root = document.getElementById('work-timeline');
         if (!root || typeof portfolioData === 'undefined') return;
 
-        // Chronological order, oldest first
+        // Keep the card index (cards are rendered in portfolioData.work order), then sort by date
         const items = portfolioData.work
+            .map((item, cardIndex) => ({ ...item, cardIndex, endValue: item.end ?? nowYear }))
             .filter(item => typeof item.start === 'number')
-            .map(item => ({ ...item, endValue: item.end ?? nowYear }))
             .sort((a, b) => a.start - b.start);
         if (!items.length) return;
 
-        // Lanes: a position goes on the first lane where it does not overlap the previous bar
-        const laneEnds = [];
-        items.forEach(item => {
-            let lane = laneEnds.findIndex(end => item.start >= end);
-            if (lane === -1) lane = laneEnds.length;
-            laneEnds[lane] = item.endValue;
-            item.lane = lane;
-        });
-
-        const minYear = Math.min(...items.map(i => i.start));
-        const maxYear = nowYear + 0.6;
+        const minYear = Math.min(...items.map(i => i.start)) - 0.3;
+        const maxYear = nowYear + 0.3;
         const pos = year => ((year - minYear) / (maxYear - minYear)) * 100;
 
-        const ticks = [];
-        for (let y = minYear; y <= Math.floor(nowYear); y++) ticks.push(y);
+        const dots = items.map((item, i) => `
+            <button type="button" class="tl-dot${i % 2 ? ' below' : ''}" data-index="${i}" style="--left:${pos(item.start)}%; --delay:${i * 120}ms"
+                aria-label="${item.title}, ${item.meta}">
+                <span class="tl-dot-name">${item.short || item.title}</span>
+                <span class="tl-dot-year">${item.start}</span>
+            </button>`).join('');
 
-        const bars = items.map((item, i) => {
-            const left = pos(item.start);
-            const width = pos(item.endValue) - left;
-            const ongoing = item.end === null || item.end === undefined;
-            return `
-                <button type="button" class="tl-bar${ongoing ? ' ongoing' : ''}" data-index="${i}"
-                    style="--left:${left}%; --width:${width}%; --lane:${item.lane}; --delay:${i * 90}ms"
-                    aria-label="${item.title}, ${item.meta}" aria-pressed="false">
-                    <span class="tl-bar-label">${item.short || item.title}</span>
-                </button>`;
-        }).join('');
-
-        const tickHtml = ticks.map(y => `
-            <span class="tl-tick" style="--left:${pos(y)}%"><span>${y}</span></span>`).join('');
-
-        root.style.setProperty('--lanes', laneEnds.length);
         root.innerHTML = `
-            <div class="tl-chart">
-                <div class="tl-lanes">
-                    ${tickHtml}
-                    ${bars}
-                    <span class="tl-now" style="--left:${pos(nowYear)}%"><span>Now</span></span>
-                </div>
-                <div class="tl-axis"></div>
-            </div>
-            <article class="tl-detail" aria-live="polite">
-                <div class="tl-detail-img"><img alt=""></div>
-                <div class="tl-detail-body">
-                    <span class="tl-detail-meta"></span>
-                    <h3 class="tl-detail-title"></h3>
-                    <p class="tl-detail-desc"></p>
-                    <div class="tl-detail-actions">
-                        <a class="tl-detail-link" target="_blank" rel="noopener">Visit
-                            <svg width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round"><use href="#icon-external-link"></use></svg>
-                        </a>
-                        <div class="tl-nav">
-                            <button type="button" class="tl-prev" aria-label="Previous position">&#8592;</button>
-                            <span class="tl-count"></span>
-                            <button type="button" class="tl-next" aria-label="Next position">&#8594;</button>
-                        </div>
-                    </div>
-                </div>
-            </article>`;
+            <div class="tl-line">
+                <span class="tl-range"></span>
+                ${dots}
+                <span class="tl-now" style="--left:${pos(nowYear)}%"><span>Now</span></span>
+            </div>`;
 
-        const barEls = [...root.querySelectorAll('.tl-bar')];
-        const detail = root.querySelector('.tl-detail');
-        const img = detail.querySelector('img');
-        const meta = detail.querySelector('.tl-detail-meta');
-        const title = detail.querySelector('.tl-detail-title');
-        const desc = detail.querySelector('.tl-detail-desc');
-        const link = detail.querySelector('.tl-detail-link');
-        const count = detail.querySelector('.tl-count');
-        const prev = detail.querySelector('.tl-prev');
-        const next = detail.querySelector('.tl-next');
+        const range = root.querySelector('.tl-range');
+        const dotEls = [...root.querySelectorAll('.tl-dot')];
+        const cards = () => [...document.querySelectorAll('#work-grid .card')];
 
-        let current = -1;
-        function select(index, focus) {
-            index = Math.max(0, Math.min(items.length - 1, index));
-            if (index === current) return;
-            current = index;
-            const item = items[index];
+        let pinned = -1;
 
-            barEls.forEach((bar, i) => {
-                bar.classList.toggle('active', i === index);
-                bar.setAttribute('aria-pressed', String(i === index));
-            });
-            if (focus) barEls[index].focus();
-
-            // Replay the entry animation
-            detail.classList.remove('swap');
-            void detail.offsetWidth;
-            detail.classList.add('swap');
-
-            img.src = item.image;
-            img.alt = item.title;
-            meta.textContent = item.meta;
-            title.textContent = item.title;
-            desc.textContent = item.description;
-            if (item.link) {
-                link.href = item.link;
-                link.target = item.external ? '_blank' : '';
-                link.hidden = false;
-            } else {
-                link.hidden = true;
+        function show(index) {
+            dotEls.forEach((dot, i) => dot.classList.toggle('active', i === index));
+            cards().forEach(card => card.classList.remove('tl-highlight'));
+            if (index < 0) {
+                range.style.opacity = '0';
+                return;
             }
-            count.textContent = `${index + 1} / ${items.length}`;
-            prev.disabled = index === 0;
-            next.disabled = index === items.length - 1;
+            const item = items[index];
+            range.style.left = `${pos(item.start)}%`;
+            range.style.width = `${pos(item.endValue) - pos(item.start)}%`;
+            range.style.opacity = '1';
+            const card = cards()[item.cardIndex];
+            if (card) card.classList.add('tl-highlight');
         }
 
-        barEls.forEach((bar, i) => {
-            bar.addEventListener('click', () => select(i));
-            bar.addEventListener('keydown', e => {
-                if (e.key === 'ArrowRight') { e.preventDefault(); select(i + 1, true); }
-                if (e.key === 'ArrowLeft') { e.preventDefault(); select(i - 1, true); }
+        dotEls.forEach((dot, i) => {
+            dot.addEventListener('mouseenter', () => show(i));
+            dot.addEventListener('mouseleave', () => show(pinned));
+            dot.addEventListener('focus', () => show(i));
+            dot.addEventListener('blur', () => show(pinned));
+            dot.addEventListener('click', () => {
+                pinned = pinned === i ? -1 : i;
+                show(pinned === -1 ? i : pinned);
+                // On a phone the card may be folded away or off screen: unfold, then bring it into view
+                const card = cards()[items[i].cardIndex];
+                if (pinned === i && card) {
+                    const grid = document.getElementById('work-grid');
+                    const expandBtn = grid.nextElementSibling;
+                    if (grid.classList.contains('collapsed') && card.offsetTop + card.offsetHeight > grid.clientHeight
+                        && expandBtn && expandBtn.classList.contains('section-expand-btn')) {
+                        expandBtn.click();
+                    }
+                    const rect = card.getBoundingClientRect();
+                    if (rect.top < 80 || rect.bottom > window.innerHeight) {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
+            dot.addEventListener('keydown', e => {
+                if (e.key === 'ArrowRight' && dotEls[i + 1]) { e.preventDefault(); dotEls[i + 1].focus(); }
+                if (e.key === 'ArrowLeft' && dotEls[i - 1]) { e.preventDefault(); dotEls[i - 1].focus(); }
             });
         });
-        prev.addEventListener('click', () => select(current - 1));
-        next.addEventListener('click', () => select(current + 1));
 
-        // A label that does not fit its bar is hidden rather than cut ("Fr...")
-        const fitLabels = () => barEls.forEach(bar => {
-            const label = bar.querySelector('.tl-bar-label');
-            bar.classList.remove('no-label');
-            bar.classList.toggle('no-label', label.scrollWidth > label.clientWidth + 1);
-        });
-        fitLabels();
-        window.addEventListener('resize', fitLabels);
-        if (document.fonts) document.fonts.ready.then(fitLabels);
-
-        // Most recent position shown first
-        select(items.length - 1);
-
-        // Bars grow in when the timeline scrolls into view
+        // Dots pop in one after the other when the line scrolls into view
         if ('IntersectionObserver' in window) {
             const observer = new IntersectionObserver(entries => {
                 if (entries.some(e => e.isIntersecting)) {
                     root.classList.add('visible');
                     observer.disconnect();
                 }
-            }, { threshold: 0.2 });
+            }, { threshold: 0.3 });
             observer.observe(root);
         } else {
             root.classList.add('visible');
