@@ -43,7 +43,8 @@ function renderCards(containerId, items) {
                 </div>
                 <div class="card-content">
                     <h3>${item.title}</h3>
-                    <p>${item.description}</p>
+                    <p class="card-desc">${item.description}</p>
+                    <button type="button" class="card-more" hidden aria-expanded="false">More</button>
                     <div class="card-footer">
                         <span class="meta">${item.meta}</span>
                         ${item.link && !item.noHover ? arrowSVG : ''}
@@ -53,8 +54,48 @@ function renderCards(containerId, items) {
         `;
     }).join('');
 
+    setupMoreButtons(container);
     // Initialize collapsible state
     setupCollapsible(containerId);
+}
+
+// "More" on a card whose description is cut by the clamp, "Less" to close it again
+function setupMoreButtons(container) {
+    const cards = [...container.querySelectorAll('.card')];
+    const refresh = () => {
+        cards.forEach(card => {
+            const desc = card.querySelector('.card-desc');
+            const btn = card.querySelector('.card-more');
+            if (!desc || !btn || card.classList.contains('expanded')) return;
+            btn.hidden = desc.scrollHeight <= desc.clientHeight + 1;
+        });
+        // Every row as tall as the tallest card, so all cards have the same size.
+        // (On a phone the CSS keeps rows automatic: clamps give the cards one height there.)
+        container.style.gridAutoRows = '';
+        const tallest = Math.max(...cards.filter(c => !c.classList.contains('expanded')).map(c => c.offsetHeight));
+        if (tallest > 0) container.style.gridAutoRows = `${tallest}px`;
+        container.dispatchEvent(new Event('cards-resized'));
+    };
+
+    container.addEventListener('click', e => {
+        const btn = e.target.closest('.card-more');
+        if (!btn) return;
+        // The card itself is a link: the button must not follow it
+        e.preventDefault();
+        e.stopPropagation();
+        const card = btn.closest('.card');
+        const open = !card.classList.contains('expanded');
+        card.classList.toggle('expanded', open);
+        btn.textContent = open ? 'Less' : 'More';
+        btn.setAttribute('aria-expanded', String(open));
+        // On a phone the card grows: let the + button logic re-measure
+        container.dispatchEvent(new Event('cards-resized'));
+    });
+
+    refresh();
+    window.addEventListener('resize', refresh);
+    window.addEventListener('load', refresh);
+    if (document.fonts) document.fonts.ready.then(refresh);
 }
 
 function setupCollapsible(containerId) {
@@ -130,6 +171,7 @@ function setupCollapsible(containerId) {
 
     update();
     window.addEventListener('resize', update);
+    container.addEventListener('cards-resized', update);
     // Images and fonts loading late can change the card height
     window.addEventListener('load', update);
 }
