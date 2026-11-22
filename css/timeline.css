@@ -212,11 +212,21 @@
     border-width: 2px;
 }
 
-/* The card next to each dot already says the name and years */
+/* No room for the names (the card next to each dot has it), the start year sits above the dot */
 .timeline.vertical .tl-dot-name,
-.timeline.vertical .tl-dot-year,
 .timeline.vertical .tl-now span {
     display: none;
+}
+
+.timeline.vertical .tl-dot-year {
+    top: auto;
+    bottom: calc(100% + 5px);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 0 2px;
+    background: var(--color-bg);
+    border-radius: 3px;
 }
 
 .timeline.vertical .tl-now {
