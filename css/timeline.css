@@ -1,21 +1,62 @@
-/* CAREER TIMELINE: a line with one dot per position, under the work cards */
+/* CAREER TIMELINE: one dot per work card, horizontal under the row, vertical on a phone */
+
+/* Wide screens: the card row never wraps, it scrolls (or drags) sideways with its timeline */
+@media (min-width: 721px) {
+    .work-scroller {
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin: 0 -1rem;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(52, 152, 219, 0.4) transparent;
+    }
+
+    .work-track {
+        width: max-content;
+        margin: 0 auto;
+    }
+
+    #work-grid {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 212px;
+        justify-content: start;
+        width: auto;
+        margin: 0;
+        padding-bottom: 0;
+    }
+
+    .work-scroller.draggable {
+        cursor: grab;
+    }
+
+    .work-scroller.dragging {
+        cursor: grabbing;
+        user-select: none;
+    }
+
+    .work-scroller.dragging .card {
+        pointer-events: none;
+    }
+}
 
 .timeline {
-    padding: 3.25rem 1.5rem 3.5rem;
-    margin-bottom: 1rem;
+    position: relative;
+    padding: 3rem 1rem 3.25rem;
 }
 
 .tl-line {
     position: relative;
     height: 3px;
     border-radius: 2px;
-    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.35) 4%, rgba(52, 152, 219, 0.35) 96%, transparent);
+    background: linear-gradient(90deg, rgba(52, 152, 219, 0.35) 92%, transparent);
 }
 
 /* Period of the hovered / selected position, lit on the line */
 .tl-range {
     position: absolute;
     top: -1px;
+    left: var(--from, 0);
+    width: var(--size, 0);
     height: 5px;
     border-radius: 3px;
     background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
@@ -27,7 +68,7 @@
 .tl-dot {
     position: absolute;
     top: 50%;
-    left: var(--left);
+    left: var(--pos, 0);
     width: 18px;
     height: 18px;
     padding: 0;
@@ -63,7 +104,7 @@
     outline-offset: 4px;
 }
 
-/* Name on one side of the line, year on the other, alternating so close dots do not collide */
+/* Name above the line, start year under it */
 .tl-dot-name,
 .tl-dot-year {
     position: absolute;
@@ -90,16 +131,6 @@
     color: var(--color-meta);
 }
 
-.tl-dot.below .tl-dot-name {
-    bottom: auto;
-    top: calc(100% + 12px);
-}
-
-.tl-dot.below .tl-dot-year {
-    top: auto;
-    bottom: calc(100% + 12px);
-}
-
 .tl-dot:hover .tl-dot-name,
 .tl-dot.active .tl-dot-name {
     color: var(--color-primary);
@@ -109,7 +140,7 @@
 .tl-now {
     position: absolute;
     top: 50%;
-    left: var(--left);
+    left: 0;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -138,30 +169,59 @@
 
 /* Card matching the hovered / selected dot */
 .card.tl-highlight {
-    transform: translateY(-5px);
     border-color: var(--color-primary);
     box-shadow: 0 0 0 2px var(--color-primary), var(--glass-shadow);
 }
 
-@media (max-width: 720px) {
-    .timeline {
-        padding: 3rem 0.75rem 3.25rem;
-    }
+/* Phone: vertical line along the left of the card list, inside it */
+#work-grid.has-timeline {
+    position: relative;
+    padding-left: 2.5rem;
+}
 
-    .tl-dot {
-        width: 14px;
-        height: 14px;
-        border-width: 2px;
-    }
+.timeline.vertical {
+    position: absolute;
+    top: 1rem;
+    bottom: 1rem;
+    left: 0.5rem;
+    width: 1.5rem;
+    padding: 0;
+}
 
-    .tl-dot-name {
-        font-size: 0.7rem;
-    }
+.timeline.vertical .tl-line {
+    width: 3px;
+    height: 100%;
+    margin: 0 auto;
+    background: linear-gradient(180deg, rgba(52, 152, 219, 0.35) 92%, transparent);
+}
 
-    /* Dots are too close for both labels: names only, the year is on the card */
-    .tl-dot-year {
-        display: none;
-    }
+.timeline.vertical .tl-range {
+    top: var(--from, 0);
+    left: -1px;
+    width: 5px;
+    height: var(--size, 0);
+    background: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
+    transition: top 0.4s cubic-bezier(0.22, 1, 0.36, 1), height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+}
+
+.timeline.vertical .tl-dot {
+    top: var(--pos, 0);
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+}
+
+/* The card next to each dot already says the name and years */
+.timeline.vertical .tl-dot-name,
+.timeline.vertical .tl-dot-year,
+.timeline.vertical .tl-now span {
+    display: none;
+}
+
+.timeline.vertical .tl-now {
+    top: 0;
+    left: 50%;
 }
 
 @media (prefers-reduced-motion: reduce) {
