@@ -5,6 +5,7 @@ const portfolioData = {
             description: "Software Mobile Engineer",
             meta: "2025 - Present",
             image: "icons/mobile_platforms.svg",
+            imageDark: "icons/mobile_platforms_dark.svg",
             link: "https://www.malt.fr/profile/briangiannini",
             external: true
         },
@@ -21,6 +22,7 @@ const portfolioData = {
             description: "Hardware wallet security & Android integration",
             meta: "2022 - 2023",
             image: "img/shelf/work_ledger.webp",
+            darkInvert: true,
             link: "https://shop.ledger.com/pages/ledger-atom",
             external: true
         },
@@ -65,7 +67,7 @@ const portfolioData = {
             image: "img/shelf/project_gen_ai_video.webp",
             link: "projects/collaborative-ai-gen-tv/",
             external: false,
-            blendC: "blend-multiply"
+            cover: "center 30%"
         },
         {
             title: "Diagnosly",
@@ -80,6 +82,7 @@ const portfolioData = {
             description: "Action game mechanic prototype",
             meta: "Oct 2020",
             image: "img/shelf/project_unity.webp",
+            darkInvert: true,
             link: "https://youtu.be/Mw7aGrnBltc",
             external: true
         },
@@ -88,6 +91,7 @@ const portfolioData = {
             description: "Half-Life Alyx mod verifying classic horror tropes",
             meta: "May 2020",
             image: "img/shelf/project_half-life-alyx.webp",
+            darkInvert: true,
             link: "https://steamcommunity.com/sharedfiles/filedetails/?id=2104498553",
             external: true
         },
@@ -96,6 +100,7 @@ const portfolioData = {
             description: "Falcon 9 simulation montage in KSP",
             meta: "Apr 2017",
             image: "img/shelf/project_spaceX.webp",
+            darkInvert: true,
             link: "https://youtu.be/qOMNfp0QcUA",
             external: true
         },
@@ -115,16 +120,17 @@ const portfolioData = {
             title: "War4Craft",
             description: "Warcraft models in Starcraft 2 engine",
             meta: "Feb 2013",
-            image: "img/shelf/project_starcraft.webp",
+            image: "img/shelf/project_war4craft.webp",
             link: "projects/war4craft/",
             external: false,
-            blendC: "blend-multiply"
+            cover: "center"
         },
         {
             title: "Bichat 3D",
             description: "High school recreation in Source Engine",
             meta: "May 2009",
             image: "img/shelf/project_source-engine.webp",
+            imageDark: "img/shelf/project_source-engine_dark.webp",
             link: "https://youtu.be/4O-YM0Iub0Y",
             external: true
         }

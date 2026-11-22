@@ -546,9 +546,42 @@ p.tagline {
 
 /* Dark Mode specific image adjustments */
 [data-theme="dark"] .card-img-wrapper {
-    background: rgba(255, 255, 255, 0.15);
-    /* Light translucent white to contrast with black logos */
+    background: rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Black logos turn light in dark mode, colours kept (hue rotated back) */
+[data-theme="dark"] .card-img-wrapper img.dark-invert {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* A card with its own dark-mode picture (imageDark) */
+.card-img-wrapper img.img-dark,
+[data-theme="dark"] .card-img-wrapper img.img-light {
+    display: none;
+}
+
+[data-theme="dark"] .card-img-wrapper img.img-dark {
+    display: block;
+}
+
+/* Multiply only works on a light background */
+[data-theme="dark"] .blend-multiply {
+    mix-blend-mode: normal;
+}
+
+/* A picture filling the whole image area */
+.card-img-wrapper.cover {
+    padding: 0;
+}
+
+.card-img-wrapper.cover img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    border-radius: 0;
 }
 
 .card-img-wrapper img {

@@ -16,7 +16,10 @@ function renderCards(containerId, items) {
     container.innerHTML = items.map(item => {
         const isExternal = item.external;
         const noHoverClass = item.noHover ? 'no-hover' : '';
-        const blendClass = item.blendC ? item.blendC : '';
+        const imgClasses = [item.blendC, item.darkInvert ? 'dark-invert' : ''].filter(Boolean).join(' ');
+        // "cover": a picture filling the whole image area, the value is its object-position
+        const coverClass = item.cover ? 'cover' : '';
+        const coverStyle = item.cover ? `style="object-position: ${item.cover}"` : '';
         const targetAttr = isExternal ? 'target="_blank"' : '';
         const hrefAttr = item.link ? `href="${item.link}"` : '';
 
@@ -38,8 +41,9 @@ function renderCards(containerId, items) {
 
         return `
             <${tag} class="card glass-card ${noHoverClass}" ${hrefAttr} ${targetAttr}>
-                <div class="card-img-wrapper">
-                    <img src="${item.image}" alt="${item.title}" class="${blendClass}">
+                <div class="card-img-wrapper ${coverClass}">
+                    <img src="${item.image}" alt="${item.title}" class="${imgClasses}${item.imageDark ? ' img-light' : ''}" ${coverStyle}>
+                    ${item.imageDark ? `<img src="${item.imageDark}" alt="" class="${imgClasses} img-dark" ${coverStyle}>` : ''}
                 </div>
                 <div class="card-content">
                     <h3>${item.title}</h3>
@@ -131,7 +135,8 @@ function setupCollapsible(containerId) {
 
     // Re-evaluated on every resize: the number of columns, so of rows, changes with the width
     const update = () => {
-        // scrollHeight includes the clipped part, so no need to un-collapse to measure
+        // scrollHeight includes the clipped part. Expanded, the bottom padding comes back first.
+        if (expanded) container.classList.remove('collapsed');
         const fullHeight = container.scrollHeight;
         const limit = collapsedHeight();
 
