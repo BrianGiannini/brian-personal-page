@@ -18,7 +18,8 @@
 
         const minYear = Math.min(...items.map(i => i.start)) - 0.3;
         const maxYear = nowYear + 0.3;
-        const pos = year => ((year - minYear) / (maxYear - minYear)) * 100;
+        // Newest on the left, like the cards above (most recent card first)
+        const pos = year => ((maxYear - year) / (maxYear - minYear)) * 100;
 
         const dots = items.map((item, i) => `
             <button type="button" class="tl-dot${i % 2 ? ' below' : ''}" data-index="${i}" style="--left:${pos(item.start)}%; --delay:${i * 120}ms"
@@ -48,8 +49,8 @@
                 return;
             }
             const item = items[index];
-            range.style.left = `${pos(item.start)}%`;
-            range.style.width = `${pos(item.endValue) - pos(item.start)}%`;
+            range.style.left = `${pos(item.endValue)}%`;
+            range.style.width = `${pos(item.start) - pos(item.endValue)}%`;
             range.style.opacity = '1';
             const card = cards()[item.cardIndex];
             if (card) card.classList.add('tl-highlight');
