@@ -138,8 +138,10 @@ function setupCollapsible(containerId) {
         if (expanded) container.classList.remove('collapsed');
         const fullHeight = container.scrollHeight;
         const limit = collapsedHeight();
+        // data-collapse="phone": a single row on wide screens, folding only makes sense on a phone
+        const phoneOnly = container.dataset.collapse === 'phone' && !window.matchMedia('(max-width: 720px)').matches;
 
-        if (fullHeight <= limit + 10) {
+        if (phoneOnly || fullHeight <= limit + 10) {
             // Everything fits: no button
             btn.hidden = true;
             container.classList.remove('collapsed');
