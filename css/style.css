@@ -154,7 +154,7 @@ h1 {
 
 h2.section-title {
     font-size: clamp(1.8rem, 3vw, 2.5rem);
-    margin: 4rem 0 2rem;
+    margin: 3rem 0 1.5rem;
     position: relative;
     display: inline-block;
 }
@@ -170,10 +170,10 @@ h2.section-title::after {
 }
 
 p.tagline {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 500;
     color: var(--color-text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .highlight-link {
@@ -202,12 +202,11 @@ p.tagline {
 
 /* HERO SECTION */
 .hero-section {
-    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 80px;
+    padding-top: 110px;
     /* Offset for sticky header */
 }
 
@@ -218,9 +217,10 @@ p.tagline {
 
 .profile-frame {
     position: relative;
-    width: 160px;
-    height: 160px;
-    margin: 0 auto 2rem;
+    width: 128px;
+    height: 128px;
+    flex-shrink: 0;
+    margin: 0 auto 1.5rem;
 }
 
 .portrait {
@@ -230,6 +230,37 @@ p.tagline {
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     border: 3px solid var(--color-bg);
+}
+
+/* Desktop: portrait beside the text instead of stacked above it */
+@media (min-width: 900px) {
+    .hero-content {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 2.5rem;
+        align-items: center;
+        text-align: left;
+    }
+
+    .profile-frame {
+        grid-row: 1 / span 4;
+        width: 168px;
+        height: 168px;
+        margin: 0;
+    }
+
+    .hero-content .bio {
+        margin-left: 0;
+    }
+
+    .hero-content .social-links {
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
 }
 
 .status-indicator {
@@ -245,9 +276,9 @@ p.tagline {
 }
 
 .bio {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--color-text-muted);
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -405,6 +436,38 @@ p.tagline {
     }
 
     /* Arrow handled by card-footer now */
+}
+
+/* Compact shelf (Career Work): the whole career fits on one row on desktop */
+@media (min-width: 1081px) {
+    .grid-shelf.compact {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+    }
+
+    .grid-shelf.compact .card-img-wrapper {
+        height: 110px;
+        padding: 0.75rem;
+    }
+
+    .grid-shelf.compact .card-content {
+        padding: 1rem;
+    }
+
+    .grid-shelf.compact h3 {
+        font-size: 1.05rem;
+        line-height: 1.3;
+    }
+
+    .grid-shelf.compact p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
+    }
+
+    .grid-shelf.compact .meta {
+        font-size: 0.72rem;
+    }
 }
 
 /* Space before the footer, the last section (was the References shelf) */
