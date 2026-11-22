@@ -545,24 +545,10 @@ p.tagline {
 }
 
 /* Dark Mode specific image adjustments */
+/* Dark mode: logos keep their official colours on a light panel, like in light mode */
 [data-theme="dark"] .card-img-wrapper {
-    background: rgba(255, 255, 255, 0.05);
+    background: #eef2f6;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Black logos turn light in dark mode, colours kept (hue rotated back) */
-[data-theme="dark"] .card-img-wrapper img.dark-invert {
-    filter: invert(1) hue-rotate(180deg);
-}
-
-/* A card with its own dark-mode picture (imageDark) */
-.card-img-wrapper img.img-dark,
-[data-theme="dark"] .card-img-wrapper img.img-light {
-    display: none;
-}
-
-[data-theme="dark"] .card-img-wrapper img.img-dark {
-    display: block;
 }
 
 /* Multiply only works on a light background */

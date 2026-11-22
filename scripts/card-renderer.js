@@ -16,7 +16,7 @@ function renderCards(containerId, items) {
     container.innerHTML = items.map(item => {
         const isExternal = item.external;
         const noHoverClass = item.noHover ? 'no-hover' : '';
-        const imgClasses = [item.blendC, item.darkInvert ? 'dark-invert' : ''].filter(Boolean).join(' ');
+        const imgClasses = item.blendC || '';
         // "cover": a picture filling the whole image area, the value is its object-position
         const coverClass = item.cover ? 'cover' : '';
         const coverStyle = item.cover ? `style="object-position: ${item.cover}"` : '';
@@ -42,8 +42,7 @@ function renderCards(containerId, items) {
         return `
             <${tag} class="card glass-card ${noHoverClass}" ${hrefAttr} ${targetAttr}>
                 <div class="card-img-wrapper ${coverClass}">
-                    <img src="${item.image}" alt="${item.title}" class="${imgClasses}${item.imageDark ? ' img-light' : ''}" ${coverStyle}>
-                    ${item.imageDark ? `<img src="${item.imageDark}" alt="" class="${imgClasses} img-dark" ${coverStyle}>` : ''}
+                    <img src="${item.image}" alt="${item.title}" class="${imgClasses}" ${coverStyle}>
                 </div>
                 <div class="card-content">
                     <h3>${item.title}</h3>
