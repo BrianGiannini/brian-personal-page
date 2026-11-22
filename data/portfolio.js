@@ -62,10 +62,9 @@ const portfolioData = {
             title: "Collab AI TV",
             description: "Stream-controlled AI video generation",
             meta: "Nov 2025",
-            image: "img/shelf/project_gen_ai_video.webp",
+            image: "img/shelf/project_collab-ai-tv.svg",
             link: "projects/collaborative-ai-gen-tv/",
-            external: false,
-            cover: "center 30%"
+            external: false
         },
         {
             title: "Diagnosly",
@@ -117,8 +116,7 @@ const portfolioData = {
             meta: "Feb 2013",
             image: "img/shelf/project_war4craft.webp",
             link: "projects/war4craft/",
-            external: false,
-            cover: "center"
+            external: false
         },
         {
             title: "Bichat 3D",
