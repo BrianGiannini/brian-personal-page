@@ -77,11 +77,15 @@ function setupCollapsible(containerId) {
 
     let expanded = false;
 
-    // Height showing the first row plus 3/4 of the second one
+    // Height showing the first row plus 3/4 of the second one. On a phone (one column) the
+    // cards are short, so three of them plus 3/4 of the fourth.
     const collapsedHeight = () => {
+        const style = getComputedStyle(container);
         const cardHeight = container.querySelector('.card').offsetHeight;
-        const gap = parseFloat(getComputedStyle(container).rowGap) || 0;
-        return cardHeight * 1.75 + gap;
+        const gap = parseFloat(style.rowGap) || 0;
+        const columns = style.gridTemplateColumns.split(' ').length;
+        const rows = columns === 1 ? 3 : 1;
+        return (cardHeight + gap) * rows + cardHeight * 0.75;
     };
 
     // Re-evaluated on every resize: the number of columns, so of rows, changes with the width
