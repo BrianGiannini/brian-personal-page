@@ -1,5 +1,4 @@
 function initCards() {
-    renderCards('work-grid', portfolioData.work);
     renderCards('projects-grid', portfolioData.projects);
 }
 

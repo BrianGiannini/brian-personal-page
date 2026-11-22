@@ -2,6 +2,9 @@ const portfolioData = {
     work: [
         {
             title: "Freelancing",
+            short: "Freelance",
+            start: 2025,
+            end: null,
             description: "Software Mobile Engineer",
             meta: "2025 - Present",
             image: "icons/mobile_platforms.svg",
@@ -10,6 +13,9 @@ const portfolioData = {
         },
         {
             title: "Criaphore",
+            short: "Criaphore",
+            start: 2023,
+            end: null,
             description: "Founder developing Agentic AI apps",
             meta: "2023 - Present",
             image: "img/shelf/work_criaphore.webp",
@@ -18,6 +24,9 @@ const portfolioData = {
         },
         {
             title: "Ledger Atom",
+            short: "Ledger",
+            start: 2022,
+            end: 2023,
             description: "Hardware wallet security & Android integration",
             meta: "2022 - 2023",
             image: "img/shelf/work_ledger.webp",
@@ -26,6 +35,9 @@ const portfolioData = {
         },
         {
             title: "SoftBank Robotics: Pepper & Plato",
+            short: "SoftBank",
+            start: 2019,
+            end: 2022,
             description: "Built the social interactions of Pepper, the humanoid robot, then the touchscreen interface of Plato, the food service robot used in restaurants",
             meta: "2019 - 2022",
             image: "img/shelf/work_pepper.webp",
@@ -34,6 +46,9 @@ const portfolioData = {
         },
         {
             title: "Thales",
+            short: "Thales",
+            start: 2015,
+            end: 2019,
             description: "Defense and security apps: tactical cartography and comms for special forces, the French Army's interoperable command system (SIA C2), and a national ID check app for law enforcement",
             meta: "2015 - 2019",
             image: "img/shelf/work_thales.webp",

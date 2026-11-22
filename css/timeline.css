@@ -1,0 +1,351 @@
+/* CAREER TIMELINE */
+
+.timeline {
+    --lane-height: 46px;
+    --lane-gap: 12px;
+    margin-bottom: 3rem;
+}
+
+.tl-chart {
+    position: relative;
+    padding: 1.75rem 1.5rem 2.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+}
+
+.tl-lanes {
+    position: relative;
+    height: calc(var(--lanes) * var(--lane-height) + (var(--lanes) - 1) * var(--lane-gap));
+}
+
+/* Axis line under the bars */
+.tl-axis {
+    position: relative;
+    height: 2px;
+    margin-top: 14px;
+    background: linear-gradient(90deg, transparent, var(--color-primary) 8%, var(--color-primary) 92%, transparent);
+    opacity: 0.35;
+}
+
+/* Year ticks: a faint vertical guide through the lanes, the year under the axis */
+.tl-tick {
+    position: absolute;
+    top: -6px;
+    bottom: -20px;
+    left: var(--left);
+    width: 1px;
+}
+
+.tl-tick::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-text-muted);
+    opacity: 0.18;
+}
+
+.tl-tick span {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    transform: translateX(-50%);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+/* "Now" marker with a pulsing dot */
+.tl-now {
+    position: absolute;
+    top: -10px;
+    bottom: -20px;
+    left: var(--left);
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--color-primary));
+}
+
+.tl-now::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.6);
+    animation: tl-pulse 2s infinite;
+}
+
+.tl-now span {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+}
+
+@keyframes tl-pulse {
+    70% { box-shadow: 0 0 0 10px rgba(52, 152, 219, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); }
+}
+
+/* Position bars */
+.tl-bar {
+    position: absolute;
+    top: calc(var(--lane) * (var(--lane-height) + var(--lane-gap)));
+    left: calc(var(--left) + 2px);
+    width: calc(var(--width) - 4px);
+    height: var(--lane-height);
+    display: flex;
+    align-items: center;
+    padding: 0 0.9rem;
+    border: 1px solid rgba(52, 152, 219, 0.45);
+    border-radius: var(--radius-md);
+    /* Opaque base so the year guides do not show through */
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.16), rgba(93, 173, 226, 0.08)), var(--card-solid);
+    color: var(--color-text-main);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    overflow: hidden;
+    transform-origin: left center;
+    transform: scaleX(0);
+    opacity: 0;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--delay),
+        opacity 0.4s ease var(--delay),
+        background var(--transition-fast), box-shadow var(--transition-fast),
+        border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.timeline.visible .tl-bar {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.tl-bar-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tl-bar.no-label .tl-bar-label {
+    visibility: hidden;
+}
+
+/* Still going: the bar fades out towards the future */
+.tl-bar.ongoing {
+    border-right-color: transparent;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    -webkit-mask-image: linear-gradient(90deg, #000 75%, rgba(0, 0, 0, 0.35));
+    mask-image: linear-gradient(90deg, #000 75%, rgba(0, 0, 0, 0.35));
+}
+
+.tl-bar:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 6px 18px rgba(52, 152, 219, 0.25);
+}
+
+.tl-bar.active {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent, #2980b9));
+    border-color: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(52, 152, 219, 0.45);
+}
+
+.tl-bar:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 3px;
+}
+
+/* Detail panel */
+.tl-detail {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    margin-top: 1.25rem;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+    overflow: hidden;
+    min-height: 190px;
+}
+
+.tl-detail.swap .tl-detail-img img,
+.tl-detail.swap .tl-detail-body > * {
+    animation: tl-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.tl-detail.swap .tl-detail-title { animation-delay: 40ms; }
+.tl-detail.swap .tl-detail-desc { animation-delay: 80ms; }
+.tl-detail.swap .tl-detail-actions { animation-delay: 120ms; }
+
+@keyframes tl-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+}
+
+/* Logos keep their official colours on a light panel, in both themes */
+.tl-detail-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: #eef2f6;
+}
+
+.tl-detail-img img {
+    max-width: 100%;
+    max-height: 130px;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+}
+
+.tl-detail-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.5rem 1.75rem;
+}
+
+.tl-detail-meta {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-meta);
+}
+
+.tl-detail-title {
+    font-size: 1.4rem;
+    line-height: 1.25;
+}
+
+.tl-detail-desc {
+    color: var(--color-text-muted);
+    max-width: 65ch;
+}
+
+.tl-detail-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 0.75rem;
+}
+
+.tl-detail-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.tl-detail-link:hover {
+    color: var(--color-accent, #2980b9);
+}
+
+.tl-detail-link[hidden] {
+    display: none;
+}
+
+.tl-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-left: auto;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+}
+
+.tl-nav button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(52, 152, 219, 0.45);
+    background: transparent;
+    color: var(--color-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.tl-nav button:hover:not(:disabled) {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.tl-nav button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+/* Phone: shorter bars, labels hidden on bars too narrow, detail stacked */
+@media (max-width: 720px) {
+    .timeline {
+        --lane-height: 36px;
+        --lane-gap: 8px;
+    }
+
+    .tl-chart {
+        padding: 1.5rem 0.9rem 2.25rem;
+    }
+
+    .tl-bar {
+        padding: 0 0.5rem;
+        font-size: 0.72rem;
+        justify-content: center;
+    }
+
+    .tl-tick span {
+        font-size: 0.62rem;
+    }
+
+    /* Only every other year on a phone */
+    .tl-tick:nth-of-type(even) span {
+        display: none;
+    }
+
+    .tl-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .tl-detail-img {
+        height: 120px;
+        padding: 1rem;
+    }
+
+    .tl-detail-img img {
+        max-height: 88px;
+    }
+
+    .tl-detail-body {
+        padding: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tl-bar,
+    .tl-detail.swap .tl-detail-img img,
+    .tl-detail.swap .tl-detail-body > *,
+    .tl-now::after {
+        transition: none;
+        animation: none;
+    }
+}
