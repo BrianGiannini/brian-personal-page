@@ -1,7 +1,7 @@
 function initCards() {
-    renderCards('work-grid', portfolioData.work);
-    renderCards('projects-grid', portfolioData.projects);
-    renderCards('personal-grid', portfolioData.personal);
+    hydrateOrRender('work-grid', portfolioData.work);
+    hydrateOrRender('projects-grid', portfolioData.projects);
+    hydrateOrRender('personal-grid', portfolioData.personal);
 }
 
 if (document.readyState === 'loading') {
@@ -10,59 +10,55 @@ if (document.readyState === 'loading') {
     initCards();
 }
 
-function renderCards(containerId, items) {
+function hydrateOrRender(containerId, items) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    container.innerHTML = items.map(item => {
-        const isExternal = item.external;
-        const noHoverClass = item.noHover ? 'no-hover' : '';
-        const imgClasses = item.blendC || '';
-        // "cover": a picture filling the whole image area, the value is its object-position
-        const coverClass = item.cover ? 'cover' : '';
-        const coverStyle = item.cover ? `style="object-position: ${item.cover}"` : '';
-        const targetAttr = isExternal ? 'target="_blank"' : '';
-        const hrefAttr = item.link ? `href="${item.link}"` : '';
-        // A word other than "Article" for an internal link that is not an article
-        const labelAttr = item.label ? `data-label="${item.label}"` : '';
+    // Static cards are pre-rendered in index.html by scripts/sync-cards.mjs.
+    // Fall back to client-side rendering only if the container is empty.
+    if (!container.querySelector('.card')) {
+        container.innerHTML = items.map(item => {
+            const isExternal = Boolean(item.external);
+            const noHoverClass = item.noHover ? 'no-hover' : '';
+            const externalClass = isExternal ? 'is-external' : '';
+            const imgClasses = item.blendC || '';
+            const coverClass = item.cover ? 'cover' : '';
+            const coverStyle = item.cover ? `style="object-position: ${item.cover}"` : '';
+            const targetAttr = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
+            const labelAttr = item.label ? `data-label="${item.label}"` : '';
+            const iconId = isExternal ? '#icon-external-link' : '#icon-arrow-right';
+            const arrowSVG = `
+                <span class="card-arrow" ${labelAttr} aria-hidden="true">
+                    <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <use href="${iconId}"></use>
+                    </svg>
+                </span>
+            `;
+            const titleHtml = item.link
+                ? `<h3><a class="card-title-link" href="${item.link}" ${targetAttr}>${item.title}</a></h3>`
+                : `<h3>${item.title}</h3>`;
 
-        // Arrow SVG
-        // Arrow SVG Logic
-        // External: Box Arrow Up Right (#icon-external-link)
-        // Internal: Standard Right Arrow (#icon-arrow-right)
-        const iconId = isExternal ? '#icon-external-link' : '#icon-arrow-right';
-        const arrowSVG = `
-            <span class="card-arrow" ${labelAttr}>
-                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <use href="${iconId}"></use>
-                </svg>
-            </span>
-        `;
-
-        // Use <a> tag if a link exists, otherwise use <div>
-        const tag = item.link ? 'a' : 'div';
-
-        return `
-            <${tag} class="card glass-card ${noHoverClass}" ${hrefAttr} ${targetAttr}>
-                <div class="card-img-wrapper ${coverClass}">
-                    <img src="${item.image}" alt="${item.title}" class="${imgClasses} ${item.imageDark ? 'img-light' : ''}" ${coverStyle}>
-                    ${item.imageDark ? `<img src="${item.imageDark}" alt="${item.title}" class="${imgClasses} img-dark" ${coverStyle}>` : ''}
-                </div>
-                <div class="card-content">
-                    <h3>${item.title}</h3>
-                    <p class="card-desc">${item.description}</p>
-                    <button type="button" class="card-more" hidden aria-expanded="false">More</button>
-                    <div class="card-footer">
-                        <span class="meta">${item.meta ?? ''}</span>
-                        ${item.link && !item.noHover ? arrowSVG : ''}
+            return `
+                <article class="card glass-card ${noHoverClass} ${externalClass}">
+                    <div class="card-img-wrapper ${coverClass}">
+                        <img src="${item.image}" alt="${item.title}" class="${imgClasses} ${item.imageDark ? 'img-light' : ''}" ${coverStyle} loading="lazy" decoding="async">
+                        ${item.imageDark ? `<img src="${item.imageDark}" alt="${item.title}" class="${imgClasses} img-dark" ${coverStyle} loading="lazy" decoding="async">` : ''}
                     </div>
-                </div>
-            </${tag}>
-        `;
-    }).join('');
+                    <div class="card-content">
+                        ${titleHtml}
+                        <p class="card-desc">${item.description}</p>
+                        <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                        <div class="card-footer">
+                            <span class="meta">${item.meta ?? ''}</span>
+                            ${item.link && !item.noHover ? arrowSVG : ''}
+                        </div>
+                    </div>
+                </article>
+            `;
+        }).join('');
+    }
 
     setupMoreButtons(container);
-    // Initialize collapsible state
     setupCollapsible(containerId);
 }
 
@@ -87,7 +83,6 @@ function setupMoreButtons(container) {
     container.addEventListener('click', e => {
         const btn = e.target.closest('.card-more');
         if (!btn) return;
-        // The card itself is a link: the button must not follow it
         e.preventDefault();
         e.stopPropagation();
         const card = btn.closest('.card');
@@ -95,7 +90,6 @@ function setupMoreButtons(container) {
         card.classList.toggle('expanded', open);
         btn.textContent = open ? 'Less' : 'More';
         btn.setAttribute('aria-expanded', String(open));
-        // On a phone the card grows: let the + button logic re-measure
         container.dispatchEvent(new Event('cards-resized'));
     });
 
@@ -110,7 +104,7 @@ function setupCollapsible(containerId) {
     if (!container || !container.querySelector('.card')) return;
 
     const getIcon = (id) => `
-        <svg width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <use href="#${id}"></use>
         </svg>
     `;
@@ -118,15 +112,15 @@ function setupCollapsible(containerId) {
     const arrowUp = getIcon('icon-arrow-up');
 
     const btn = document.createElement('button');
+    btn.type = 'button';
     btn.className = 'section-expand-btn';
     btn.innerHTML = arrowDown;
     btn.setAttribute('aria-label', 'Show more');
+    btn.setAttribute('aria-expanded', 'false');
     container.parentNode.insertBefore(btn, container.nextSibling);
 
     let expanded = false;
 
-    // Height showing the first row plus 3/4 of the second one. On a phone (one column) the
-    // cards are short, so three of them plus 3/4 of the fourth.
     const collapsedHeight = () => {
         const style = getComputedStyle(container);
         const cardHeight = container.querySelector('.card').offsetHeight;
@@ -136,17 +130,13 @@ function setupCollapsible(containerId) {
         return (cardHeight + gap) * rows + cardHeight * 0.75;
     };
 
-    // Re-evaluated on every resize: the number of columns, so of rows, changes with the width
     const update = () => {
-        // scrollHeight includes the clipped part. Expanded, the bottom padding comes back first.
         if (expanded) container.classList.remove('collapsed');
         const fullHeight = container.scrollHeight;
         const limit = collapsedHeight();
-        // data-collapse="phone": a single row on wide screens, folding only makes sense on a phone
         const phoneOnly = container.dataset.collapse === 'phone' && !window.matchMedia('(max-width: 720px)').matches;
 
         if (phoneOnly || fullHeight <= limit + 10) {
-            // Everything fits: no button
             btn.hidden = true;
             container.classList.remove('collapsed');
             container.style.maxHeight = '';
@@ -168,11 +158,11 @@ function setupCollapsible(containerId) {
         btn.classList.toggle('expanded', expanded);
         btn.innerHTML = expanded ? arrowUp : arrowDown;
         btn.setAttribute('aria-label', expanded ? 'Show less' : 'Show more');
+        btn.setAttribute('aria-expanded', String(expanded));
         update();
 
         if (!expanded) {
-            // Scroll back to the section if we are below it
-            const sectionTop = container.offsetTop - 100; // navbar offset
+            const sectionTop = container.offsetTop - 100;
             if (window.scrollY > sectionTop) {
                 window.scrollTo({ top: sectionTop, behavior: 'smooth' });
             }
@@ -182,6 +172,5 @@ function setupCollapsible(containerId) {
     update();
     window.addEventListener('resize', update);
     container.addEventListener('cards-resized', update);
-    // Images and fonts loading late can change the card height
     window.addEventListener('load', update);
 }

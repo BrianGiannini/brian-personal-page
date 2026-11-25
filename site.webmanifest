@@ -1,0 +1,21 @@
+{
+  "name": "Brian Giannini | AI & Mobile Engineer",
+  "short_name": "Brian Giannini",
+  "description": "Portfolio of Brian Giannini, Senior Android, Kotlin Multiplatform & AI Engineer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e3eaf2",
+  "theme_color": "#1a6fb3",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

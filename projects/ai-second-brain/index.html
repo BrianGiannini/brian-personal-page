@@ -5,51 +5,81 @@
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AI Second Brain</title>
+    <title>AI Second Brain | Brian Giannini</title>
     <meta name="description"
         content="A personal knowledge base where AI agents write and maintain every page, built on the LLM Wiki pattern, running 24/7 on a home server and driven from my phone.">
     <meta name="author" content="Brian Giannini">
-    <meta name="theme-color" content="#55aeb7">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="theme-color" content="#e3eaf2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a252f" media="(prefers-color-scheme: dark)">
     <meta name="color-scheme" content="light dark">
-    <link rel="icon" href="../../icon.png">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="icon" type="image/png" href="../../icon.png">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 
     <!-- Preconnect to External Domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://ajax.googleapis.com">
-    <link rel="preconnect" href="https://t2.gstatic.com">
 
     <!-- Social Media Tags -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="AI Second Brain - Brian Giannini">
+    <meta property="og:title" content="AI Second Brain | Brian Giannini">
     <meta property="og:description"
         content="A personal knowledge base where AI agents write and maintain every page, built on the LLM Wiki pattern, running 24/7 on a home server and driven from my phone.">
-    <link rel="canonical" href="https://briangiannini.com/projects/ai-second-brain">
-    <meta property="og:url" content="https://briangiannini.com/projects/ai-second-brain">
+    <link rel="canonical" href="https://briangiannini.com/projects/ai-second-brain/">
+    <meta property="og:url" content="https://briangiannini.com/projects/ai-second-brain/">
     <meta property="og:image" content="https://briangiannini.com/img/shelf/project_second-brain.webp">
     <meta property="og:site_name" content="Brian Giannini">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@SanguiSan">
-    <meta name="twitter:title" content="AI Second Brain - Brian Giannini">
+    <meta name="twitter:creator" content="@Sanguisan">
+    <meta name="twitter:title" content="AI Second Brain | Brian Giannini">
     <meta name="twitter:description"
         content="A personal knowledge base where AI agents write and maintain every page, built on the LLM Wiki pattern, running 24/7 on a home server and driven from my phone.">
     <meta name="twitter:image" content="https://briangiannini.com/img/shelf/project_second-brain.webp">
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "headline": "AI Second Brain",
+          "description": "A personal knowledge base where AI agents write and maintain every page, built on the LLM Wiki pattern, running 24/7 on a home server and driven from a phone.",
+          "url": "https://briangiannini.com/projects/ai-second-brain/",
+          "image": "https://briangiannini.com/img/shelf/project_second-brain.webp",
+          "datePublished": "2026-07-01",
+          "dateModified": "2026-11-12",
+          "author": { "@id": "https://briangiannini.com/#person", "@type": "Person", "name": "Brian Giannini", "url": "https://briangiannini.com/" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://briangiannini.com/" },
+            { "@type": "ListItem", "position": 2, "name": "AI Second Brain", "item": "https://briangiannini.com/projects/ai-second-brain/" }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <!-- CSS files with relative paths -->
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/switch.css">
     <link rel="stylesheet" href="../../css/link-preview.css">
     <link rel="stylesheet" href="../../css/second-brain.css">
     <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;500;700&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;500;700&display=swap">
+    </noscript>
 
     <!-- JavaScript files -->
     <script src="../../scripts/theme-flash-prevention.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
     <script src="../../scripts/toggle-dark-mode.js" defer></script>
-    <script src="../../scripts/hamburger.js" defer></script>
+    <script src="../../scripts/copyright.js" defer></script>
 </head>
 
 <body>
@@ -98,7 +128,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <main class="container">
 
         <div id="part-content">
             <div class="section self-section">
@@ -296,10 +326,9 @@
 
                     <h2>Inspiration</h2>
                     <div class="link-preview">
-                        <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank">
+                        <a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-logo">
-                                <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://github.com&size=128"
-                                    alt="GitHub Logo">
+                                <img src="../../icons/github.svg" alt="GitHub Logo" width="56" height="56" loading="lazy" decoding="async">
                             </div>
                             <div class="link-preview-content">
                                 <div class="link-preview-title">LLM Wiki, by Andrej Karpathy</div>
@@ -312,10 +341,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer class="centered-footer">
-        <p>&copy; 2025 Brian Giannini. All rights reserved.</p>
+        <p id="copyright">&copy; 2022 - 2026 Brian Giannini</p>
     </footer>
 </body>
 

@@ -83,25 +83,6 @@
     width: 100%;
 }
 
-.nav-cta {
-    background: var(--color-text-main);
-    color: var(--color-bg) !important;
-    /* Inverted */
-    padding: 8px 16px;
-    border-radius: var(--radius-full);
-    font-weight: 600 !important;
-    transition: transform var(--transition-fast) !important;
-}
-
-.nav-links a.nav-cta::after {
-    display: none !important;
-}
-
-.nav-cta:hover {
-    transform: scale(1.05);
-    background: var(--color-primary);
-}
-
 /* Theme Toggle Button */
 #theme-toggle {
     background: transparent;

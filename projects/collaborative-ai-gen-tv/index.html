@@ -5,51 +5,81 @@
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The collaborative AI Gen TV</title>
+    <title>The collaborative AI Gen TV | Brian Giannini</title>
     <meta name="description"
         content="A project that allows viewers of a YouTube stream to donate with a prompt to generate a unique AI video that is then shown on the stream for everyone to see.">
     <meta name="author" content="Brian Giannini">
-    <meta name="theme-color" content="#55aeb7">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="theme-color" content="#e3eaf2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a252f" media="(prefers-color-scheme: dark)">
     <meta name="color-scheme" content="light dark">
-    <link rel="icon" href="../../icon.png">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="icon" type="image/png" href="../../icon.png">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 
     <!-- Preconnect to External Domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://ajax.googleapis.com">
-    <link rel="preconnect" href="https://t2.gstatic.com">
 
     <!-- Social Media Tags -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="The collaborative AI Gen TV - Brian Giannini">
+    <meta property="og:title" content="The collaborative AI Gen TV | Brian Giannini">
     <meta property="og:description"
         content="A project that allows viewers of a YouTube stream to donate with a prompt to generate a unique AI video that is then shown on the stream for everyone to see.">
-    <link rel="canonical" href="https://briangiannini.com/projects/collaborative-ai-gen-tv">
-    <meta property="og:url" content="https://briangiannini.com/projects/collaborative-ai-gen-tv">
+    <link rel="canonical" href="https://briangiannini.com/projects/collaborative-ai-gen-tv/">
+    <meta property="og:url" content="https://briangiannini.com/projects/collaborative-ai-gen-tv/">
     <meta property="og:image" content="https://briangiannini.com/img/shelf/project_gen_ai_video.webp">
     <meta property="og:site_name" content="Brian Giannini">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@SanguiSan">
-    <meta name="twitter:title" content="The collaborative AI Gen TV - Brian Giannini">
+    <meta name="twitter:creator" content="@Sanguisan">
+    <meta name="twitter:title" content="The collaborative AI Gen TV | Brian Giannini">
     <meta name="twitter:description"
         content="A project that allows viewers of a YouTube stream to donate with a prompt to generate a unique AI video that is then shown on the stream for everyone to see.">
     <meta name="twitter:image" content="https://briangiannini.com/img/shelf/project_gen_ai_video.webp">
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "headline": "The collaborative AI Gen TV",
+          "description": "A live TV channel programmed by its audience using Google ADK, Gemini 3, and Veo 3.1 on Google Cloud Run.",
+          "url": "https://briangiannini.com/projects/collaborative-ai-gen-tv/",
+          "image": "https://briangiannini.com/img/shelf/project_gen_ai_video.webp",
+          "datePublished": "2025-11-01",
+          "dateModified": "2026-09-25",
+          "author": { "@id": "https://briangiannini.com/#person", "@type": "Person", "name": "Brian Giannini", "url": "https://briangiannini.com/" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://briangiannini.com/" },
+            { "@type": "ListItem", "position": 2, "name": "The collaborative AI Gen TV", "item": "https://briangiannini.com/projects/collaborative-ai-gen-tv/" }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <!-- CSS files with relative paths -->
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/switch.css">
     <link rel="stylesheet" href="../../css/link-preview.css">
     <link rel="stylesheet" href="../../css/collab-ai-tv.css">
     <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;500;700&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;500;700&display=swap">
+    </noscript>
 
     <!-- JavaScript files -->
     <script src="../../scripts/theme-flash-prevention.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
     <script src="../../scripts/toggle-dark-mode.js" defer></script>
-    <script src="../../scripts/hamburger.js" defer></script>
+    <script src="../../scripts/copyright.js" defer></script>
 </head>
 
 <body>
@@ -98,7 +128,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <main class="container">
 
         <div id="part-content">
             <div class="section self-section">
@@ -110,7 +140,7 @@
                     <h2>Live Stream Replay</h2>
                     <div class="video-container">
                         <iframe src="https://www.youtube-nocookie.com/embed/lv9KWO0ZTsU" title="YouTube video player"
-                            frameborder="0"
+                            loading="lazy" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div>
@@ -129,7 +159,7 @@
 
                     <h2>What it does</h2>
                     <img src="../../img/content/stream_ai_video.webp" alt="A generated video playing live on stream with the donor's name and prompt"
-                        style="width: 100%; height: auto; border-radius: 15px;">
+                        loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: 15px;">
                     <p>From the viewer's side, it's five steps:</p>
                     <ol class="tv-journey">
                         <li><div><strong>Donate</strong>with a video idea as the message</div></li>
@@ -247,7 +277,7 @@
 
                     <h3>4. On the streaming PC</h3>
                     <img src="../../img/content/obs_stream_ai.webp" alt="OBS scene capturing the FFmpeg video player and the prompt text"
-                        style="width: 100%; height: auto; border-radius: 15px;">
+                        loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: 15px;">
                     <p>A <strong>Python</strong> program watches the bucket. When a new video and its prompt file
                         appear, it downloads them, plays the video with <strong>FFmpeg</strong>, and writes the prompt
                         into a local <code>prompt.txt</code>. When the video ends, it picks a random earlier video from a
@@ -285,10 +315,9 @@
 
                     <h2>Source code</h2>
                     <div class="link-preview">
-                        <a href="https://github.com/BrianGiannini/adk-ai-gen-video" target="_blank">
+                        <a href="https://github.com/BrianGiannini/adk-ai-gen-video" target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-logo">
-                                <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://github.com&size=128"
-                                    alt="GitHub Logo">
+                                <img src="../../icons/github.svg" alt="GitHub Logo" width="56" height="56" loading="lazy" decoding="async">
                             </div>
                             <div class="link-preview-content">
                                 <div class="link-preview-title">adk-ai-gen-video</div>
@@ -301,10 +330,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer class="centered-footer">
-        <p>&copy; 2025 Brian Giannini. All rights reserved.</p>
+        <p id="copyright">&copy; 2022 - 2026 Brian Giannini</p>
     </footer>
 </body>
 

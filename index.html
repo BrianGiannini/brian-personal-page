@@ -2,11 +2,12 @@
 <html lang="en" data-theme="light">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
         (function () {
             const savedTheme = localStorage.getItem('theme');
             const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
             if (savedTheme) {
                 document.documentElement.setAttribute('data-theme', savedTheme);
             } else if (systemPrefersDark) {
@@ -15,35 +16,47 @@
         })();
     </script>
 
-    <title>Brian Giannini | Mobile Engineer Portfolio & Freelance</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brian Giannini | AI &amp; Mobile Engineer (Android, KMP) &amp; Freelance</title>
     <meta name="description"
-        content="Showcase of Android & KMP projects by Brian Giannini. Senior engineer (ex-Ledger, SoftBank) available for freelance consulting and technical entrepreneurship.">
+        content="Senior AI & Mobile Engineer (Android, Kotlin Multiplatform, Jetpack Compose, agentic workflows) with 10+ years of experience (ex-Ledger, SoftBank Robotics, Thales). Founder of Criaphore, available for remote freelance consulting.">
     <meta name="author" content="Brian Giannini">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="theme-color" content="#e3eaf2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a252f" media="(prefers-color-scheme: dark)">
     <meta name="color-scheme" content="light dark">
-    <meta charset="UTF-8">
     <link rel="canonical" href="https://briangiannini.com/">
 
     <!-- Open Graph / LinkedIn / Social -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Brian Giannini">
     <meta property="og:url" content="https://briangiannini.com/">
-    <meta property="og:title" content="Brian Giannini | Mobile Engineer Portfolio & Freelance">
+    <meta property="og:title" content="Brian Giannini | AI &amp; Mobile Engineer (Android, KMP)">
     <meta property="og:description"
-        content="Showcase of Android & KMP projects by Brian Giannini. Senior engineer (ex-Ledger, SoftBank) available for freelance consulting and technical entrepreneurship.">
-    <meta property="og:image" content="https://briangiannini.com/img/brian.png">
+        content="Senior AI & Mobile Engineer (Android, Kotlin Multiplatform, agentic workflows). Ex-Ledger, SoftBank Robotics, Thales. Founder of Criaphore, available for remote freelance consulting.">
+    <meta property="og:image" content="https://briangiannini.com/img/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Brian Giannini - AI & Mobile Engineer">
 
-    <!-- Twitter -->
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@Sanguisan">
     <meta name="twitter:url" content="https://briangiannini.com/">
-    <meta name="twitter:title" content="Brian Giannini | Mobile Engineer Portfolio & Freelance">
+    <meta name="twitter:title" content="Brian Giannini | AI &amp; Mobile Engineer (Android, KMP)">
     <meta name="twitter:description"
-        content="Showcase of Android & KMP projects by Brian Giannini. Senior engineer (ex-Ledger, SoftBank) available for freelance consulting and technical entrepreneurship.">
-    <meta name="twitter:image" content="https://briangiannini.com/img/brian.png">
+        content="Senior AI & Mobile Engineer (Android, Kotlin Multiplatform, agentic workflows). Ex-Ledger, SoftBank Robotics, Thales. Available for remote freelance consulting.">
+    <meta name="twitter:image" content="https://briangiannini.com/img/og-card.png">
 
-    <link rel="icon" href="icon.png">
+    <!-- Icons & Manifest -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Preload & Fonts -->
     <link rel="preload" as="image" href="img/brian.webp" fetchpriority="high">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;500;700&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
@@ -52,60 +65,129 @@
             href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;500;700&display=swap"
             rel="stylesheet">
     </noscript>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/timeline.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
-    <script type="text/javascript" src="scripts/utils.js" defer></script>
-    <script type="text/javascript" src="scripts/toggle-dark-mode.js" defer></script>
-    <script type="text/javascript" src="scripts/hamburger.js" defer></script>
-    <script type="text/javascript" src="scripts/scroll-spy.js" defer></script>
-    <script type="text/javascript" src="scripts/icons.js" defer></script>
-    <script type="text/javascript" src="data/portfolio.js" defer></script>
-    <script type="text/javascript" src="scripts/webmcp-tools.js" defer></script>
-    <script type="text/javascript" src="scripts/card-renderer.js" defer></script>
-    <script type="text/javascript" src="scripts/timeline.js" defer></script>
-    <script type="text/javascript" src="scripts/copyright.js" defer></script>
+
+    <!-- Structured Data (GEO & SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://briangiannini.com/#website",
+          "url": "https://briangiannini.com/",
+          "name": "Brian Giannini",
+          "description": "Portfolio and professional profile of Brian Giannini, Senior AI & Mobile Engineer.",
+          "publisher": { "@id": "https://briangiannini.com/#person" }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://briangiannini.com/#profilepage",
+          "url": "https://briangiannini.com/",
+          "name": "Brian Giannini | AI & Mobile Engineer",
+          "isPartOf": { "@id": "https://briangiannini.com/#website" },
+          "mainEntity": { "@id": "https://briangiannini.com/#person" },
+          "dateModified": "2026-11-25"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://briangiannini.com/#person",
+          "name": "Brian Giannini",
+          "url": "https://briangiannini.com/",
+          "image": "https://briangiannini.com/img/brian.webp",
+          "email": "mailto:brian@criaphore.com",
+          "jobTitle": "Senior AI & Mobile Engineer",
+          "description": "Senior Android and Kotlin Multiplatform engineer with 10+ years of experience across defense, robotics, crypto hardware, IoT, and agentic AI products. Founder of Criaphore and available for remote freelance consulting.",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Criaphore",
+            "url": "https://criaphore.com/"
+          },
+          "alumniOf": [
+            { "@type": "Organization", "name": "Ledger", "url": "https://www.ledger.com/" },
+            { "@type": "Organization", "name": "SoftBank Robotics", "url": "https://www.softbankrobotics.com/" },
+            { "@type": "Organization", "name": "Thales", "url": "https://www.thalesgroup.com/" }
+          ],
+          "knowsAbout": [
+            "Android Development",
+            "Kotlin",
+            "Kotlin Multiplatform (KMP)",
+            "Jetpack Compose",
+            "Agentic AI Workflows",
+            "Model Context Protocol (MCP)",
+            "LLM Integration",
+            "Mobile Architecture",
+            "IoT & Hardware Integration",
+            "Robotics Software"
+          ],
+          "sameAs": [
+            "https://github.com/BrianGiannini",
+            "https://www.linkedin.com/in/briangiannini1/",
+            "https://x.com/Sanguisan/",
+            "https://www.youtube.com/@Sanguinax/videos/",
+            "https://www.malt.fr/profile/briangiannini",
+            "https://criaphore.com/"
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Scripts -->
+    <script src="scripts/utils.js" defer></script>
+    <script src="scripts/toggle-dark-mode.js" defer></script>
+    <script src="scripts/hamburger.js" defer></script>
+    <script src="scripts/scroll-spy.js" defer></script>
+    <script src="scripts/icons.js" defer></script>
+    <script src="data/portfolio.js" defer></script>
+    <script src="scripts/webmcp-tools.js" defer></script>
+    <script src="scripts/card-renderer.js" defer></script>
+    <script src="scripts/timeline.js" defer></script>
+    <script src="scripts/copyright.js" defer></script>
 </head>
 
 <body>
-    <div class="background-glob"></div>
-    <div class="scanlines"></div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="background-glob" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
 
-    <nav class="sticky-header" id="navbar">
+    <nav class="sticky-header" id="navbar" aria-label="Primary">
         <div class="header-container">
             <div class="header-left">
                 <a href="#" class="nav-logo" aria-label="Back to top">
-                    <img src="img/brian.webp" alt="" class="nav-avatar">
+                    <img src="img/brian.webp" alt="" width="32" height="32" class="nav-avatar">
                     <span class="nav-name">Brian Giannini</span>
                 </a>
             </div>
 
             <div class="header-center">
-                <button class="hamburger" aria-label="Menu">
+                <button type="button" class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </button>
-                <div class="nav-menu">
+                <div class="nav-menu" id="nav-menu">
                     <ul class="nav-links">
                         <li><a href="#about">About</a></li>
                         <li><a href="#work">Work</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#personal">Personal</a></li>
-
                     </ul>
                 </div>
             </div>
 
             <div class="header-right">
-                <button id="theme-toggle" aria-label="Toggle dark mode">
+                <button type="button" id="theme-toggle" aria-label="Toggle dark mode">
                     <svg class="sun-icon" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <use href="#icon-sun"></use>
                     </svg>
                     <svg class="moon-icon" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <use href="#icon-moon"></use>
                     </svg>
                 </button>
@@ -113,79 +195,80 @@
         </div>
     </nav>
 
-    <main class="container">
+    <main id="main-content" class="container">
 
         <section id="about" class="hero-section">
             <div class="hero-content">
                 <div class="profile-frame">
-                    <img class="portrait" src="img/brian.webp" alt="" fetchpriority="high">
-
+                    <img class="portrait" src="img/brian.webp" alt="Brian Giannini" width="168" height="168" fetchpriority="high">
                 </div>
                 <h1>Brian Giannini</h1>
-                <p class="tagline">Engineer. Entrepreneur. Creator.</p>
+                <p class="tagline">Senior AI &amp; Mobile Engineer · Android, KMP &amp; Agentic AI</p>
                 <p class="bio">Freelancing as <a href="https://www.malt.fr/profile/briangiannini" target="_blank"
-                        class="highlight-link">AI &amp; Mobile Engineer<svg width="16" height="16"
-                            class="icon-inline">
+                        rel="me noopener noreferrer" class="highlight-link">AI &amp; Mobile Engineer<svg width="16" height="16"
+                            class="icon-inline" aria-hidden="true">
                             <use href="#icon-external-link"></use>
-                        </svg></a><br> Solo entrepreneurship at <a href="https://criaphore.com/" target="_blank"
-                        class="highlight-link">Criaphore<svg width="16" height="16" class="icon-inline">
+                        </svg></a> (10+ years, Android, Kotlin Multiplatform &amp; AI workflows)<br> Solo entrepreneurship at <a href="https://criaphore.com/" target="_blank"
+                        rel="me noopener noreferrer" class="highlight-link">Criaphore<svg width="16" height="16" class="icon-inline" aria-hidden="true">
                             <use href="#icon-external-link"></use>
                         </svg></a><br> Previously <a href="https://www.ledger.com/" target="_blank"
-                        class="highlight-link">Ledger<svg width="16" height="16" class="icon-inline">
+                        rel="noopener noreferrer" class="highlight-link">Ledger<svg width="16" height="16" class="icon-inline" aria-hidden="true">
                             <use href="#icon-external-link"></use>
                         </svg></a>, <a href="https://www.softbankrobotics.com/" target="_blank"
-                        class="highlight-link">SoftBank<svg width="16" height="16" class="icon-inline">
+                        rel="noopener noreferrer" class="highlight-link">SoftBank<svg width="16" height="16" class="icon-inline" aria-hidden="true">
                             <use href="#icon-external-link"></use>
                         </svg></a>, <a href="https://www.thalesgroup.com/" target="_blank"
-                        class="highlight-link">Thales<svg width="16" height="16" class="icon-inline">
+                        rel="noopener noreferrer" class="highlight-link">Thales<svg width="16" height="16" class="icon-inline" aria-hidden="true">
                             <use href="#icon-external-link"></use>
                         </svg></a></p>
 
                 <div class="social-links">
-                    <button id="email-btn" class="social-btn" aria-label="Copy Email">
+                    <a id="email-btn" href="mailto:brian@criaphore.com" class="social-btn" aria-label="Email brian@criaphore.com (click to copy)" title="brian@criaphore.com">
                         <svg class="mail-icon" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <use href="#icon-mail"></use>
                         </svg>
                         <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" stroke="currentColor"
                             stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
-                        <span id="copy-tooltip">Copied!</span>
-                    </button>
+                        <span id="copy-tooltip" role="status" aria-live="polite">Copied!</span>
+                    </a>
 
                     <!-- Declarative WebMCP Contact Form (Hidden, styled for agents) -->
-                    <form id="webmcp-contact-form" 
-                          toolname="contactForFreelance" 
-                          tooldescription="Prepare an email to hire Brian for a freelance project."
+                    <form id="webmcp-contact-form"
+                          toolname="contactForFreelance"
+                          tooldescription="Prepare an email to hire Brian Giannini for a freelance Android, KMP, or AI engineering project."
                           toolautosubmit
-                          action="mailto:brian@criaphore.com" 
+                          action="mailto:brian@criaphore.com"
                           method="GET">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                            <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-primary);">Agent Session</span>
-                            <button type="button" id="close-agent-form" style="background: none; border: none; color: var(--color-text-muted); cursor: pointer; padding: 5px; font-size: 1.2rem; line-height: 1;">&times;</button>
+                        <div class="webmcp-form-header">
+                            <span class="webmcp-form-badge">Agent Session</span>
+                            <button type="button" id="close-agent-form" aria-label="Close agent form">&times;</button>
                         </div>
-                        <input type="text" name="subject" toolparamtitle="Email Subject" placeholder="Subject">
-                        <textarea name="body" toolparamtitle="Email Body" placeholder="Message"></textarea>
+                        <label for="webmcp-subject" class="sr-only">Email Subject</label>
+                        <input id="webmcp-subject" type="text" name="subject" toolparamdescription="Concise subject line for the freelance inquiry email" placeholder="Subject" required>
+                        <label for="webmcp-body" class="sr-only">Email Body</label>
+                        <textarea id="webmcp-body" name="body" toolparamdescription="Message body describing the project scope, timeline, and contact details" placeholder="Message" required></textarea>
                         <button type="submit">Draft Email</button>
                     </form>
 
-                    <a href="https://x.com/Sanguisan/" target="_blank" class="social-btn" aria-label="Twitter">
+                    <a href="https://x.com/Sanguisan/" target="_blank" rel="me noopener noreferrer" class="social-btn" aria-label="X (Twitter)">
                         <img src="icons/x-twitter-icon.svg" alt="" width="18" height="18" class="icon-invert">
                     </a>
 
-                    <a href="https://www.linkedin.com/in/briangiannini1/" target="_blank" class="social-btn"
+                    <a href="https://www.linkedin.com/in/briangiannini1/" target="_blank" rel="me noopener noreferrer" class="social-btn"
                         aria-label="LinkedIn">
                         <img src="icons/linkedin-icon.svg" alt="" width="18" height="18">
                     </a>
 
-                    <a href="https://www.youtube.com/@Sanguinax/videos/" target="_blank" class="social-btn"
+                    <a href="https://www.youtube.com/@Sanguinax/videos/" target="_blank" rel="me noopener noreferrer" class="social-btn"
                         aria-label="YouTube">
                         <img src="icons/youtube-icon.svg" alt="" width="22" height="18">
                     </a>
 
-                    <a href="https://github.com/BrianGiannini" target="_blank" class="social-btn" aria-label="GitHub">
-                        <svg width="18" height="18" role="img" fill="var(--color-text-main)">
+                    <a href="https://github.com/BrianGiannini" target="_blank" rel="me noopener noreferrer" class="social-btn" aria-label="GitHub">
+                        <svg width="18" height="18" fill="var(--color-text-main)" aria-hidden="true">
                             <use href="#icon-github"></use>
                         </svg>
                     </a>
@@ -198,7 +281,98 @@
             <div class="work-scroller" id="work-scroller">
                 <div class="work-track">
                     <div class="grid-shelf" id="work-grid" data-collapse="phone">
-
+                        <!-- CARDS:WORK:START -->
+                        <article class="card glass-card is-external">
+                            <div class="card-img-wrapper">
+                                <img src="icons/mobile_platforms.svg" alt="Freelancing" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="https://www.malt.fr/profile/briangiannini" target="_blank" rel="noopener noreferrer">Freelancing</a></h3>
+                                <p class="card-desc">AI &amp; Mobile Engineer (Android, KMP, Jetpack Compose, agentic workflows)</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">2025 - Present</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card is-external">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/work_criaphore.webp" alt="Criaphore" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="https://criaphore.com/" target="_blank" rel="noopener noreferrer">Criaphore</a></h3>
+                                <p class="card-desc">Founder developing Agentic AI apps</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">2023 - Present</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card is-external">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/work_ledger.webp" alt="Ledger Atom" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="https://shop.ledger.com/pages/ledger-atom" target="_blank" rel="noopener noreferrer">Ledger Atom</a></h3>
+                                <p class="card-desc">Hardware wallet security &amp; Android integration</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">2022 - 2024</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card is-external">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/work_pepper.webp" alt="SoftBank Robotics: Pepper &amp; Plato" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="https://us.softbankrobotics.com/pepper" target="_blank" rel="noopener noreferrer">SoftBank Robotics: Pepper &amp; Plato</a></h3>
+                                <p class="card-desc">Built the social interactions of Pepper, the humanoid robot, then the touchscreen interface of Plato, the food service robot used in restaurants</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">2019 - 2022</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card is-external">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/work_thales.webp" alt="Thales" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="https://www.thalesgroup.com/" target="_blank" rel="noopener noreferrer">Thales</a></h3>
+                                <p class="card-desc">Defense and security apps: tactical cartography and comms for special forces, the French Army's interoperable command system (SIA C2), and a national ID check app for law enforcement</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">2015 - 2019</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- CARDS:WORK:END -->
                     </div>
                     <div class="timeline" id="work-timeline"></div>
                 </div>
@@ -206,21 +380,229 @@
         </section>
 
         <section id="projects" class="content-section">
-            <h2 class="section-title">Experiments & Projects</h2>
+            <h2 class="section-title">Experiments &amp; Projects</h2>
             <div class="grid-shelf" id="projects-grid">
-
+                <!-- CARDS:PROJECTS:START -->
+                        <article class="card glass-card is-external">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/project_orbora.webp" alt="Orbora" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="https://criaphore.com/orbora" target="_blank" rel="noopener noreferrer">Orbora</a></h3>
+                                <p class="card-desc">Generative audio wellness agentic app</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">Aug 2026</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/project_second-brain.webp" alt="AI Second Brain" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="projects/ai-second-brain/">AI Second Brain</a></h3>
+                                <p class="card-desc">Knowledge base written and maintained by an AI agent</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">Jul 2026</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-arrow-right"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/project_collab-ai-tv.svg" alt="Collab AI TV" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="projects/collaborative-ai-gen-tv/">Collab AI TV</a></h3>
+                                <p class="card-desc">Stream-controlled AI video generation</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">Nov 2025</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-arrow-right"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card is-external">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/project_diagnosly.webp" alt="Diagnosly" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="https://criaphore.com/diagnosly" target="_blank" rel="noopener noreferrer">Diagnosly</a></h3>
+                                <p class="card-desc">Agentic AI mobile app for health diagnosis</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">May 2025</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card is-external">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/project_unity.webp" alt="VR Slow Motion" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="https://youtu.be/Mw7aGrnBltc" target="_blank" rel="noopener noreferrer">VR Slow Motion</a></h3>
+                                <p class="card-desc">Action game mechanic prototype</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">Oct 2020</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card is-external">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/project_half-life-alyx.webp" alt="Horror Apartment VR" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="https://steamcommunity.com/sharedfiles/filedetails/?id=2104498553" target="_blank" rel="noopener noreferrer">Horror Apartment VR</a></h3>
+                                <p class="card-desc">Half-Life Alyx mod verifying classic horror tropes</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">May 2020</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card is-external">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/project_spaceX.webp" alt="Rocket Sim Launch" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="https://youtu.be/qOMNfp0QcUA" target="_blank" rel="noopener noreferrer">Rocket Sim Launch</a></h3>
+                                <p class="card-desc">Falcon 9 simulation montage in KSP</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">Apr 2017</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/project_philippe.webp" alt="Boîte à Philippe" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3>Boîte à Philippe</h3>
+                                <p class="card-desc">Soundbox app from a cult classic movie</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">Aug 2015</span>
+                                    
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/project_ogaming.webp" alt="O'Gaming Tournament" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3>O'Gaming Tournament</h3>
+                                <p class="card-desc">Starcraft 2 tournament mod</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">Mar 2014</span>
+                                    
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/project_war4craft.webp" alt="War4Craft" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="projects/war4craft/">War4Craft</a></h3>
+                                <p class="card-desc">Warcraft models in Starcraft 2 engine</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">Feb 2013</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-arrow-right"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card glass-card is-external">
+                            <div class="card-img-wrapper">
+                                <img src="img/shelf/project_source-engine.webp" alt="Bichat 3D" class="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="https://youtu.be/4O-YM0Iub0Y" target="_blank" rel="noopener noreferrer">Bichat 3D</a></h3>
+                                <p class="card-desc">High school recreation in Source Engine</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta">May 2009</span>
+                                    <span class="card-arrow" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-external-link"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- CARDS:PROJECTS:END -->
             </div>
         </section>
 
         <section id="personal" class="content-section">
             <h2 class="section-title">Personal</h2>
             <div class="grid-shelf" id="personal-grid">
-
+                <!-- CARDS:PERSONAL:START -->
+                        <article class="card glass-card">
+                            <div class="card-img-wrapper cover">
+                                <img src="img/shelf/personal_travels.webp" alt="Travels" class="img-light" style="object-position: center 45%" loading="lazy" decoding="async">
+                            <img src="img/shelf/personal_travels_dark.webp" alt="Travels" class="img-dark" style="object-position: center 45%" loading="lazy" decoding="async">
+                            </div>
+                            <div class="card-content">
+                                <h3><a class="card-title-link" href="travels/">Travels</a></h3>
+                                <p class="card-desc">Where I have been, on an interactive map and globe</p>
+                                <button type="button" class="card-more" hidden aria-expanded="false">More</button>
+                                <div class="card-footer">
+                                    <span class="meta"></span>
+                                    <span class="card-arrow" data-label="Open map" aria-hidden="true">
+                                <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <use href="#icon-arrow-right"></use>
+                                </svg>
+                            </span>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- CARDS:PERSONAL:END -->
             </div>
         </section>
-
-
-
 
     </main>
 

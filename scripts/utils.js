@@ -1,18 +1,24 @@
-function copyEmail() {
-    navigator.clipboard.writeText('brian@criaphore.com');
-    // The envelope turns into a check mark, then comes back
-    const btn = document.getElementById('email-btn');
-    if (btn) {
-        btn.classList.add('copied');
-        clearTimeout(btn._copiedTimer);
-        btn._copiedTimer = setTimeout(() => btn.classList.remove('copied'), 2000);
+function copyEmail(e) {
+    if (!navigator.clipboard || !navigator.clipboard.writeText) {
+        return; // Fall back to native mailto: link
     }
-    const tooltip = document.getElementById('copy-tooltip');
-    if (tooltip) {
-        tooltip.style.opacity = '1';
-        setTimeout(() => { tooltip.style.opacity = '0'; }, 2000);
-    }
-
+    e.preventDefault();
+    navigator.clipboard.writeText('brian@criaphore.com').then(() => {
+        const btn = document.getElementById('email-btn');
+        if (btn) {
+            btn.classList.add('copied');
+            clearTimeout(btn._copiedTimer);
+            btn._copiedTimer = setTimeout(() => btn.classList.remove('copied'), 2000);
+        }
+        const tooltip = document.getElementById('copy-tooltip');
+        if (tooltip) {
+            tooltip.style.opacity = '1';
+            clearTimeout(tooltip._hideTimer);
+            tooltip._hideTimer = setTimeout(() => { tooltip.style.opacity = '0'; }, 2000);
+        }
+    }).catch(() => {
+        window.location.href = 'mailto:brian@criaphore.com';
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {

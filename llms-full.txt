@@ -1,0 +1,37 @@
+# Brian Giannini - Full Context for AI Assistants
+
+> Senior AI & Mobile Engineer (Android, Kotlin Multiplatform, Jetpack Compose, agentic AI workflows) with 10+ years of experience. Founder of Criaphore, based in Paris, available for remote freelance consulting. Contact: brian@criaphore.com.
+
+## Professional Summary
+Brian Giannini is a French software engineer specializing in Android, Kotlin Multiplatform (KMP), Jetpack Compose, and production AI-native mobile applications and agentic developer workflows. He holds an Engineering degree (Polytech, France, 2015) and has worked across defense, robotics, crypto hardware, IoT, and generative AI.
+
+## Career History
+- **Freelance AI & Mobile Engineer (2025 - Present)**: Senior Android, KMP, Jetpack Compose, and agentic workflow consulting (Malt: https://www.malt.fr/profile/briangiannini).
+- **Founder, Criaphore (2023 - Present)**: Solo software studio building AI-native mobile products including Orbora (generative audio wellness app on iOS and Android, https://criaphore.com/orbora) and Diagnosly (AI health assistant, https://criaphore.com/diagnosly).
+- **Senior Android Software Engineer, Ledger (2022 - 2024)**: Ground-up Kotlin & Jetpack Compose Android application for Ledger Atom hardware security device, integrating hardware wallets (BLE/USB) and Web3 SDKs.
+- **Android Software Engineer, SoftBank Robotics (2019 - 2022)**: Built social interaction apps in Kotlin for Pepper (humanoid robot) and the touchscreen interface for Plato (restaurant service robot).
+- **Software Engineer, Thales (2015 - 2019)**: Defense and security software including tactical GPS mapping and offline mesh messaging for special forces, the French Army's interoperable command system (SIA C2), and an Android biometric ID verification app.
+
+## Featured Project Deep-Dives
+
+### AI Second Brain (https://briangiannini.com/projects/ai-second-brain/)
+Personal knowledge base built on Andrej Karpathy's LLM Wiki pattern. A three-layer Markdown vault (immutable raw sources, agent-maintained cross-linked wiki, vendor-neutral `AGENTS.md` schema) running 24/7 on a home laptop behind Tailscale, controlled from a phone via a custom Python web dashboard, tmux, systemd timers, Telegram reminders, and Quartz. Supports Claude Code, Codex, and Antigravity.
+
+### The collaborative AI Gen TV (https://briangiannini.com/projects/collaborative-ai-gen-tv/)
+Live YouTube stream programmed by viewers. Donations with prompts flow through a 4-agent Google ADK pipeline on Cloud Run (Safety check via Cloud Natural Language API, Gemini 3 Decision agent classifying SAFE/BORDERLINE/TOXIC and rewriting prompts, Veo 3.1 video worker on Vertex AI, Confirmation agent), stored in Google Cloud Storage, and broadcast live via Python, FFmpeg, SQL replay loop, and OBS. Includes transactional Firestore daily caps, one-video-per-request guards, kill switch, and fail-closed spending limits. Source: https://github.com/BrianGiannini/adk-ai-gen-video
+
+### War4craft: Battle Realms (https://briangiannini.com/projects/war4craft/)
+StarCraft II custom mod importing 3D models and animations from World of Warcraft into the Galaxy Engine, inspired by Battle Realms unit training and combat mechanics. Released as an open beta on Battle.net with community and press coverage on ModDB, CurseForge, Reddit, and JudgeHype.
+
+### Travel Map (https://briangiannini.com/travels/)
+Interactive 2D world map and 3D globe showing countries and regions visited by Brian Giannini, trip timelines, and travel wishes.
+
+## Links
+- Website: https://briangiannini.com/
+- Email: brian@criaphore.com
+- Malt: https://www.malt.fr/profile/briangiannini
+- LinkedIn: https://www.linkedin.com/in/briangiannini1/
+- GitHub: https://github.com/BrianGiannini
+- X: https://x.com/Sanguisan/
+- YouTube: https://www.youtube.com/@Sanguinax/videos/
+- Criaphore: https://criaphore.com/

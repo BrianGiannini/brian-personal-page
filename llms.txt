@@ -1,21 +1,30 @@
 # Brian Giannini
 
-## Introduction
+> Senior AI & Mobile Engineer (Android, Kotlin Multiplatform, Jetpack Compose, agentic AI workflows) with 10+ years of experience across defense (Thales), robotics (SoftBank Robotics), crypto hardware (Ledger), IoT, and AI-native consumer apps. Founder of Criaphore, based in Paris, available for remote freelance consulting.
 
-Brian Giannini personal website for showcase and portfolio
+## Core Expertise
+- Mobile: Android SDK, Kotlin, Kotlin Multiplatform (KMP), Jetpack Compose, Clean Architecture, MVVM/MVI, hardware/BLE/IoT integration
+- AI & Automation: LLM API integration, Model Context Protocol (MCP), WebMCP, agentic development workflows, multi-agent systems (Google ADK, Gemini, Veo)
+- Contact: brian@criaphore.com | [Malt](https://www.malt.fr/profile/briangiannini) | [LinkedIn](https://www.linkedin.com/in/briangiannini1/) | [GitHub](https://github.com/BrianGiannini) | [X](https://x.com/Sanguisan/)
 
-## Applications
+## Pages
+- [Home & Portfolio](https://briangiannini.com/): Overview of career history, freelance positioning, and projects.
+- [AI Second Brain](https://briangiannini.com/projects/ai-second-brain/): Personal knowledge base built on the LLM Wiki pattern, maintained by AI agents 24/7 on a home server and controlled from a phone.
+- [The collaborative AI Gen TV](https://briangiannini.com/projects/collaborative-ai-gen-tv/): Live YouTube stream programmed by viewers via Google ADK multi-agent orchestration, Gemini 3, and Veo 3.1 on Google Cloud Run.
+- [War4craft: Battle Realms](https://briangiannini.com/projects/war4craft/): StarCraft II custom mod importing World of Warcraft 3D models and Battle Realms mechanics, with gameplay videos and press coverage.
+- [Travel Map](https://briangiannini.com/travels/): Interactive 2D map and 3D globe of countries and regions visited by Brian Giannini.
 
-[Work] https://briangiannini.com/#work: Professional experiences of Brian Giannini
-[Project] https://briangiannini.com/#projects: Personal projects made by Brian Giannini
-
-## Optional
-
-- [Website](https://briangiannini.com/)
-- [Contact](mailto:brian@criaphore.com)
+## Selected Products & Work
+- [Criaphore](https://criaphore.com/): Solo software studio building AI-native mobile applications (including [Orbora](https://criaphore.com/orbora) and [Diagnosly](https://criaphore.com/diagnosly)).
+- [Freelance Consulting](https://www.malt.fr/profile/briangiannini): Senior Android, KMP, and AI engineering consulting (2025 - Present).
+- [Ledger Atom](https://shop.ledger.com/pages/ledger-atom): Hardware wallet security & Android integration (2022 - 2024).
+- [SoftBank Robotics](https://us.softbankrobotics.com/pepper): Android software for Pepper humanoid robot and Plato food-service robot (2019 - 2022).
+- [Thales](https://www.thalesgroup.com/): Tactical special-forces Android apps, French Army SIA C2 command system, and biometric ID verification (2015 - 2019).
 
 ## AI Agent Interaction (WebMCP)
+This website supports WebMCP (Model Context Protocol for the Web) on the homepage:
+- `searchPortfolio`: Search Brian's work, projects, and personal pages by keyword.
+- `contactForFreelance`: Declarative form tool to draft a freelance inquiry email to brian@criaphore.com.
 
-This website supports WebMCP (Model Context Protocol for the Web). AI agents can use the following registered tools:
-- `searchPortfolio`: Search through Brian's work and projects.
-- `contactForFreelance`: Get contact information for hiring Brian for freelance missions.
+## Optional
+- [Full Markdown Context](https://briangiannini.com/llms-full.txt): Single-file summary of Brian Giannini's background and detailed project write-ups.

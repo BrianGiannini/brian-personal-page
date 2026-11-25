@@ -1,17 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    if (!hamburger || !navMenu) return;
+
+    const setOpen = (open) => {
+        hamburger.classList.toggle('active', open);
+        navMenu.classList.toggle('active', open);
+        hamburger.setAttribute('aria-expanded', String(open));
+    };
 
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        setOpen(!hamburger.classList.contains('active'));
     });
 
-    // Close menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
+        link.addEventListener('click', () => setOpen(false));
     });
-}); 
+});

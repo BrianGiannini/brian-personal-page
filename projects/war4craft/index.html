@@ -5,54 +5,84 @@
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>War4craft Battle Realms</title>
+    <title>War4craft: Battle Realms | Brian Giannini</title>
     <meta name="description"
-        content="Gameplay videos and press coverage for the War4craft: Battle Realms mod on StarCraft II.">
+        content="Gameplay videos and press coverage for the War4craft: Battle Realms mod on StarCraft II by Brian Giannini.">
     <meta name="author" content="Brian Giannini">
-    <meta name="theme-color" content="#55aeb7">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="theme-color" content="#e3eaf2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a252f" media="(prefers-color-scheme: dark)">
     <meta name="color-scheme" content="light dark">
-    <link rel="icon" href="../../icon.png">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="icon" type="image/png" href="../../icon.png">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 
     <!-- Preconnect to External Domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://ajax.googleapis.com">
-    <link rel="preconnect" href="https://t2.gstatic.com">
 
     <!-- Social Media Tags -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="War4craft: Battle Realms - Brian Giannini">
+    <meta property="og:title" content="War4craft: Battle Realms | Brian Giannini">
     <meta property="og:description"
         content="Gameplay videos and press coverage for the War4craft: Battle Realms mod on StarCraft II.">
-    <link rel="canonical" href="https://briangiannini.com/projects/war4craft">
-    <meta property="og:url" content="https://briangiannini.com/projects/war4craft">
+    <link rel="canonical" href="https://briangiannini.com/projects/war4craft/">
+    <meta property="og:url" content="https://briangiannini.com/projects/war4craft/">
     <meta property="og:image" content="https://briangiannini.com/img/shelf/project_starcraft.webp">
     <meta property="og:site_name" content="Brian Giannini">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@SanguiSan">
-    <meta name="twitter:title" content="War4craft: Battle Realms - Brian Giannini">
+    <meta name="twitter:creator" content="@Sanguisan">
+    <meta name="twitter:title" content="War4craft: Battle Realms | Brian Giannini">
     <meta name="twitter:description"
         content="Gameplay videos and press coverage for the War4craft: Battle Realms mod on StarCraft II.">
     <meta name="twitter:image" content="https://briangiannini.com/img/shelf/project_starcraft.webp">
 
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "headline": "War4craft: Battle Realms",
+          "description": "Custom StarCraft II mod importing World of Warcraft 3D models and Battle Realms mechanics into the Galaxy Engine.",
+          "url": "https://briangiannini.com/projects/war4craft/",
+          "image": "https://briangiannini.com/img/shelf/project_starcraft.webp",
+          "datePublished": "2013-02-01",
+          "author": { "@id": "https://briangiannini.com/#person", "@type": "Person", "name": "Brian Giannini", "url": "https://briangiannini.com/" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://briangiannini.com/" },
+            { "@type": "ListItem", "position": 2, "name": "War4craft: Battle Realms", "item": "https://briangiannini.com/projects/war4craft/" }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <!-- CSS files with relative paths -->
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/navbar.css">
-    <link rel="stylesheet" href="../../css/switch.css">
     <link rel="stylesheet" href="../../css/link-preview.css">
     <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;500;700&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Inter:wght@300;400;500;700&display=swap">
+    </noscript>
 
     <!-- JavaScript files -->
     <script src="../../scripts/theme-flash-prevention.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js" defer></script>
-
+    <script src="../../scripts/toggle-dark-mode.js" defer></script>
+    <script src="../../scripts/copyright.js" defer></script>
 </head>
 
 <body>
-    <div class="background-glob"></div>
-    <div class="scanlines"></div>
+    <div class="background-glob" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
 
     <nav class="sticky-header" id="navbar">
         <div class="header-container">
@@ -60,7 +90,7 @@
                 <a href="../../#projects" class="back-arrow-btn" aria-label="Back to projects"
                     onclick="if (window.history.length > 1 && document.referrer && new URL(document.referrer).origin === window.location.origin) { window.history.back(); return false; }">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <line x1="19" y1="12" x2="5" y2="12"></line>
                         <polyline points="12 19 5 12 12 5"></polyline>
                     </svg>
@@ -72,10 +102,10 @@
             </div>
 
             <div class="header-right">
-                <button id="theme-toggle" aria-label="Toggle dark mode">
+                <button type="button" id="theme-toggle" aria-label="Toggle dark mode">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
+                        stroke-linejoin="round" aria-hidden="true">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
                         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -88,7 +118,7 @@
                     </svg>
                     <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
+                        stroke-linejoin="round" aria-hidden="true">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
@@ -96,7 +126,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <main class="container">
 
         <div id="part-content">
             <div class="section self-section">
@@ -122,7 +152,7 @@
                     <h2>Gameplay Videos</h2>
 
                     <div class="link-preview">
-                        <a href="https://youtu.be/DCTnwHj4eXU?si=IR7EDjlgGE7Hvf0e" target="_blank">
+                        <a href="https://youtu.be/DCTnwHj4eXU" target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-img"
                                 style="background-image: url('https://img.youtube.com/vi/DCTnwHj4eXU/hqdefault.jpg');">
                             </div>
@@ -136,7 +166,7 @@
                     </div>
 
                     <div class="link-preview">
-                        <a href="https://youtu.be/rYT7EQu9KGA?si=1P4ISvmyVt7cYTk2" target="_blank">
+                        <a href="https://youtu.be/rYT7EQu9KGA" target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-img"
                                 style="background-image: url('https://img.youtube.com/vi/rYT7EQu9KGA/hqdefault.jpg');">
                             </div>
@@ -150,7 +180,7 @@
                     </div>
 
                     <div class="link-preview">
-                        <a href="https://youtu.be/iZITzezYcsM?si=X2MsHxXIL0M_Yls5" target="_blank">
+                        <a href="https://youtu.be/iZITzezYcsM" target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-img"
                                 style="background-image: url('https://img.youtube.com/vi/iZITzezYcsM/hqdefault.jpg');">
                             </div>
@@ -164,7 +194,7 @@
                     </div>
 
                     <div class="link-preview">
-                        <a href="https://youtu.be/AYW0I4hY3u4?si=hpsrA08FoKOPUqqH" target="_blank">
+                        <a href="https://youtu.be/AYW0I4hY3u4" target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-img"
                                 style="background-image: url('https://img.youtube.com/vi/AYW0I4hY3u4/hqdefault.jpg');">
                             </div>
@@ -178,7 +208,7 @@
                     </div>
 
                     <div class="link-preview">
-                        <a href="https://youtu.be/e583w0T8ihU?si=Hg6vDzR4e29fJsEc" target="_blank">
+                        <a href="https://youtu.be/e583w0T8ihU" target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-img"
                                 style="background-image: url('https://img.youtube.com/vi/e583w0T8ihU/hqdefault.jpg');">
                             </div>
@@ -195,10 +225,9 @@
                     <h2>Press Coverage</h2>
 
                     <div class="link-preview">
-                        <a href="https://war4craftsc2.wordpress.com/" target="_blank">
+                        <a href="https://war4craftsc2.wordpress.com/" target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-logo">
-                                <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://wordpress.com&size=128"
-                                    alt="WordPress Logo">
+                                <img src="../../icons/wordpress.svg" alt="WordPress Logo" width="56" height="56" loading="lazy" decoding="async">
                             </div>
                             <div class="link-preview-content">
                                 <div class="link-preview-title">War4craft Official Blog</div>
@@ -211,10 +240,9 @@
 
                     <div class="link-preview">
                         <a href="https://www.moddb.com/mods/war4craft-the-battle-realms/news/war4craft-the-battle-realms-is-born"
-                            target="_blank">
+                            target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-logo">
-                                <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.moddb.com&size=128"
-                                    alt="ModDB Logo">
+                                <img src="../../icons/moddb.svg" alt="ModDB Logo" width="56" height="56" loading="lazy" decoding="async">
                             </div>
                             <div class="link-preview-content">
                                 <div class="link-preview-title">ModDB: Project Announcement</div>
@@ -226,10 +254,9 @@
                     </div>
 
                     <div class="link-preview">
-                        <a href="https://www.moddb.com/mods/war4craft-the-battle-realms" target="_blank">
+                        <a href="https://www.moddb.com/mods/war4craft-the-battle-realms" target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-logo">
-                                <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.moddb.com&size=128"
-                                    alt="ModDB Logo">
+                                <img src="../../icons/moddb.svg" alt="ModDB Logo" width="56" height="56" loading="lazy" decoding="async">
                             </div>
                             <div class="link-preview-content">
                                 <div class="link-preview-title">ModDB: Project Hub</div>
@@ -242,10 +269,9 @@
 
                     <div class="link-preview">
                         <a href="https://www.reddit.com/r/starcraft/comments/1gba2m/war4craft_battle_realms/"
-                            target="_blank">
+                            target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-logo">
-                                <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://reddit.com&size=128"
-                                    alt="Reddit Logo">
+                                <img src="../../icons/reddit.svg" alt="Reddit Logo" width="56" height="56" loading="lazy" decoding="async">
                             </div>
                             <div class="link-preview-content">
                                 <div class="link-preview-title">Reddit Community Discussion</div>
@@ -257,10 +283,9 @@
                     </div>
 
                     <div class="link-preview">
-                        <a href="https://www.curseforge.com/sc2/maps/war4craft-battle-realms" target="_blank">
+                        <a href="https://www.curseforge.com/sc2/maps/war4craft-battle-realms" target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-logo">
-                                <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://curseforge.com&size=128"
-                                    alt="CurseForge Logo">
+                                <img src="../../icons/curseforge.svg" alt="CurseForge Logo" width="56" height="56" loading="lazy" decoding="async">
                             </div>
                             <div class="link-preview-content">
                                 <div class="link-preview-title">CurseForge: Map Download</div>
@@ -272,10 +297,9 @@
 
                     <div class="link-preview">
                         <a href="https://warcraft3.judgehype.com/news/le-mod-war4craft-battle-realms-entre-en-version-beta-131271/"
-                            target="_blank">
+                            target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-logo">
-                                <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://judgehype.com&size=128"
-                                    alt="JudgeHype Logo">
+                                <img src="../../icons/judgehype.svg" alt="JudgeHype Logo" width="56" height="56" loading="lazy" decoding="async">
                             </div>
                             <div class="link-preview-content">
                                 <div class="link-preview-title">JudgeHype: Beta Release (FR)</div>
@@ -288,10 +312,9 @@
 
                     <div class="link-preview">
                         <a href="https://warcraft3.judgehype.com/news/mod-warcraft-battle-realms-une-video-de-la-version-alpha-130492/"
-                            target="_blank">
+                            target="_blank" rel="noopener noreferrer">
                             <div class="link-preview-logo">
-                                <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://judgehype.com&size=128"
-                                    alt="JudgeHype Logo">
+                                <img src="../../icons/judgehype.svg" alt="JudgeHype Logo" width="56" height="56" loading="lazy" decoding="async">
                             </div>
                             <div class="link-preview-content">
                                 <div class="link-preview-title">JudgeHype: Alpha Preview (FR)</div>
@@ -304,10 +327,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer class="centered-footer">
-        <p>&copy; 2025 Brian Giannini. All rights reserved.</p>
+        <p id="copyright">&copy; 2022 - 2026 Brian Giannini</p>
     </footer>
 </body>
 
