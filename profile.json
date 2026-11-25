@@ -1,0 +1,50 @@
+{
+  "name": "Brian Giannini",
+  "headline": "Mobile & AI Software Engineer",
+  "summary": "Senior Mobile & AI Software Engineer with 10+ years of experience across crypto hardware (Ledger), robotics (SoftBank Robotics), defense (Thales), IoT, and AI-native consumer products. Founder of Criaphore, based in Paris, available for remote freelance consulting.",
+  "location": "Paris, France (Remote-friendly)",
+  "languages": ["French (native)", "English (fluent)"],
+  "availability": "Available for remote freelance consulting and technical advisory",
+  "services": [
+    {
+      "title": "AI-Native Mobile Products",
+      "description": "End-to-end architecture and shipping of iOS & Android apps powered by LLMs, RAG, and generative media using Kotlin Multiplatform (KMP) and modern mobile stacks."
+    },
+    {
+      "title": "Agentic Engineering & MCP Tooling",
+      "description": "Designing multi-agent pipelines, Model Context Protocol (MCP) integrations, custom agent skills, and AI-assisted development workflows for engineering teams."
+    },
+    {
+      "title": "Senior Mobile Architecture",
+      "description": "Clean architecture, hardware/BLE/IoT integration, design systems, CI/CD, and production quality across complex mobile codebases."
+    }
+  ],
+  "skills": [
+    "Mobile Architecture (iOS & Android)",
+    "Kotlin Multiplatform (KMP)",
+    "Kotlin & Jetpack Compose",
+    "Agentic AI Workflows",
+    "Model Context Protocol (MCP) & WebMCP",
+    "LLM API Integration & RAG",
+    "Multi-Agent Orchestration (Google ADK, Gemini, Veo)",
+    "IoT, BLE & Hardware Integration",
+    "CI/CD & Testing"
+  ],
+  "contact": {
+    "email": "brian@criaphore.com",
+    "malt": "https://www.malt.fr/profile/briangiannini",
+    "linkedin": "https://www.linkedin.com/in/briangiannini1/",
+    "github": "https://github.com/BrianGiannini",
+    "x": "https://x.com/Sanguisan/",
+    "website": "https://briangiannini.com/"
+  },
+  "featured_pages": [
+    "https://briangiannini.com/",
+    "https://briangiannini.com/projects/ai-second-brain/",
+    "https://briangiannini.com/projects/collaborative-ai-gen-tv/",
+    "https://briangiannini.com/projects/war4craft/",
+    "https://briangiannini.com/travels/",
+    "https://briangiannini.com/llms.txt",
+    "https://briangiannini.com/llms-full.txt"
+  ]
+}

@@ -1,14 +1,14 @@
 # Brian Giannini
 
-> Senior AI & Mobile Engineer (Android, Kotlin Multiplatform, Jetpack Compose, agentic AI workflows) with 10+ years of experience across defense (Thales), robotics (SoftBank Robotics), crypto hardware (Ledger), IoT, and AI-native consumer apps. Founder of Criaphore, based in Paris, available for remote freelance consulting.
+> Mobile & AI Software Engineer with 10+ years of experience across crypto hardware (Ledger), robotics (SoftBank Robotics), defense (Thales), IoT, and AI-native consumer apps. Founder of Criaphore, based in Paris, available for remote freelance consulting.
 
 ## Core Expertise
-- Mobile: Android SDK, Kotlin, Kotlin Multiplatform (KMP), Jetpack Compose, Clean Architecture, MVVM/MVI, hardware/BLE/IoT integration
-- AI & Automation: LLM API integration, Model Context Protocol (MCP), WebMCP, agentic development workflows, multi-agent systems (Google ADK, Gemini, Veo)
-- Contact: brian@criaphore.com | [Malt](https://www.malt.fr/profile/briangiannini) | [LinkedIn](https://www.linkedin.com/in/briangiannini1/) | [GitHub](https://github.com/BrianGiannini) | [X](https://x.com/Sanguisan/)
+- Mobile Engineering: Cross-platform mobile (Kotlin Multiplatform), iOS & Android product architecture, Jetpack Compose, BLE/IoT/hardware integration, CI/CD
+- AI Software Engineering: AI-native mobile products, LLM API integration & RAG, Model Context Protocol (MCP), WebMCP, agentic development workflows, multi-agent systems (Google ADK, Gemini, Veo)
+- Consulting & Contact: brian@criaphore.com | [Malt](https://www.malt.fr/profile/briangiannini) | [LinkedIn](https://www.linkedin.com/in/briangiannini1/) | [GitHub](https://github.com/BrianGiannini) | [X](https://x.com/Sanguisan/)
 
 ## Pages
-- [Home & Portfolio](https://briangiannini.com/): Overview of career history, freelance positioning, and projects.
+- [Home & Portfolio](https://briangiannini.com/): Overview of career history, freelance consulting services, and projects.
 - [AI Second Brain](https://briangiannini.com/projects/ai-second-brain/): Personal knowledge base built on the LLM Wiki pattern, maintained by AI agents 24/7 on a home server and controlled from a phone.
 - [The collaborative AI Gen TV](https://briangiannini.com/projects/collaborative-ai-gen-tv/): Live YouTube stream programmed by viewers via Google ADK multi-agent orchestration, Gemini 3, and Veo 3.1 on Google Cloud Run.
 - [War4craft: Battle Realms](https://briangiannini.com/projects/war4craft/): StarCraft II custom mod importing World of Warcraft 3D models and Battle Realms mechanics, with gameplay videos and press coverage.
@@ -16,15 +16,17 @@
 
 ## Selected Products & Work
 - [Criaphore](https://criaphore.com/): Solo software studio building AI-native mobile applications (including [Orbora](https://criaphore.com/orbora) and [Diagnosly](https://criaphore.com/diagnosly)).
-- [Freelance Consulting](https://www.malt.fr/profile/briangiannini): Senior Android, KMP, and AI engineering consulting (2025 - Present).
-- [Ledger Atom](https://shop.ledger.com/pages/ledger-atom): Hardware wallet security & Android integration (2022 - 2024).
-- [SoftBank Robotics](https://us.softbankrobotics.com/pepper): Android software for Pepper humanoid robot and Plato food-service robot (2019 - 2022).
-- [Thales](https://www.thalesgroup.com/): Tactical special-forces Android apps, French Army SIA C2 command system, and biometric ID verification (2015 - 2019).
+- [Freelance Consulting](https://www.malt.fr/profile/briangiannini): Mobile & AI Software Engineering consulting (2025 - Present).
+- [Ledger Atom](https://shop.ledger.com/pages/ledger-atom): Hardware wallet security & mobile integration (2022 - 2024).
+- [SoftBank Robotics](https://us.softbankrobotics.com/pepper): Mobile software for Pepper humanoid robot and Plato food-service robot (2019 - 2022).
+- [Thales](https://www.thalesgroup.com/): Tactical special-forces mobile apps, French Army SIA C2 command system, and biometric ID verification (2015 - 2019).
 
-## AI Agent Interaction (WebMCP)
+## AI Agent Interaction (WebMCP & JSON)
 This website supports WebMCP (Model Context Protocol for the Web) on the homepage:
 - `searchPortfolio`: Search Brian's work, projects, and personal pages by keyword.
+- `getHireInfo`: Get structured freelance availability, services, location, and contact links.
 - `contactForFreelance`: Declarative form tool to draft a freelance inquiry email to brian@criaphore.com.
 
 ## Optional
 - [Full Markdown Context](https://briangiannini.com/llms-full.txt): Single-file summary of Brian Giannini's background and detailed project write-ups.
+- [Structured JSON Profile](https://briangiannini.com/profile.json): Machine-readable JSON profile for recruiting and research agents.

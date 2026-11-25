@@ -77,6 +77,35 @@
         }
     });
 
+    // --- HIRE INFO TOOL ---
+    modelContext.registerTool({
+        name: "getHireInfo",
+        description: "Get structured information on Brian Giannini's freelance availability, AI & Mobile Software Engineering services, location, and contact links.",
+        inputSchema: {
+            type: "object",
+            properties: {}
+        },
+        execute: () => {
+            return {
+                content: [{
+                    type: "text",
+                    text: [
+                        "Brian Giannini - Mobile & AI Software Engineer (10+ years, ex-Ledger, SoftBank Robotics, Thales).",
+                        "Location: Paris, France (available for remote freelance consulting).",
+                        "Services:",
+                        "- AI-Native Mobile Products (iOS & Android, Kotlin Multiplatform, LLM & RAG integration)",
+                        "- Agentic Workflows & MCP Tooling (multi-agent pipelines, MCP servers, custom agent skills)",
+                        "- Senior Mobile Architecture (clean architecture, BLE/IoT hardware integration, CI/CD)",
+                        "Contact: brian@criaphore.com",
+                        "Malt: https://www.malt.fr/profile/briangiannini",
+                        "LinkedIn: https://www.linkedin.com/in/briangiannini1/",
+                        "Machine-readable profile: https://briangiannini.com/profile.json"
+                    ].join("\n")
+                }]
+            };
+        }
+    });
+
     // --- DECLARATIVE FORM HANDLING (contactForFreelance) ---
     const contactForm = document.getElementById('webmcp-contact-form');
     const closeBtn = document.getElementById('close-agent-form');

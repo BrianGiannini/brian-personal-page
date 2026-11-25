@@ -1,16 +1,21 @@
 # Brian Giannini - Full Context for AI Assistants
 
-> Senior AI & Mobile Engineer (Android, Kotlin Multiplatform, Jetpack Compose, agentic AI workflows) with 10+ years of experience. Founder of Criaphore, based in Paris, available for remote freelance consulting. Contact: brian@criaphore.com.
+> Mobile & AI Software Engineer with 10+ years of experience. Founder of Criaphore, based in Paris, available for remote freelance consulting. Contact: brian@criaphore.com.
 
 ## Professional Summary
-Brian Giannini is a French software engineer specializing in Android, Kotlin Multiplatform (KMP), Jetpack Compose, and production AI-native mobile applications and agentic developer workflows. He holds an Engineering degree (Polytech, France, 2015) and has worked across defense, robotics, crypto hardware, IoT, and generative AI.
+Brian Giannini is a French Mobile & AI Software Engineer specializing in cross-platform mobile architecture (Kotlin Multiplatform, iOS & Android), AI-native mobile products, and agentic developer workflows (MCP, multi-agent pipelines, custom agent skills). He holds an Engineering degree (Polytech, France, 2015) and has worked across crypto hardware, robotics, defense, IoT, and generative AI.
+
+## Freelance Services (Remote / Paris)
+- **AI-Native Mobile Products**: End-to-end architecture and shipping of iOS & Android apps powered by LLMs, RAG, and generative media with shared Kotlin Multiplatform codebases.
+- **Agentic Workflows & MCP Tooling**: Designing multi-agent pipelines, Model Context Protocol (MCP) integrations, custom agent skills, and AI-assisted development workflows for engineering teams.
+- **Senior Mobile Architecture**: Clean architecture, BLE/IoT hardware integration, design systems, CI/CD, and production quality across complex mobile codebases.
 
 ## Career History
-- **Freelance AI & Mobile Engineer (2025 - Present)**: Senior Android, KMP, Jetpack Compose, and agentic workflow consulting (Malt: https://www.malt.fr/profile/briangiannini).
+- **Freelance Mobile & AI Software Engineer (2025 - Present)**: Remote consulting for mobile architecture, AI-native apps, and agentic dev workflows (Malt: https://www.malt.fr/profile/briangiannini).
 - **Founder, Criaphore (2023 - Present)**: Solo software studio building AI-native mobile products including Orbora (generative audio wellness app on iOS and Android, https://criaphore.com/orbora) and Diagnosly (AI health assistant, https://criaphore.com/diagnosly).
-- **Senior Android Software Engineer, Ledger (2022 - 2024)**: Ground-up Kotlin & Jetpack Compose Android application for Ledger Atom hardware security device, integrating hardware wallets (BLE/USB) and Web3 SDKs.
-- **Android Software Engineer, SoftBank Robotics (2019 - 2022)**: Built social interaction apps in Kotlin for Pepper (humanoid robot) and the touchscreen interface for Plato (restaurant service robot).
-- **Software Engineer, Thales (2015 - 2019)**: Defense and security software including tactical GPS mapping and offline mesh messaging for special forces, the French Army's interoperable command system (SIA C2), and an Android biometric ID verification app.
+- **Senior Mobile Software Engineer, Ledger (2022 - 2024)**: Ground-up mobile application for Ledger Atom hardware security device, integrating hardware wallets (BLE/USB) and Web3 SDKs.
+- **Mobile Software Engineer, SoftBank Robotics (2019 - 2022)**: Built social interaction apps for Pepper (humanoid robot) and the touchscreen interface for Plato (restaurant service robot).
+- **Software Engineer, Thales (2015 - 2019)**: Defense and security software including tactical GPS mapping and offline mesh messaging for special forces, the French Army's interoperable command system (SIA C2), and a biometric ID verification mobile app.
 
 ## Featured Project Deep-Dives
 
@@ -28,6 +33,7 @@ Interactive 2D world map and 3D globe showing countries and regions visited by B
 
 ## Links
 - Website: https://briangiannini.com/
+- Structured JSON Profile: https://briangiannini.com/profile.json
 - Email: brian@criaphore.com
 - Malt: https://www.malt.fr/profile/briangiannini
 - LinkedIn: https://www.linkedin.com/in/briangiannini1/

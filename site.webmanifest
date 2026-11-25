@@ -1,11 +1,11 @@
 {
-  "name": "Brian Giannini | AI & Mobile Engineer",
+  "name": "Brian Giannini | Mobile & AI Software Engineer",
   "short_name": "Brian Giannini",
-  "description": "Portfolio of Brian Giannini, Senior Android, Kotlin Multiplatform & AI Engineer.",
+  "description": "Portfolio of Brian Giannini, Mobile & AI Software Engineer available for remote freelance consulting.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#e3eaf2",
-  "theme_color": "#1a6fb3",
+  "theme_color": "#1765a3",
   "icons": [
     {
       "src": "/icon.png",
