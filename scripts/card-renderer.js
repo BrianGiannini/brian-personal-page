@@ -45,7 +45,8 @@ function renderCards(containerId, items) {
         return `
             <${tag} class="card glass-card ${noHoverClass}" ${hrefAttr} ${targetAttr}>
                 <div class="card-img-wrapper ${coverClass}">
-                    <img src="${item.image}" alt="${item.title}" class="${imgClasses}" ${coverStyle}>
+                    <img src="${item.image}" alt="${item.title}" class="${imgClasses} ${item.imageDark ? 'img-light' : ''}" ${coverStyle}>
+                    ${item.imageDark ? `<img src="${item.imageDark}" alt="${item.title}" class="${imgClasses} img-dark" ${coverStyle}>` : ''}
                 </div>
                 <div class="card-content">
                     <h3>${item.title}</h3>

@@ -147,6 +147,7 @@ const portfolioData = {
             title: "Travels",
             description: "Where I have been, on an interactive map and globe",
             image: "img/shelf/personal_travels.webp",
+            imageDark: "img/shelf/personal_travels_dark.webp",
             cover: "center 45%",
             link: "travels/",
             label: "Open map",

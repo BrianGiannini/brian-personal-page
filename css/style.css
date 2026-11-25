@@ -989,3 +989,9 @@ button:tool-submit-active, input:tool-submit-active {
   from { transform: translateY(50px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
+/* A card picture with its own dark version (imageDark in data/portfolio.js). */
+.card-img-wrapper .img-dark { display: none; }
+[data-theme="dark"] .card-img-wrapper .img-dark { display: block; }
+[data-theme="dark"] .card-img-wrapper .img-light { display: none; }
+[data-theme="dark"] .card-img-wrapper:has(.img-dark) { background: #1f242b; }
