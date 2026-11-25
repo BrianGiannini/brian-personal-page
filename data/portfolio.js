@@ -146,7 +146,6 @@ const portfolioData = {
         {
             title: "Travels",
             description: "Where I have been, on an interactive map and globe",
-            meta: "Since 1994",
             image: "img/shelf/personal_travels.webp",
             cover: "center 45%",
             link: "travels/",

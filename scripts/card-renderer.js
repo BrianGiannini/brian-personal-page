@@ -52,7 +52,7 @@ function renderCards(containerId, items) {
                     <p class="card-desc">${item.description}</p>
                     <button type="button" class="card-more" hidden aria-expanded="false">More</button>
                     <div class="card-footer">
-                        <span class="meta">${item.meta}</span>
+                        <span class="meta">${item.meta ?? ''}</span>
                         ${item.link && !item.noHover ? arrowSVG : ''}
                     </div>
                 </div>
