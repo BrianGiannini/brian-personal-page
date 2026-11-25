@@ -1,6 +1,6 @@
 # Brian Giannini - Full Context for AI Assistants
 
-> Mobile & AI Software Engineer with 10+ years of experience. Founder of Criaphore, based in Paris, available for remote freelance consulting. Contact: brian@criaphore.com.
+> Mobile & AI Software Engineer with 10+ years of experience. Founder of Criaphore, based in Paris, available for remote freelance consulting. Contact: contact@briangiannini.com.
 
 ## Professional Summary
 Brian Giannini is a French Mobile & AI Software Engineer specializing in cross-platform mobile architecture (Kotlin Multiplatform, iOS & Android), AI-native mobile products, and agentic developer workflows (MCP, multi-agent pipelines, custom agent skills). He holds an Engineering degree (Polytech, France, 2015) and has worked across crypto hardware, robotics, defense, IoT, and generative AI.
@@ -34,7 +34,7 @@ Interactive 2D world map and 3D globe showing countries and regions visited by B
 ## Links
 - Website: https://briangiannini.com/
 - Structured JSON Profile: https://briangiannini.com/profile.json
-- Email: brian@criaphore.com
+- Email: contact@briangiannini.com
 - Malt: https://www.malt.fr/profile/briangiannini
 - LinkedIn: https://www.linkedin.com/in/briangiannini1/
 - GitHub: https://github.com/BrianGiannini

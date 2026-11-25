@@ -3,7 +3,7 @@ function copyEmail(e) {
         return; // Fall back to native mailto: link
     }
     e.preventDefault();
-    navigator.clipboard.writeText('brian@criaphore.com').then(() => {
+    navigator.clipboard.writeText('contact@briangiannini.com').then(() => {
         const btn = document.getElementById('email-btn');
         if (btn) {
             btn.classList.add('copied');
@@ -17,7 +17,7 @@ function copyEmail(e) {
             tooltip._hideTimer = setTimeout(() => { tooltip.style.opacity = '0'; }, 2000);
         }
     }).catch(() => {
-        window.location.href = 'mailto:brian@criaphore.com';
+        window.location.href = 'mailto:contact@briangiannini.com';
     });
 }
 

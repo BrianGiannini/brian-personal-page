@@ -57,7 +57,7 @@
                 return {
                     content: [{
                         type: "text",
-                        text: `No direct match for '${query}'. Brian's core expertise covers Android, Kotlin Multiplatform (KMP), Jetpack Compose, Agentic AI workflows, Robotics, and VR. Contact: brian@criaphore.com`
+                        text: `No direct match for '${query}'. Brian's core expertise covers Mobile & AI Software Engineering (cross-platform mobile, KMP, agentic AI workflows, MCP, Robotics, and VR). Contact: contact@briangiannini.com`
                     }]
                 };
             }
@@ -96,7 +96,7 @@
                         "- AI-Native Mobile Products (iOS & Android, Kotlin Multiplatform, LLM & RAG integration)",
                         "- Agentic Workflows & MCP Tooling (multi-agent pipelines, MCP servers, custom agent skills)",
                         "- Senior Mobile Architecture (clean architecture, BLE/IoT hardware integration, CI/CD)",
-                        "Contact: brian@criaphore.com",
+                        "Contact: contact@briangiannini.com",
                         "Malt: https://www.malt.fr/profile/briangiannini",
                         "LinkedIn: https://www.linkedin.com/in/briangiannini1/",
                         "Machine-readable profile: https://briangiannini.com/profile.json"
@@ -127,8 +127,8 @@
             const subject = String(formData.get('subject') || '');
             const body = String(formData.get('body') || '');
 
-            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=brian@criaphore.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            const mailtoUrl = `mailto:brian@criaphore.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=contact@briangiannini.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const mailtoUrl = `mailto:contact@briangiannini.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
             const btn = contactForm.querySelector('button[type="submit"]');
             if (btn) {
@@ -141,7 +141,7 @@
             }
 
             if (typeof e.respondWith === 'function') {
-                e.respondWith(Promise.resolve("Prepared a draft email to brian@criaphore.com. The user can click 'Open in Mail App' to send it."));
+                e.respondWith(Promise.resolve("Prepared a draft email to contact@briangiannini.com. The user can click 'Open in Mail App' to send it."));
             }
         });
     }

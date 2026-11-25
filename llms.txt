@@ -5,7 +5,7 @@
 ## Core Expertise
 - Mobile Engineering: Cross-platform mobile (Kotlin Multiplatform), iOS & Android product architecture, Jetpack Compose, BLE/IoT/hardware integration, CI/CD
 - AI Software Engineering: AI-native mobile products, LLM API integration & RAG, Model Context Protocol (MCP), WebMCP, agentic development workflows, multi-agent systems (Google ADK, Gemini, Veo)
-- Consulting & Contact: brian@criaphore.com | [Malt](https://www.malt.fr/profile/briangiannini) | [LinkedIn](https://www.linkedin.com/in/briangiannini1/) | [GitHub](https://github.com/BrianGiannini) | [X](https://x.com/Sanguisan/)
+- Consulting & Contact: contact@briangiannini.com | [Malt](https://www.malt.fr/profile/briangiannini) | [LinkedIn](https://www.linkedin.com/in/briangiannini1/) | [GitHub](https://github.com/BrianGiannini) | [X](https://x.com/Sanguisan/)
 
 ## Pages
 - [Home & Portfolio](https://briangiannini.com/): Overview of career history, freelance consulting services, and projects.
@@ -25,7 +25,7 @@
 This website supports WebMCP (Model Context Protocol for the Web) on the homepage:
 - `searchPortfolio`: Search Brian's work, projects, and personal pages by keyword.
 - `getHireInfo`: Get structured freelance availability, services, location, and contact links.
-- `contactForFreelance`: Declarative form tool to draft a freelance inquiry email to brian@criaphore.com.
+- `contactForFreelance`: Declarative form tool to draft a freelance inquiry email to contact@briangiannini.com.
 
 ## Optional
 - [Full Markdown Context](https://briangiannini.com/llms-full.txt): Single-file summary of Brian Giannini's background and detailed project write-ups.
