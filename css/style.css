@@ -636,6 +636,10 @@ p.tagline {
     white-space: nowrap;
 }
 
+.card:not([target="_blank"]) .card-arrow[data-label]::before {
+    content: attr(data-label);
+}
+
 .card:not(.no-hover):hover .card-arrow {
     opacity: 1;
     transform: translateX(0);

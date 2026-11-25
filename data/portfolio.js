@@ -141,5 +141,17 @@ const portfolioData = {
             link: "https://youtu.be/4O-YM0Iub0Y",
             external: true
         }
+    ],
+    personal: [
+        {
+            title: "Travels",
+            description: "Where I have been, on an interactive map and globe",
+            meta: "Since 1994",
+            image: "img/shelf/personal_travels.webp",
+            cover: "center 45%",
+            link: "travels/",
+            label: "Open map",
+            external: false
+        }
     ]
 };

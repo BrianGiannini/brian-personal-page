@@ -1,6 +1,7 @@
 function initCards() {
     renderCards('work-grid', portfolioData.work);
     renderCards('projects-grid', portfolioData.projects);
+    renderCards('personal-grid', portfolioData.personal);
 }
 
 if (document.readyState === 'loading') {
@@ -22,6 +23,8 @@ function renderCards(containerId, items) {
         const coverStyle = item.cover ? `style="object-position: ${item.cover}"` : '';
         const targetAttr = isExternal ? 'target="_blank"' : '';
         const hrefAttr = item.link ? `href="${item.link}"` : '';
+        // A word other than "Article" for an internal link that is not an article
+        const labelAttr = item.label ? `data-label="${item.label}"` : '';
 
         // Arrow SVG
         // Arrow SVG Logic
@@ -29,7 +32,7 @@ function renderCards(containerId, items) {
         // Internal: Standard Right Arrow (#icon-arrow-right)
         const iconId = isExternal ? '#icon-external-link' : '#icon-arrow-right';
         const arrowSVG = `
-            <span class="card-arrow">
+            <span class="card-arrow" ${labelAttr}>
                 <svg width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <use href="${iconId}"></use>
                 </svg>
