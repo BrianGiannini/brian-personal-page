@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f262e">
+  <title>Travel Map</title>
+  <script>window.__travelSource = 'travel.json';</script>
+  <script>if (['nations', 'empires'].includes(new URLSearchParams(location.search).get('mode'))) document.documentElement.classList.add('nations-startup');</script>
+  <style>
+    html.nations-startup body > :not(#empires) { display: none !important; }
+    html.nations-startup #empires { display: grid !important; position: fixed; inset: 0; place-content: center; gap: 16px; margin: 0; background: #17232d; color: #f0e8de; font: 16px system-ui, sans-serif; text-align: center; }
+    html.nations-startup #empires h1, html.nations-startup #empires p { margin: 0; }
+    html.nations-startup #empires a { color: inherit; }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <script>try { const t = localStorage.getItem('travel-map-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; document.documentElement.dataset.themeSetting = t || 'system'; if (localStorage.getItem('travel-map-lines') === 'off') document.documentElement.classList.add('no-lines'); } catch {}</script>
+  <script>
+    // Fast start (2026-11-24): the saved map is asked for now, alongside the app's code (store.ts
+    // load() takes this answer), and the last picture of the map (snapshot.ts) is shown until the
+    // real map is drawn, instead of an empty screen.
+    if (!document.documentElement.classList.contains('nations-startup')) {
+      window.__travelState = fetch(window.__travelSource || 'api/state', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null);
+    }
+  </script>
+  <style>#map-snapshot { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }</style>
+  <script type="module" crossorigin src="./assets/index-C_8M7E3J.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CiZmJWf9.css">
+</head>
+<body>
+  <script>
+    // The last picture of the map (see the fast start note in the head).
+    if (!document.documentElement.classList.contains('nations-startup')) {
+      try {
+        const v = JSON.parse(localStorage.getItem('travel-map-snapshot') || 'null'), l = localStorage, root = document.documentElement;
+        const theme = root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const key = [innerWidth, innerHeight, devicePixelRatio, theme, l.getItem('travel-map-projection'), l.getItem('travel-map-globe'), l.getItem('travel-map-lines')].join('|');
+        if (v && v.key === key) {
+          const img = new Image();
+          img.id = 'map-snapshot'; img.alt = ''; img.src = v.url;
+          document.body.prepend(img);
+          window.__snapshotAt = performance.now();
+        }
+      } catch {}
+    }
+  </script>
+  <main id="empires" hidden><h1>Nations</h1><p role="status">Loading nations…</p></main>
+  <svg id="map" aria-label="World map"></svg>
+
+  <header id="bar">
+    <h1>Travel map</h1>
+    <div id="stats"></div>
+    <input id="search" type="search" list="places" placeholder="Search" autocomplete="off" aria-label="Find a place">
+    <datalist id="places"></datalist>
+    <button id="lines-btn" class="tool" aria-pressed="true" aria-label="Borders and small-place dots" title="Show or hide borders and small-place dots"><svg viewBox="0 0 24 24"><path d="M4 6l5-2 6 2 5-2v14l-5 2-6-2-5 2z"/><path d="M9 4v14M15 6v14"/></svg></button>
+    <button id="names-btn" class="tool" aria-pressed="false" aria-label="Place names" title="Show or hide place names">Aa</button>
+    <button id="projection-btn" class="tool" aria-label="Switch map projection"><svg viewBox="0 0 24 24"></svg></button>
+    <button id="spin-btn" class="tool" aria-pressed="false" aria-label="Turn the globe" title="Turn the globe on its axis"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="8.5" ry="3.5"/><path d="M12 2.5v19"/><path d="M17.5 6.5l2 2.2-2.8.6"/></svg></button>
+    <button id="globe-btn" class="tool" aria-pressed="false" aria-label="3D globe"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="3.6" ry="8.5"/><path d="M3.5 12h17"/></svg></button>
+    <button id="night-btn" class="tool" aria-pressed="false" aria-label="Day and night" title="Day and night as they are now"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></button>
+    <button id="theme-btn" class="tool" aria-label="Light or dark mode" title="Light or dark mode"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+    <button id="menu-btn" aria-label="Backup" title="Backup">⋯</button>
+    <div id="menu" hidden>
+      <button id="export">Export a backup (.json, open format)</button>
+      <button id="export-png">Export the map as a picture with your data (.png)</button>
+      <button id="export-csv">Export visits for a spreadsheet (.csv)</button>
+      <button id="export-kml">Export for Google Earth / My Maps (.kml)</button>
+      <button id="import">Import a backup</button>
+      <input id="import-file" type="file" accept="application/json,.json,image/png" hidden>
+    </div>
+  </header>
+
+  <div id="night-time" hidden>
+    <div class="slider">
+      <input type="range" min="-720" max="720" step="5" value="0" aria-label="Time of the night view, up to 12 hours before or after now">
+      <div class="ticks"><span>−12 h</span><span>now</span><span>+12 h</span></div>
+    </div>
+    <span class="when"></span>
+    <button>Now</button>
+  </div>
+  <div id="space" hidden>
+    <canvas></canvas>
+    <button class="back">Back to Earth</button>
+    <div class="info"><b>The Moon</b><span class="phase"></span><span class="hint">Drag to turn it · zoom in or tap the Earth to go back</span></div>
+    <div class="credit">Moon: NASA Scientific Visualization Studio (LRO)</div>
+  </div>
+  <dialog id="places-list" aria-labelledby="places-list-title">
+    <h2><span id="places-list-title">Places</span><button data-close aria-label="Close places list">×</button></h2>
+    <ul></ul>
+    <p class="empty" hidden>No places yet.</p>
+  </dialog>
+  <aside id="panel" hidden></aside>
+  <aside id="timeline" hidden></aside>
+  <button id="timeline-btn" class="tool fab" aria-pressed="false" aria-label="Timeline" title="Timeline: your trips, replayed by age"><svg viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3"/><path d="M4.5 4.5v3.7h3.7"/><path d="M12 8v4.2l3 1.8"/></svg></button>
+  <div id="tooltip" hidden></div>
+
+  <details id="legend" open>
+    <summary>Legend</summary>
+    <button type="button" data-layer="visited" aria-pressed="true"><i class="s-visited"></i>Visited once</button>
+    <button type="button" data-layer="often" aria-pressed="true"><i class="s-often"></i>2–3 visits</button>
+    <button type="button" data-layer="many" aria-pressed="true"><i class="s-many"></i>4–9 visits</button>
+    <button type="button" data-layer="lots" aria-pressed="true"><i class="s-lots"></i>10+ visits</button>
+    <button type="button" data-layer="must" aria-pressed="true"><i class="s-must"></i>Must go</button>
+    <button type="button" data-layer="wish" aria-pressed="true"><i class="s-wish"></i>Would like to go</button>
+    <button type="button" data-layer="home" aria-pressed="true"><i class="s-home"></i>Home</button>
+  </details>
+  <div id="saved"></div>
+
+</body>
+</html>
